@@ -25,12 +25,16 @@
 </div>
 <div style="background-color: #ececec;">
 	<div class="container">
+		<h2>Notícias da ANPED / FORPRED</h2>
 		<div class="card-group">
 			<?php foreach ($noticias as $noticias_item): ?>
-			<div class="card" style="width: 18rem;">
-				<div class="card-body">
-					<h4 class="card-title"><?php echo $noticias_item['titulo']; ?></h4>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			<div class="col-sm-4 d-flex pb-3 px-0 mx-0 bg-white">
+				<div class="card border border-primary rounded-0 h-100" style="width: 18rem;">
+					<div class="card-body">
+						<p class="card-text"><?php echo $noticias_item['data']; ?></p>
+						<h4 class="card-title"><?php echo $noticias_item['titulo']; ?></h4>
+						<p class="card-text"><?php echo $noticias_item['categoria']; ?></p>
+					</div>
 				</div>
 			</div>
 			<?php endforeach; ?>

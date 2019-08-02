@@ -9,7 +9,7 @@ class MY_Controller extends CI_Controller {
 	public function create_pagination($tot_rows) {
 		$this->load->library('pagination');
 
-		$config['base_url'] = base_url($this->router->fetch_class() . '/' . $this->router->fetch_method());
+		$config['base_url'] = base_url('index.php/' . $this->router->fetch_class() . '/' . $this->router->fetch_method());
 		$config['total_rows'] = $tot_rows;
 		$config['per_page'] = 16;
 
