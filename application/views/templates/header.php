@@ -17,7 +17,10 @@
 				color: #fff;
 			}
 			body {
-				padding-top: 60px;
+				padding-top: 70px;
+			}
+			.btn:hover {
+				color: #f0ce00;
 			}
 			/*
 			@media (max-width: 979px) {
@@ -32,25 +35,16 @@
 	</head>
 	<body>
 		<div class="fixed-top ppged-header">
-			<div class="bg-info">
+			<div class="navbar navbar-expand-sm bg-info">
 				<div class="container">
-					<div class="row">
-						<div class="col-2">
-							<div class="row">
-								<div class="col-3 btn">
-									<button type="button" class="btn btn-outline-secondary">A-</button>
-								</div>
-								<div class="col-3 btn">
-									<button type="button" class="btn btn-outline-secondary">A+</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-3 pull-right">
-							<button type="button" class="btn btn-outline-secondary">
-								<i class="fa fa-th" aria-hidden="true"></i>
-							</button>
-						</div>
+					<div class="btn-group">
+						<button type="button" class="btn border-0 text-white ppged-btn">A-</button>
+						<button type="button" class="btn border-0 text-white ppged-btn">A</button>
+						<button type="button" class="btn border-0 text-white ppged-btn">A+</button>
 					</div>
+					<button type="button" class="btn border-0 text-white" data-toggle="modal" data-target="#parceiros">
+						<i class="fa fa-th" aria-hidden="true"></i>
+					</button>
 				</div>
 			</div>	
 			<nav class="navbar navbar-expand-sm bg-primary">
@@ -114,4 +108,15 @@
 					</div>
 				</div>
 			</nav>
+		</div>
+
+		<div class="modal" id="parceiros">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Parceiros</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+				</div>
+			</div>
 		</div>

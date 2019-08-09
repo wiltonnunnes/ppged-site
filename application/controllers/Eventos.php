@@ -11,7 +11,6 @@ class Eventos extends MY_Controller {
 		$data['title'] = 'Lista de eventos';
 	}
 
-	public function adicionar() {
-
+	public function recebe_cadastra_evento() {
 	}
 }
