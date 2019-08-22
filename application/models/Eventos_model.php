@@ -3,6 +3,14 @@ class Eventos_model extends MY_Model {
 
 	public function __construct() {
 		parent::__construct();
-		$this->table = 'professores';
+		$this->table = 'eventos';
+	}
+
+	public function get_by_id($id) {
+		$eventos = $this->get(array('evento_id' => $id));
+		if (count($eventos) > 0) {
+			return $eventos[0];
+		}
+		return NULL;
 	}
 }

@@ -55,3 +55,11 @@ $route['translate_uri_dashes'] = FALSE;
 $route['professores'] = 'professores';
 $route['noticias'] = 'noticias';
 $route['editais'] = 'editais';
+$route['(([a-zA-Z_])[a-zA-Z0-9_]*)/adicionar'] = '$1/adicionar';
+$route['(([a-zA-Z_])[a-zA-Z0-9_]*)/listar'] = '$1/listar';
+$route['painel_controle'] = 'usuarios';
+$route['usuarios/(:num)'] = 'usuarios/view/$1';
+$route['usuarios/login'] = 'usuarios/login';
+
+$route['eventos/(:num)']['GET'] = 'eventos';
+$route['eventos/(:num)'] = 'eventos/view/$1';

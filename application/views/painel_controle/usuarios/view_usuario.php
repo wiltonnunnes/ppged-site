@@ -1,0 +1,1 @@
+Nome: <?php echo $usuario['nome']; ?>
