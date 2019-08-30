@@ -4,7 +4,6 @@ class Editais extends MY_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('editais_model');
-		$this->load->helper('form');
 	}
 
 	public function index() {
@@ -16,7 +15,15 @@ class Editais extends MY_Controller {
 	}
 
 	public function adicionar() {
+		if (!$this->is_logged_in()) {
+			redirect('painel_controle');
+		}
+		$this->load->helper('form');
+		$data['title'] = '';
+		$data['user_logged'] = $this->session->userdata('user_logged');
+		$this->load->view('painel_controle/templates/header', $data);
 		$this->load->view('painel_controle/editais/adicionar_editais', array('error' => ''));
+		$this->load->view('painel_controle/templates/footer');
 	}
 
 	public function recebe_cadastra_edital() {

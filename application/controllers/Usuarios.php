@@ -8,7 +8,9 @@ class Usuarios extends MY_Controller {
 	}
 
 	public function index() {
+		//$this->load->view('painel_controle/templates/header');
 		$this->load->view('painel_controle/index');
+		$this->load->view('painel_controle/templates/footer');
 	}
 
 	public function login() {
@@ -19,7 +21,7 @@ class Usuarios extends MY_Controller {
 
 		if (!empty($usuarios)) {
 			$usuario = $usuarios[0];
-			$this->session->set_userdata(array('user' => $usuario['login'], 'logged_in' => TRUE));
+			$this->session->set_userdata(array('user_logged' => $usuario));
 			redirect("usuarios/" . $usuario['usuario_id']);
 		} else {
 			redirect('painel_controle');
@@ -30,5 +32,10 @@ class Usuarios extends MY_Controller {
 		$usuarios = $this->usuarios_model->get(array('usuario_id' => $id));
 		$data['usuario'] = $usuarios[0];
 		$this->load->view('painel_controle/usuarios/view_usuario', $data);
+	}
+
+	public function logout() {
+		$this->session->unset_userdata('user_logged');
+		redirect('painel_controle');
 	}
 }

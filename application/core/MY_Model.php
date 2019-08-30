@@ -2,7 +2,6 @@
 class MY_Model extends CI_Model {
 	
 	public $table = NULL;
-	public $primaryKey = NULL;
 
 	public function __construct() {
 		parent::__construct();
@@ -23,5 +22,12 @@ class MY_Model extends CI_Model {
 		if ($data <> NULL) {
 			$this->db->insert($this->table, $data);
 		}
+	}
+
+	public function remove($data) {
+		if ($this->db->delete($this->table, $data))
+			return true;
+		else
+			return true;
 	}
 }

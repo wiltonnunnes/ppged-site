@@ -52,14 +52,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['professores'] = 'professores';
-$route['noticias'] = 'noticias';
-$route['editais'] = 'editais';
-$route['(([a-zA-Z_])[a-zA-Z0-9_]*)/adicionar'] = '$1/adicionar';
-$route['(([a-zA-Z_])[a-zA-Z0-9_]*)/listar'] = '$1/listar';
-$route['painel_controle'] = 'usuarios';
-$route['usuarios/(:num)'] = 'usuarios/view/$1';
-$route['usuarios/login'] = 'usuarios/login';
 
-$route['eventos/(:num)']['GET'] = 'eventos';
-$route['eventos/(:num)'] = 'eventos/view/$1';
+$route['professores'] = 'professores';
+$route['editais'] = 'editais';
+$route['eventos'] = 'eventos';
+$route['noticias'] = 'noticias';
+
+$route['eventos/(:num)'] = 'eventos/index/$1';
+
+$route['painel_controle'] = 'usuarios';
+
+$route['painel_controle/eventos'] = 'eventos/listar';
+$route['painel_controle/professores'] = 'professores/listar';
+
+$route['painel_controle/eventos/(:num)'] = 'eventos/view/$1';
+
+$route['painel_controle/eventos/adicionar'] = 'eventos/adicionar';
+$route['painel_controle/professores/adicionar'] = 'professores/adicionar';
+$route['painel_controle/editais/adicionar'] = 'editais/adicionar';

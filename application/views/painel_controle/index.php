@@ -1,11 +1,23 @@
-<?php echo form_open('usuarios/login'); ?>
+<div class="container">
+	<div class="row">
+		<div class="col"></div>
+		<div class="col border border-primary">
+			<?php echo form_open('usuarios/login'); ?>
 
-Usuario: <input type="text" name="login">
-<br /><br />
+				<div class="form-group">
+					<label for="login">Usuario</label>
+					<input type="text" name="login" id="login" class="form-control">
+				</div>
 
-Senha: <input type="password" name="senha">
-<br /><br />
+				<div class="form-group">
+					<label for="senha">Senha</label>
+					<input type="password" name="senha" id="senha" class="form-control">
+				</div>
 
-<input type="submit" value="Entrar">
+				<button type="submit" class="btn btn-primary">Submit</button>
 
-</form>
+			</form>
+		</div>
+		<div class="col"></div>
+	</div>
+</div>
