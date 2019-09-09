@@ -42,6 +42,7 @@ class Eventos extends MY_Controller {
 		$config['upload_path'] = './uploads/arquivos/eventos/';
 		$config['allowed_types'] = 'pdf|jpg|png';
 		$config['max_size'] = 0;
+		$this->upload->initialize($config);
 
 		if ($id = $this->input->post('evento_id')) {
 			$data['nome_evento'] = $this->input->post('nome_evento');
@@ -66,7 +67,7 @@ class Eventos extends MY_Controller {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
 		$this->load->view('painel_controle/templates/header');
-		$this->load->view('painel_controle/eventos/adicionar_eventos');
+		$this->load->view('painel_controle/eventos/adicionar_alterar_eventos');
 		$this->load->view('painel_controle/templates/footer');
 	}
 
@@ -98,6 +99,16 @@ class Eventos extends MY_Controller {
 			unlink(APPPATH . '/uploads/arquivos/eventos/' . $evento['cartaz']);
 		}
 		redirect('painel_controle/eventos');
+	}
+
+	public function alterar($id) {
+		if ($this->is_logged_in()) {
+			$evento = $this->eventos_model->get_by_id($id);
+			$this->load->view('painel_controle/templates/header');
+			$this->load->view('painel_controle/eventos/adicionar_alterar_eventos', array('evento' => $evento));
+			$this->load->view('painel_controle/templates/footer');
+		} else
+			redirect('painel_controle');
 	}
 
 }

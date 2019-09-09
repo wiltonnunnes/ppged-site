@@ -3,7 +3,7 @@
 Nome do Evento: <?php echo form_input('nome_evento', isset($evento['nome_evento']) ? $evento['nome_evento'] : ''); ?>
 <br /><br />
 
-Data: <input type="date" name="data">
+Data: <input type="date" name="data" value="<?php echo isset($evento['data']) ? $evento['data'] : ''; ?>">
 <br /><br />
 
 Local do Evento: <?php echo form_input('local', isset($evento['local']) ? $evento['local'] : ''); ?>

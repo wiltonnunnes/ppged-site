@@ -53,19 +53,26 @@ $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['professores'] = 'professores';
 $route['editais'] = 'editais';
 $route['eventos'] = 'eventos';
+$route['informativos'] = 'informativos';
 $route['noticias'] = 'noticias';
+$route['professores'] = 'professores';
 
 $route['eventos/(:num)'] = 'eventos/index/$1';
+$route['informativos/(:num)'] = 'informativos/index/$1';
+$route['professores/(:num)'] = 'professores/index/$1';
 
 $route['painel_controle'] = 'usuarios';
 
+$route['painel_controle/editais'] = 'editais/listar';
 $route['painel_controle/eventos'] = 'eventos/listar';
+$route['painel_controle/formularios'] = 'formularios/listar';
+$route['painel_controle/informativos'] = 'informativos/listar';
 $route['painel_controle/professores'] = 'professores/listar';
 
 $route['painel_controle/eventos/(:num)'] = 'eventos/view/$1';
+$route['painel_controle/usuarios/(:num)'] = 'usuarios/view/$1';
 
 $route['painel_controle/eventos/adicionar'] = 'eventos/adicionar';
 $route['painel_controle/professores/adicionar'] = 'professores/adicionar';

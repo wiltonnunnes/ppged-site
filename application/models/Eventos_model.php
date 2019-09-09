@@ -15,7 +15,6 @@ class Eventos_model extends MY_Model {
 	}
 
 	public function update($data, $id) {
-		$this->db->where('evento_id', $id);
-		$this->db->update($this->table, $data);
+		$this->set($data, array('evento_id' => $id));
 	}
 }

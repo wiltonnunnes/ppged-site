@@ -6,14 +6,15 @@ class Professores_model extends MY_Model {
 		$this->table = 'professores';
 	}
 
-	public function search($searchString) {
-		$this->db->like('nome', $searchString, 'after');
-		$query = $this->db->get($this->table);
-		return $query->result_array();
+	public function get_by_id($id) {
+		$professores = $this->get(array('professor_id' => $id));
+		if (count($professores) > 0) {
+			return $professores[0];
+		}
+		return NULL;
 	}
 
-	public function get_professores($limit, $start) {
-		$query = $this->db->get($this->table, $limit, $start);
-		return $query->result_array();
+	public function remove($id) {
+		return parent::remove(array('professor_id' => $id));
 	}
 }
