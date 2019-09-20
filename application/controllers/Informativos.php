@@ -6,24 +6,28 @@ class Informativos extends MY_Controller {
 		$this->load->model('informativos_model');
 	}
 
-	public function index() {
-		$config['base_url'] = site_url('informativos');
-		$config['total_rows'] = $this->informativos_model->get_count();
-		$config['per_page'] = 16;
-		$config['use_page_numbers'] = TRUE;
-		$config['page_query_string'] = TRUE;
-		$config['query_string_segment'] = 'page';
+	public function index($id = NULL) {
+		if (is_null($id)) {
+			$config['base_url'] = site_url('informativos');
+			$config['total_rows'] = $this->informativos_model->get_count();
+			$config['per_page'] = 16;
 
-		$this->pagination->initialize($config);
+			$this->pagination->initialize($config);
 
-		$data['links'] = $this->pagination->create_links();
+			$data['links'] = $this->pagination->create_links();
 
-		$page = ($this->input->get('page')) ?: 0;
-		$data['informativos'] = $this->professores_model->get(array(), $config['per_page'], $page * $config['per_page']);
+			$page = ($this->input->get('page')) ?: 1;
+			$data['informativos'] = $this->professores_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
 
-		$this->load->view('templates/header');
-		$this->load->view('informativos/index', $data);
-		$this->load->view('templates/footer');
+			$this->load->view('templates/header');
+			$this->load->view('informativos/index', $data);
+			$this->load->view('templates/footer');
+		} else {
+			$informativo = $this->informativos_model->get_by_id($id);
+			$this->load->view('templates/header');
+			$this->load->view('informativos/informativo', array('informativo' => $informativo));
+			$this->load->view('templates/foorer');
+		}
 	}
 
 	public function adicionar() {
@@ -39,7 +43,7 @@ class Informativos extends MY_Controller {
 		$data = $this->input->post();
 
 		$config['upload_path'] = './uploads/arquivos/informativos/';
-		$config['allowed_types'] = 'gif|jpg|png';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 		$config['max_size'] = 0;
 		$this->upload->initialize($config);
 
@@ -57,16 +61,13 @@ class Informativos extends MY_Controller {
 		$config['base_url'] = site_url('painel_controle/informativos');
 		$config['total_rows'] = $this->informativos_model->get_count();
 		$config['per_page'] = 16;
-		$config['use_page_numbers'] = TRUE;
-		$config['page_query_string'] = TRUE;
-		$config['query_string_segment'] = 'page';
 
 		$this->pagination->initialize($config);
 
 		$data['links'] = $this->pagination->create_links();
 
-		$page = ($this->input->get('page')) ?: 0;
-		$data['informativos'] = $this->informativos_model->get(array(), $config['per_page'], $page * $config['per_page']);
+		$page = ($this->input->get('page')) ?: 1;
+		$data['informativos'] = $this->informativos_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
 
 		$this->load->view('painel_controle/templates/header', $data);
 		$this->load->view('painel_controle/informativos/listar_informativos', $data);
@@ -75,8 +76,8 @@ class Informativos extends MY_Controller {
 
 	public function deletar($id) {
 		$informativo = $this->informativos_model->get_by_id($id);
-		if ($this->informativos_model->remove($informativo))
-			unlink(APPPATH . '/uploads/arquivos/informativos/' . $evento['imagem']);
+		if ($this->informativos_model->remove($informativo) && $informativo['imagem'])
+			unlink('./uploads/arquivos/informativos/' . $informativo['imagem']);
 		redirect('painel_controle/informativos');
 	}
 

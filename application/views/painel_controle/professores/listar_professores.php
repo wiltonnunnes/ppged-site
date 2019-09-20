@@ -1,4 +1,5 @@
 <?php echo anchor('professores/adicionar', 'Adicionar novo(a)'); ?>
+<input type="text" id="q">
 <table>
 	<thead>
 		<tr>
@@ -29,3 +30,12 @@
 	</tbody>
 </table>
 <?php echo $links; ?>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#q').change(function() {
+			$.get("<?php echo site_url('professores/get'); ?>", { "q" : $('#q').val()}, function(data) {
+				alert(data);
+			});
+		});
+	});
+</script>

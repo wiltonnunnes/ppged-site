@@ -8,3 +8,6 @@ $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" hre
 $config['cur_tag_close'] = '</a></li>';
 $config['last_link'] = 'Última';
 $config['first_link'] = 'Primeira';
+$config['use_page_numbers'] = TRUE;
+$config['page_query_string'] = TRUE;
+$config['query_string_segment'] = 'page';

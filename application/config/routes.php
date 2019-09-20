@@ -57,6 +57,7 @@ $route['editais'] = 'editais';
 $route['eventos'] = 'eventos';
 $route['informativos'] = 'informativos';
 $route['noticias'] = 'noticias';
+$route['pesquisas'] = 'pesquisas';
 $route['professores'] = 'professores';
 
 $route['eventos/(:num)'] = 'eventos/index/$1';
@@ -69,7 +70,10 @@ $route['painel_controle/editais'] = 'editais/listar';
 $route['painel_controle/eventos'] = 'eventos/listar';
 $route['painel_controle/formularios'] = 'formularios/listar';
 $route['painel_controle/informativos'] = 'informativos/listar';
+$route['painel_controle/noticias_anpae'] = 'noticias_anpae/listar';
+$route['painel_controle/pesquisas'] = 'pesquisas/listar';
 $route['painel_controle/professores'] = 'professores/listar';
+$route['painel_controle/publicacoes'] = 'publicacoes/listar';
 
 $route['painel_controle/eventos/(:num)'] = 'eventos/view/$1';
 $route['painel_controle/usuarios/(:num)'] = 'usuarios/view/$1';

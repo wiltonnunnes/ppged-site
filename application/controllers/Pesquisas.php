@@ -4,27 +4,35 @@ class Pesquisas extends MY_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('pesquisas_model');
+		$this->load->model('professores_pesquisas_model');
 	}
 
 	public function index($id = NULL) {
 		if (is_null($id)) {
-			$config['base_url'] = base_url('index.php/pesquisas');
+			$config['base_url'] = site_url('pesquisas');
 			$config['total_rows'] = $this->pesquisas_model->get_count();
 			$config['per_page'] = 16;
-			$config['use_page_numbers'] = TRUE;
-			$config['page_query_string'] = TRUE;
-			$config['query_string_segment'] = 'page';
 
 			$this->pagination->initialize($config);
 
 			$data['links'] = $this->pagination->create_links();
 
-			$page = ($this->input->get('page')) ?: 0;
-			$data['pesquisas'] = $this->pesquisas_model->get(array(), $config['per_page'], $page * $config['per_page']);
+			$page = ($this->input->get('page')) ?: 1;
 
+			$pesquisas = $this->pesquisas_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
+			foreach ($pesquisas as &$pesquisas_item)
+				$pesquisas_item['professores'] = $this->pesquisas_model->get_professores($pesquisas_item['pesquisa_id']);
+			unset($pesquisas_item);
+
+			$data['pesquisas'] = $pesquisas;
+
+			$this->load->view('templates/header');
 			$this->load->view('pesquisas/index', $data);
+			$this->load->view('templates/footer');
 		} else {
-			$data['pesquisa'] = $this->pesquisas_model->get_by_id($id);
+			$pesquisa = $this->pesquisas_model->get_by_id($id);
+			$pesquisa['professores'] = $this->pesquisas_model->get_professores($id);
+			$data['pesquisa'] = $pesquisa;
 			$this->load->view('templates/header');
 			$this->load->view('pesquisas/pesquisa', $data);
 			$this->load->view('templates/footer');
@@ -39,53 +47,42 @@ class Pesquisas extends MY_Controller {
 	}
 
 	public function recebe_processa_pesquisa() {
-		$config['upload_path'] = './uploads/arquivos/pesquisas/pdf/';
-		$config['allowed_types'] = 'pdf';
-		$config['max_size'] = 0;
-		$this->upload->initialize($config);
+		if ($id = $this->input->post('pesquisa_id'))
+			$this->pesquisas_model->update($this->input->post(array('titulo', 'texto')), $id);
+		else
+			$id = $this->pesquisas_model->insert($this->input->post(array('titulo', 'texto')));
 
-		if (count($_FILES) == 2) {
-			$this->upload->do_upload('arquivo_pdf');
-			$data['arquivo_pdf'] = $this->upload->data('file_name');
-
-			$config['upload_path'] = './uploads/arquivos/pesquisas/docx/';
-			$config['allowed_types'] = 'docx|doc|odt';
-			$config['max_size'] = 0;
-
-			$this->upload->initialize($config);
-			$this->upload->do_upload('arquivo_docx');
-			$data['arquivo_docx'] = $this->upload->data('file_name');
-
-			$data = array_merge($data, $this->input->post());
-			$this->pesquisas_model->set($data, isset($data['pesquisas_id']) ? array('pesquisas_id' => $data['pesquisas_id']) : array());
-		}
+		if($professor_id = $this->input->post('professor_id'))
+			foreach ($professor_id => $professor_id_item)
+				$this->professores_pesquisas_model->insert(array('pesquisa_id' => $id, 'professor_id' => $professor_id_item));
 		redirect('painel_controle/pesquisas');
 	}
 
 	public function adicionar() {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
+
+		$data = $this->input->post();
+		if (isset($data['nome'])) $data['professores'][] = $this->professores_model->get(array('nome' => $data['nome']));
+
 		$this->load->view('painel_controle/templates/header');
-		$this->load->view('painel_controle/pesquisas/adicionar_alterar_pesquisas');
+		$this->load->view('painel_controle/pesquisas/adicionar_alterar_pesquisas', $data);
 		$this->load->view('painel_controle/templates/footer');
 	}
 
 	public function listar() {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
-		$config['base_url'] = base_url('index.php/painel_controle/pesquisas');
+		$config['base_url'] = site_url('painel_controle/pesquisas');
 		$config['total_rows'] = $this->pesquisas_model->get_count();
 		$config['per_page'] = 16;
-		$config['use_page_numbers'] = TRUE;
-		$config['page_query_string'] = TRUE;
-		$config['query_string_segment'] = 'page';
 
 		$this->pagination->initialize($config);
 
 		$data['links'] = $this->pagination->create_links();
 
-		$page = ($this->input->get('page')) ?: 0;
-		$data['pesquisas'] = $this->pesquisas_model->get(array(), $config['per_page'], $page * $config['per_page']);
+		$page = ($this->input->get('page')) ?: 1;
+		$data['pesquisas'] = $this->pesquisas_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
 
 		$this->load->view('painel_controle/templates/header');
 		$this->load->view('painel_controle/pesquisas/listar_pesquisas', $data);
@@ -93,10 +90,8 @@ class Pesquisas extends MY_Controller {
 	}
 
 	public function deletar($id) {
-		$pesquisa = $this->pesquisas_model->get_by_id($id);
-		if ($this->pesquisas_model->remove($pesquisa)) {
-			unlink('./uploads/arquivos/pesquisas/pdf/' . $pesquisa['arquivo_pdf']);
-			unlink('./uploads/arquivos/pesquisas/docx/' . $pesquisa['arquivo_docx']);
+		if ($this->pesquisas_model->remove($id)) {
+			$this->professores_pesquisas_model->remove($id);
 		}
 		redirect('painel_controle/pesquisas');
 	}
