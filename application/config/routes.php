@@ -55,17 +55,20 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['editais'] = 'editais';
 $route['eventos'] = 'eventos';
+$route['formularios'] = 'formularios';
 $route['informativos'] = 'informativos';
-$route['noticias'] = 'noticias';
+$route['noticias'] = 'noticias_anpae';
 $route['pesquisas'] = 'pesquisas';
 $route['professores'] = 'professores';
 
 $route['eventos/(:num)'] = 'eventos/index/$1';
 $route['informativos/(:num)'] = 'informativos/index/$1';
+$route['noticias/(:num)'] = 'noticias_anpae/$1';
 $route['professores/(:num)'] = 'professores/index/$1';
 
 $route['painel_controle'] = 'usuarios';
 
+$route['painel_controle/convenios'] = 'convenios/listar';
 $route['painel_controle/editais'] = 'editais/listar';
 $route['painel_controle/eventos'] = 'eventos/listar';
 $route['painel_controle/formularios'] = 'formularios/listar';

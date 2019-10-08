@@ -5,6 +5,7 @@ class MY_Controller extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->helper('html');
+		$this->lang->load('menu');
 	}
 
 	public function is_logged_in() {

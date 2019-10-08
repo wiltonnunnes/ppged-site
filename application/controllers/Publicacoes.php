@@ -42,7 +42,7 @@ class Publicacoes extends MY_Controller {
 	public function recebe_processa_publicacao() {
 		$data = $this->input->post();
 
-		$config['upload_path'] = './uploads/arquivos/publicacoes/';
+		$config['upload_path'] = './uploads/publicacoes/';
 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 		$config['max_size'] = 0;
 		$this->upload->initialize($config);
@@ -77,7 +77,7 @@ class Publicacoes extends MY_Controller {
 	public function deletar($id) {
 		$publicacao = $this->publicacoes_model->get_by_id($id);
 		if ($this->publicacoes_model->remove($publicacao) && $publicacao['imagem'])
-			unlink('./uploads/arquivos/publicacoes/' . $publicacao['ano'] . '/' . $publicacao['imagem']);
+			unlink('./uploads/publicacoes/' . $publicacao['imagem']);
 		redirect('painel_controle/publicacoes');
 	}
 

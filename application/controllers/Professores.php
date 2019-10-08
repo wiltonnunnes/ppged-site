@@ -11,18 +11,16 @@ class Professores extends MY_Controller {
 			$config['base_url'] = site_url('professores');
 			$config['total_rows'] = $this->professores_model->get_count();
 			$config['per_page'] = 16;
-			$config['use_page_numbers'] = TRUE;
-			$config['page_query_string'] = TRUE;
-			$config['query_string_segment'] = 'page';
 
 			$this->pagination->initialize($config);
 
 			$data['links'] = $this->pagination->create_links();
 
-			$page = ($this->input->get('page')) ?: 0;
-			$data['professores'] = $this->professores_model->get(array(), $config['per_page'], $page * $config['per_page']);
+			$page = ($this->input->get('page')) ?: 1;
+			$data['professores'] = $this->professores_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
 
 			$this->load->view('templates/header');
+			$this->load->view('templates/menu');
 			$this->load->view('professores/index', $data);
 			$this->load->view('templates/footer');
 		} else {

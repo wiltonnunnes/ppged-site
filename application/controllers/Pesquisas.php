@@ -27,6 +27,8 @@ class Pesquisas extends MY_Controller {
 			$data['pesquisas'] = $pesquisas;
 
 			$this->load->view('templates/header');
+			$this->load->view('templates/menu');
+			$this->load->view('templates/inicio');
 			$this->load->view('pesquisas/index', $data);
 			$this->load->view('templates/footer');
 		} else {
@@ -53,7 +55,7 @@ class Pesquisas extends MY_Controller {
 			$id = $this->pesquisas_model->insert($this->input->post(array('titulo', 'texto')));
 
 		if($professor_id = $this->input->post('professor_id'))
-			foreach ($professor_id => $professor_id_item)
+			foreach ($professor_id as $professor_id_item)
 				$this->professores_pesquisas_model->insert(array('pesquisa_id' => $id, 'professor_id' => $professor_id_item));
 		redirect('painel_controle/pesquisas');
 	}

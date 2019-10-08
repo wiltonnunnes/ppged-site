@@ -45,24 +45,23 @@ class Convenios extends MY_Controller {
 		$config['base_url'] = base_url('index.php/painel_controle/convenios');
 		$config['total_rows'] = $this->convenios_model->get_count();
 		$config['per_page'] = 16;
-		$config['use_page_numbers'] = TRUE;
-		$config['page_query_string'] = TRUE;
-		$config['query_string_segment'] = 'page';
 
 		$this->pagination->initialize($config);
 
 		$data['links'] = $this->pagination->create_links();
 
-		$page = ($this->input->get('page')) ?: 0;
-		$data['convenios'] = $this->convenios_model->get(array(), $config['per_page'], $page * $config['per_page']);
+		$page = ($this->input->get('page')) ?: 1;
+		$data['convenios'] = $this->convenios_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
 
-		$this->load->view('painel_controle/templates/header', $data);
+		$this->load->view('painel_controle/templates/header');
 		$this->load->view('painel_controle/convenios/listar_convenios', $data);
 		$this->load->view('painel_controle/templates/footer');
 	}
 
 	public function deletar($id) {
-		$this->convenios_model->remove($id);
+		$convenio = $this->convenios_model->get_by_id($id);
+		if ($this->convenios_model->remove($convenio))
+			unlink('./uploads/convenios/' . $convenio['logomarca']);
 		redirect('painel_controle/convenios');
 	}
 

@@ -1,5 +1,8 @@
 <ul class="list-group">
 	<li class="list-group-item">
+		<?php echo anchor('painel_controle/convenios', 'Convenios'); ?>
+	</li>
+	<li class="list-group-item">
 		<?php echo anchor('painel_controle/editais', 'Editais'); ?>
 	</li>
 	<li class="list-group-item">

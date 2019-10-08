@@ -13,7 +13,7 @@
 	<?php foreach ($publicacoes as $publicacoes_item): ?>
 		<tr>
 			<td><?php echo $publicacoes_item['ano']; ?></td>
-			<td><?php echo img('uploads/arquivos/publicacoes/' . $publicacoes_item['ano'] . '/' . $publicacoes_item['imagem'], FALSE, array('alt' => '', 'height' => '100')); ?></td>
+			<td><?php echo img('uploads/publicacoes/' . $publicacoes_item['imagem'], FALSE, array('alt' => '', 'height' => '100')); ?></td>
 			<td><?php echo $publicacoes_item['referencia']; ?></td>
 			<td><?php echo $publicacoes_item['autores']; ?></td>
 			<td>
