@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 12-Set-2019 às 11:41
+-- Generation Time: 15-Out-2019 às 13:45
 -- Versão do servidor: 5.5.56-MariaDB
 -- PHP Version: 5.4.16
 
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `eventos` (
   `descricao` text CHARACTER SET latin1,
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `cartaz` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=387 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=389 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Extraindo dados da tabela `eventos`
@@ -487,7 +487,9 @@ INSERT INTO `eventos` (`evento_id`, `nome_evento`, `data`, `local`, `entidade_or
 (383, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | NAT&Aacute;LIA MARINA DANTAS CUNHA', '2019-08-30', 'Audit&oacute;rio 02 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Natalia.pdf'),
 (384, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | ISAURA DE FRANCA BRANDAO', '2019-08-27', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Isaura.pdf'),
 (385, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | MARCILENE FRAN&Ccedil;A DA SILVA TABOSA', '2019-09-30', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Marcilene.pdf'),
-(386, 'DEFESA DE TESE | ROSANE DA SILVA NUNES', '2019-09-20', 'Audit&oacute;rio D - CCHLA', 'PPGED', '', 0, 'Cartaz - Rosane.pdf');
+(386, 'DEFESA DE TESE | ROSANE DA SILVA NUNES', '2019-09-20', 'Audit&oacute;rio D - CCHLA', 'PPGED', '', 0, 'Cartaz - Rosane.pdf'),
+(387, 'DEFESA DE TESE | LISIE MARLENE DA SILVEIRA MELO MARTINS', '2019-10-14', 'Audit&oacute;rio do CE', 'PPGED', '', 0, 'Cartaz - Lisie.pdf'),
+(388, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | MARCIA BETANIA ALVES DA SILVA', '2019-10-25', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Marcia.pdf');
 
 -- --------------------------------------------------------
 
@@ -548,7 +550,7 @@ CREATE TABLE IF NOT EXISTS `informativos` (
   `data` date NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `imagem` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=84 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=86 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Extraindo dados da tabela `informativos`
@@ -621,7 +623,9 @@ INSERT INTO `informativos` (`informativo_id`, `titulo`, `categoria`, `texto`, `d
 (80, 'Resultado do processo seletivo para alunos especiais 2019.2', 'not&iacute;cia', '<p>Divulgado Resultado do processo seletivo para alunos especiais 2019.2!</p>\r\n\r\n<p>Lista de Aprovados e informa&ccedil;&otilde;es para matr&iacute;cula podem ser conferidas <a href="uploads/arquivos/anexos/Resultado e InstruÃ§Ãµes sobre as matrÃ­culas - 2019.2 - SITE.pdf">aqui</a></p>\r\n', '2019-07-24', 0, NULL),
 (81, 'Resultado final do Processo Seletivo de Reingresso do PPGED da UFRN para o semestre 2019.2', 'not&iacute;cia', '<p>Divulgado Resultado do processo seletivo de Reingresso do Programa de P&oacute;s-Gradua&ccedil;&atilde;o em Educa&ccedil;&atilde;o da UFRN para o semestre 2019.2</p>\r\n\r\n<p>A lista com os aprovados pode ser conferida <a href="uploads/arquivos/anexos/Resultado Final -Reingresso 2019.2.pdf">aqui</a></p>\r\n', '2019-08-01', 0, NULL),
 (82, 'PPGEd oferece M&oacute;dulo &quot;G&ecirc;nero e Educa&ccedil;&atilde;o Profissional&quot;', 'not&iacute;cia', '<p style="text-align:justify">O Programa de P&oacute;s-Gradua&ccedil;&atilde;o em Educa&ccedil;&atilde;o da UFRN oferecer&aacute; o m&oacute;dulo&nbsp;<strong>PPGE0700 - T&Oacute;PICOS ESPECIAIS EM EDUCA&Ccedil;&Atilde;O I</strong> <strong>- &quot;G&ecirc;nero e Educa&ccedil;&atilde;o Profissional&quot;.</strong></p>\r\n\r\n<p style="text-align:justify"><u>Docentes</u>:&nbsp;Julie Thomas (Universidade de Saint &Eacute;tienne/Fran&ccedil;a) e Avelino A. de Lima Neto (PPGEd/UFRN)</p>\r\n\r\n<p style="text-align:justify"><u>Ementa</u>:&nbsp;<em>Introdu&ccedil;&atilde;o a&nbsp;um t&oacute;pico contempor&acirc;neo de educa&ccedil;&atilde;o. Principais refer&ecirc;ncias te&oacute;ricas, quest&otilde;es, grupos de trabalho, abordagens metodol&oacute;gicas.</em></p>\r\n\r\n<p><u>Observa&ccedil;&otilde;es:</u>&nbsp;Partindo de uma abordagem sociol&oacute;gica, as aulas versar&atilde;o sobre quest&otilde;es de g&ecirc;nero da Educa&ccedil;&atilde;o Profissional francesa, sobretudo no que concerne aos aspectos relacionados &agrave; profissionaliza&ccedil;&atilde;o das mulheres nos Liceus Profissionais e Institutos Universit&aacute;rios de Tecnologia.&nbsp;</p>\r\n\r\n<p style="text-align:justify"><u>Data</u>:&nbsp;<strong>11 e 13 de setembro, a partir das 14h.</strong></p>\r\n\r\n<p style="text-align:justify"><u>Local</u>:&nbsp;<strong>Miniaudit&oacute;rio da DIAC - IFRN/Natal-Central</strong></p>\r\n\r\n<p style="text-align:justify"><strong>Per&iacute;odo de matr&iacute;cula no <u>SIGAA</u> (p/ Alunos Regulares do PPGEd)</strong>: <strong>30/08/2019 a 03/09/2019.</strong></p>\r\n\r\n<p style="text-align:justify">&nbsp;</p>\r\n\r\n<h2 style="text-align:justify"><strong>Aten&ccedil;&atilde;o! Haver&aacute; 10 vagas para Alunos Especiais!</strong></h2>\r\n\r\n<p style="text-align:justify"><strong>Interessados devem participar do <u>processo seletivo</u> por meio do&nbsp; preenchimento deste&nbsp; <a href="https://forms.gle/q16DZogrYms8fQsE7">formul&aacute;rio</a>.</strong></p>\r\n\r\n<p style="text-align:justify"><strong>O formul&aacute;rio estar&aacute; aberto de 30/08/2019 a 03/09/2019.</strong></p>\r\n\r\n<p style="text-align:justify">&nbsp;</p>\r\n\r\n<p style="text-align:justify">&nbsp;</p>\r\n\r\n<p style="text-align:justify"><img alt="" src="https://uploaddeimagens.com.br/images/002/307/240/original/li.PNG?1567172603" style="height:856px; width:542px" /></p>\r\n', '2019-08-30', 0, NULL),
-(83, 'Resultado e Instru&ccedil;&otilde;es sobre as matr&iacute;culas - Alunos Especiais PPGE0700 ', 'not&iacute;cia', '<p>Clique <a href="https://drive.google.com/open?id=1utAMwoDqt0wSg2z_za_4H0IP15DF2GCF">aqui</a> para visualizar a lista dos<strong>&nbsp;Alunos Especiais aprovados e instru&ccedil;&otilde;es de matr&iacute;culas</strong> para o&nbsp;M&oacute;dulo&nbsp;PPGE0700 - T&Oacute;PICOS ESPECIAIS EM EDUCA&Ccedil;&Atilde;O I - <strong>&quot;G&ecirc;nero e Educa&ccedil;&atilde;o Profissional&quot;</strong></p>\r\n', '2019-09-09', 1, NULL);
+(83, 'Resultado e Instru&ccedil;&otilde;es sobre as matr&iacute;culas - Alunos Especiais PPGE0700 ', 'not&iacute;cia', '<p>Clique <a href="https://drive.google.com/open?id=1utAMwoDqt0wSg2z_za_4H0IP15DF2GCF">aqui</a> para visualizar a lista dos<strong>&nbsp;Alunos Especiais aprovados e instru&ccedil;&otilde;es de matr&iacute;culas</strong> para o&nbsp;M&oacute;dulo&nbsp;PPGE0700 - T&Oacute;PICOS ESPECIAIS EM EDUCA&Ccedil;&Atilde;O I - <strong>&quot;G&ecirc;nero e Educa&ccedil;&atilde;o Profissional&quot;</strong></p>\r\n', '2019-09-09', 0, NULL),
+(84, 'Resultado da prova escrita do processo seletivo para Mestrado e Doutorado em Educa&ccedil;&atilde;o ', 'not&iacute;cia', '<p>Divulgado o resultado da prova escrita do processo seletivo para os n&iacute;veis&nbsp;de mestrado e doutorado em educa&ccedil;&atilde;o 2019.</p>\n\n<p>Confira as listas com os candidatos aprovados abaixo.</p>\n\n<p><a href="http://www.comperve.ufrn.br/conteudo/posgraduacao/ppged/202001/resultados/prova_escrita/relacao_mestrado.pdf">mestrado</a></p>\n\n<p><a href="http://www.comperve.ufrn.br/conteudo/posgraduacao/ppged/202001/resultados/prova_escrita/relacao_doutorado.pdf">doutorado</a></p>\n', '2019-09-18', 0, NULL),
+(85, 'Suspenso pedidos de aux&iacute;lio financeiro a estudantes', 'not&iacute;cia', '<p>Car@s estudantes,</p>\r\n\r\n<p>Informamos que, em decorr&ecirc;ncia dos cortes or&ccedil;ament&aacute;rios, o apoio financeiro &agrave; alunas(os) para a participa&ccedil;&atilde;o em eventos cient&iacute;ficos est&aacute; suspenso, por tempo indeterminado. Apenas as(os) alunas(os) com trabalhos aprovados na 39. ANPEd e que ainda n&atilde;o tenham recebido esse tipo de apoio em 2019, ter&atilde;o seus pedidos analisados pela coordena&ccedil;&atilde;o.&nbsp;</p>\r\n\r\n<p>Para isso, &eacute; necess&aacute;rio que a documenta&ccedil;&atilde;o referente ao pedido (Formul&aacute;rio de Solicita&ccedil;&atilde;o do Aux&iacute;lio, Carta de aceite, Trabalho em PDF, Justificativa do Orientador e Programa&ccedil;&atilde;o do Evento), seja encaminhada por e-mail (ppged@ce.ufrn.br) at&eacute; 23/09/2019.</p>\r\n', '2019-09-19', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -942,6 +946,116 @@ INSERT INTO `publicacoes` (`publicacao_id`, `imagem`, `referencia`, `resumo`, `a
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `resolucoes`
+--
+
+CREATE TABLE IF NOT EXISTS `resolucoes` (
+  `resolucao_id` bigint(20) NOT NULL,
+  `titulo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `arquivo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ano` char(4) COLLATE utf8_unicode_ci NOT NULL,
+  `orgao` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `resolucoes`
+--
+
+INSERT INTO `resolucoes` (`resolucao_id`, `titulo`, `arquivo`, `ano`, `orgao`) VALUES
+(1, 'MUDANÇA DE NÍVEL', 'https://drive.google.com/open?id=13lHidii0feOQq5S_a26-ayz5X2TuKZbk', '2017', 'PPGED'),
+(2, 'PROFICIÊNCIA', 'https://drive.google.com/open?id=1uvnxRP1yN9x6KI7XLQ7bdFjAX7tvB1vC', '2017', 'PPGED'),
+(3, 'ELEIÇÃO PPGED', 'https://drive.google.com/file/d/0B2rF19cD8pywRXpfV1ZZbFQtcms/view?usp=sharing', '2017', 'PPGED'),
+(4, 'BANCAS DEFESA TESE E DISSERTAÇÃO', 'https://drive.google.com/file/d/0B2rF19cD8pywckdWVkpLV25aRzQ/view?usp=sharing', '2017', 'PPGED'),
+(5, 'PÓS-DOUTORADO NO PPGED/UFRN', 'https://drive.google.com/file/d/0B2rF19cD8pywc05nWlRwM09yYlE/view?usp=sharing', '2016', 'PPGED'),
+(6, 'DOUTORADO EM COTUTELA', 'https://drive.google.com/file/d/0B0PyDfKqZjGPa3I3aVZhWERrSHFnQlJGTHlQc0tNeFFoUkE4/view?usp=sharing', '2015', 'PPGED'),
+(7, 'APROVEITAMENTO DE DISCIPLINAS', 'RESOLUÇÃO%2001.2013%20-%20APROVEITAMENTO.pdf', '2013', 'PPGED'),
+(8, 'REINGRESSO', 'https://drive.google.com/file/d/0B0PyDfKqZjGPZmNvNU5odjFTbm8/view?usp=sharing', '2012', 'PPGED'),
+(9, 'ORIENTAÇÕES E CREDENCIAMENTO DE PROFESSORES', 'Orientacoes e credenciamento de professores - RESOLUCAO 02-2011.pdf', '2011', 'PPGED'),
+(10, 'PRORROGAÇÃO DE CURSO', 'res_03-97.pdf', '1997', 'PPGED'),
+(11, 'SEMINÁRIO DE FORMAÇÃO DOUTORAL', 'res_05-97.pdf', '1997', 'PPGED'),
+(12, 'NORMAS DOS PROGRAMAS E CURSOS DE PÓS-GRADUAÇÃO DA UFRN', 'https://goo.gl/PW1jcn', '2013', 'CONSEPE'),
+(13, 'ESTÁGIO DOCÊNCIA', 'RESOLUÇÃO 041-2019 - Docencia Assistida.pdf', '2019', 'CONSEPE');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `selecoes`
+--
+
+CREATE TABLE IF NOT EXISTS `selecoes` (
+  `selecoes_id` bigint(20) NOT NULL,
+  `titulo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ano` varchar(6) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `selecoes`
+--
+
+INSERT INTO `selecoes` (`selecoes_id`, `titulo`, `ano`) VALUES
+(1, 'MESTRADO E DOUTORADO 2012', '2012'),
+(2, 'MESTRADO E DOUTORADO - REINGRESSO', '2013.1'),
+(3, 'MESTRADO E DOUTORADO 2013.1', '2013.1'),
+(4, 'MESTRADO E DOUTORADO 2013.2', '2013.2'),
+(5, 'MESTRADO E DOUTORADO 2014', '2014.1'),
+(6, 'MESTRADO E DOUTORADO 2015', '2015.1'),
+(7, 'MESTRADO E DOUTORADO 2016', '2016.1'),
+(8, 'MESTRADO E DOUTORADO 2017', '2017.1'),
+(9, 'MESTRADO E DOUTORADO 2018', '2018.1'),
+(10, 'MESTRADO E DOUTORADO 2019', '2019.1');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `selecoes_arquivos`
+--
+
+CREATE TABLE IF NOT EXISTS `selecoes_arquivos` (
+  `selecoes_arquivos_id` bigint(20) NOT NULL,
+  `selecoes_id` bigint(20) NOT NULL,
+  `caminho` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `titulo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `data` date DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `selecoes_arquivos`
+--
+
+INSERT INTO `selecoes_arquivos` (`selecoes_arquivos_id`, `selecoes_id`, `caminho`, `titulo`, `data`) VALUES
+(1, 1, 'http://www.ppged.ufrn.br/arquivos/processo_seletivo/edital_01_2011.pdf', 'Edital', NULL),
+(2, 2, 'arquivos/resolucoes/res_06-97.pdf', 'Resolução', NULL),
+(4, 3, 'LOCAIS DE PROVA DOUTORADO.pdf', 'LOCAIS DE PROVA DOUTORADO', NULL),
+(5, 3, 'LOCAIS DE PROVA MESTRADO.pdf', 'LOCAIS DE PROVA DOUTORADO', NULL),
+(6, 3, 'processo_selecao_mestrado_doutorado_2013.pdf', 'Resolucao Processo Seletivo 2013', NULL),
+(7, 3, 'bibliografia_2013_01.pdf', 'Bibliografia Processo Seletivo 2013', NULL),
+(8, 3, 'edital_selecao_2013.pdf', 'Edital Processo Seletivo 2013', NULL),
+(9, 4, 'http://www.ppged.ufrn.br/arquivos/processo_seletivo/homologacaoUFMA.pdf', 'Homologa&ccedil;&atilde;o final das inscri&ccedil;&otilde;es - sele&ccedil;&atilde;o de doutorado', NULL),
+(10, 4, 'http://www.ppged.ufrn.br/arquivos/processo_seletivo/2-Resultado%20provaescrita-UFMA.pdf', 'Resultado prova escrita - sele&ccedil;&atilde;o de doutorado', NULL),
+(11, 4, 'http://www.ppged.ufrn.br/arquivos/processo_seletivo/4%20-%20Resultado%20Analise%20de%20Projetos%20-%20UFMA.pdf', 'Resultado da an&aacute;lise de projetos', NULL),
+(12, 4, 'http://www.ppged.ufrn.br/arquivos/processo_seletivo/6%20-%20Resultado%20final%20-%20DINTER-UFMA.pdf', 'Resultado final da sele&ccedil;&atilde;o de doutorado', NULL),
+(13, 4, 'http://www.ppged.ufrn.br/arquivos/processo_seletivo/homologacaoDoutoradoIFPB.pdf', 'Homologa&ccedil;&atilde;o final das inscri&ccedil;&otilde;es - sele&ccedil;&atilde;o de doutorado', NULL),
+(14, 4, 'http://www.ppged.ufrn.br/arquivos/processo_seletivo/2%20-%20Resultado%20prova%20escrita%20-%20IFPB.pdf', 'Resultado prova escrita - sele&ccedil;&atilde;o de doutorado', NULL),
+(15, 4, 'http://www.ppged.ufrn.br/arquivos/processo_seletivo/4%20-%20Resultado%20analise%20de%20projetos%20-%20IFPB.pdf', 'Resultado da an&aacute;lise de projetos', NULL),
+(16, 4, 'http://www.ppged.ufrn.br/arquivos/processo_seletivo/6%20-%20Resultado%20final%20-%20IFPB.pdf', 'Resultado final da sele&ccedil;&atilde;o de doutorado', NULL),
+(17, 5, 'http://www.ppged.ufrn.br/arquivos/processo_seletivo/resultado_selecao_2014.1/APROVADOS_DOUTORADO.pdf', 'Resultado da prova escrita (Mestrado)', NULL),
+(18, 5, 'http://www.ppged.ufrn.br/arquivos/processo_seletivo/resultado_selecao_2014.1/APROVADOS_MESTRADO.pdf', 'Resultado da prova escrita (Doutorado)', NULL),
+(19, 6, 'Resultado RECURSOS prova - demanda externa - Por linha de pesquisa.pdf', 'Resultado dos recursos - Etapa prova escrita', NULL),
+(20, 6, 'Relatorio dos Aprovados - Doutorado.pdf', 'Aprovados na etapa prova escrita - Doutorado', NULL),
+(21, 6, 'Relatorio dos Aprovados - Mestrado.pdf', 'Aprovados na etapa prova escrita - Mestrado', NULL),
+(22, 8, 'https://goo.gl/cDHuXu', 'Resultado final, das entrevistas e da prova escrita (comperve)', '2016-11-04'),
+(23, 8, 'https://goo.gl/PxowxL', 'Resposta aos recursos (comperve)', '2016-09-19'),
+(24, 8, 'https://goo.gl/bhMPbP', 'Demanda parcial de candidatos inscritos por especialidade (comperve)', '2016-08-25'),
+(25, 8, 'https://goo.gl/7kq0P9', 'Edital Sele&ccedil;&atilde;o Mestrado e Doutorado', '2016-06-28'),
+(26, 9, 'https://goo.gl/9QQvwq ', 'Resultado da fase de projetos', '2017-10-10'),
+(27, 9, 'https://goo.gl/9QQvwq ', 'Resultado da primeira fase do processo seletivo (prova escrita)', '2017-09-13'),
+(28, 9, 'https://goo.gl/nv82Mm', 'Agenda do canditato (comperve)', '2017-06-12'),
+(29, 9, 'https://drive.google.com/open?id=0B2rF19cD8pywWWRMVTFFRVlMbFk', 'Edital Nº 02/2017 - Sele&ccedil;&atilde;o Mestrado e Doutorado', '2017-06-09'),
+(30, 10, 'https://drive.google.com/file/d/1dZ653d0_yUqdx6EX-ufNZmmW6SfbW_W6/view', 'Edital', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `usuarios_adm`
 --
 
@@ -1043,6 +1157,24 @@ ALTER TABLE `publicacoes`
   ADD PRIMARY KEY (`publicacao_id`);
 
 --
+-- Indexes for table `resolucoes`
+--
+ALTER TABLE `resolucoes`
+  ADD PRIMARY KEY (`resolucao_id`);
+
+--
+-- Indexes for table `selecoes`
+--
+ALTER TABLE `selecoes`
+  ADD PRIMARY KEY (`selecoes_id`);
+
+--
+-- Indexes for table `selecoes_arquivos`
+--
+ALTER TABLE `selecoes_arquivos`
+  ADD PRIMARY KEY (`selecoes_arquivos_id`);
+
+--
 -- Indexes for table `usuarios_adm`
 --
 ALTER TABLE `usuarios_adm`
@@ -1066,7 +1198,7 @@ ALTER TABLE `editais`
 -- AUTO_INCREMENT for table `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `evento_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=387;
+  MODIFY `evento_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=389;
 --
 -- AUTO_INCREMENT for table `fale_conosco`
 --
@@ -1081,7 +1213,7 @@ ALTER TABLE `formularios`
 -- AUTO_INCREMENT for table `informativos`
 --
 ALTER TABLE `informativos`
-  MODIFY `informativo_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=84;
+  MODIFY `informativo_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=86;
 --
 -- AUTO_INCREMENT for table `noticias_anpae`
 --
@@ -1112,6 +1244,21 @@ ALTER TABLE `professores_pesquisas`
 --
 ALTER TABLE `publicacoes`
   MODIFY `publicacao_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=45;
+--
+-- AUTO_INCREMENT for table `resolucoes`
+--
+ALTER TABLE `resolucoes`
+  MODIFY `resolucao_id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `selecoes`
+--
+ALTER TABLE `selecoes`
+  MODIFY `selecoes_id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `selecoes_arquivos`
+--
+ALTER TABLE `selecoes_arquivos`
+  MODIFY `selecoes_arquivos_id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `usuarios_adm`
 --

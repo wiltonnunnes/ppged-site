@@ -21,6 +21,7 @@ class Eventos extends MY_Controller {
 
 			$this->load->view('templates/header');
 			$this->load->view('templates/menu');
+			$this->load->view('templates/inicio');
 			$this->load->view('eventos/index', $data);
 			$this->load->view('templates/footer');
 		} else {

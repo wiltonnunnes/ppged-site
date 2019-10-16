@@ -15,7 +15,7 @@
 
 <nav class="navbar navbar-expand-md fixed-top top-nav">
 	<div class="container">
-		  <a class="navbar-brand" href="index.php"><strong><img id="logo" class="img-fluid" src="<?php echo base_url('img/logo_ppged_white.png'); ?>" alt="" width="320"></strong></a>
+		  <a class="navbar-brand" href="<?php echo base_url(); ?>"><strong><img id="logo" class="img-fluid" src="<?php echo base_url('img/logo_ppged_white.png'); ?>" alt="" width="320"></strong></a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
 		  </button>
@@ -23,15 +23,15 @@
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav ml-auto">
 		      <li class="nav-item">
-		        <a class="nav-link" href="index.php">Início<span class="sr-only">(current)</span></a>
+		        <a class="nav-link" href="<?php echo base_url(); ?>">Início<span class="sr-only">(current)</span></a>
 			  </li>
 			  <li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">O programa</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="O Programa/apresentacao.php">APRESENTAÇÃO</a>
+							<a class="dropdown-item" href="<?php echo site_url('apresentacao'); ?>">APRESENTAÇÃO</a>
 							<a class="dropdown-item" href="<?php echo site_url('professores'); ?>">DOCENTES</a>
 							<a class="dropdown-item" href="<?php echo site_url('pesquisas'); ?>">LINHAS DE PESQUISA</a>
-							<a class="dropdown-item" href="O Programa/bancoDeTeses.php">BANCO DE TESES E DISSERTAÇÕES</a>
+							<a class="dropdown-item" href="<?php echo site_url('teses_dissertacoes'); ?>">BANCO DE TESES E DISSERTAÇÕES</a>
 							<a class="dropdown-item" href="">PUBLICAÇÕES</a>
 							<a class="dropdown-item" href="">CURSOS</a>
 						</div>
@@ -39,16 +39,16 @@
 			  <li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentos</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="">REGIMENTO</a>
-							<a class="dropdown-item" href="">RECONHECIMENTO DE DIPLOMAS</a>
-							<a class="dropdown-item" href="#">RESOLUÇÕES</a>
+							<a class="dropdown-item" href="<?php echo site_url('regimento'); ?>">REGIMENTO</a>
+							<a class="dropdown-item" href="<?php echo site_url('reconhecimento'); ?>">RECONHECIMENTO DE DIPLOMAS</a>
+							<a class="dropdown-item" href="<?php echo site_url('resolucoes'); ?>">RESOLUÇÕES</a>
 							<a class="dropdown-item" href="<?php echo site_url('formularios'); ?>">FORMULÁRIOS</a>
 							<a class="dropdown-item" href="<?php echo site_url('editais'); ?>">EDITAIS</a>
-							<a class="dropdown-item" href="">ESTRUTURA CURRICULAR</a>
+							<a class="dropdown-item" href="https://drive.google.com/file/d/1_UAKSMdMwxNRnewEt3COJJPvDB99Dafj/view">ESTRUTURA CURRICULAR</a>
 						</div>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="Selecao/index.php">SELEÇÃO</a>
+		        <a class="nav-link" href="<?php echo site_url('selecoes'); ?>">SELEÇÃO</a>
 		      </li>
 			  <li class="nav-item">
 		        <a class="nav-link" href="<?php echo site_url('eventos'); ?>">Eventos</a>
@@ -56,13 +56,13 @@
 		      <li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Parcerias</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="Parcerias/intercambio.php">INTERCÂMBIOS</a>
-							<a class="dropdown-item" href="Parcerias/conveniosNacionais.php">CONVÊNIOS NACIONAIS</a>
-							<a class="dropdown-item" href="Parcerias/conveniosInternacionais.php">CONVÊNIOS INTERNACIONAIS</a>
+							<a class="dropdown-item" href="<?php echo site_url('intercambios'); ?>">INTERCÂMBIOS</a>
+							<a class="dropdown-item" href="<?php echo site_url('convenios_nacionais'); ?>">CONVÊNIOS NACIONAIS</a>
+							<a class="dropdown-item" href="<?php echo site_url('convenios_internacionais'); ?>">CONVÊNIOS INTERNACIONAIS</a>
 						</div>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="Auditorios/index.php">Auditórios</a>
+		        <a class="nav-link" href="<?php echo site_url('auditorios'); ?>">Auditórios</a>
 		      </li>
 
 		    </ul>

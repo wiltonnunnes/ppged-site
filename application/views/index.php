@@ -20,41 +20,25 @@
 					<a href="<?php echo site_url('informativos'); ?>"><h6 class="text-white text-underline-rb-white">Veja todos os nossos informes <i class="fa fa-plus-circle" aria-hidden="true" style="font-size:20px; margin-left:1%;"></i></h6></a>
 				</div>
                 <ul class="pl-5">
+                <?php for ($i = 0; $i < count($informativos); $i++): ?>
+                	<?php if ($i == 0): ?>
                     <li>
-						<a href="post/1" target="_blank" style="color: white"><i class="fa fa-file fa-white" aria-hidden="true"></i>
+						<a href="<?php echo site_url('informativos/' . $informativos[$i]['informativo_id']); ?>" target="_blank" style="color: white"><i class="fa fa-file fa-white" aria-hidden="true"></i>
                     	<span class="list-content">
-                    		<strong>NOTÍCIA</strong>
-                    		<br>Resultado final do Processo Seletivo de Reingresso do PPGED da UFRN.
+                    		<strong><?php echo $informativos[$i]['categoria']; ?></strong>
+                    		<br><?php echo $informativos[$i]['titulo']; ?>.
                     	</span></a>
                 	</li>
-                    <li>
-                    	<a href="#" target="_blank"><i class="fa fa-file fa-white" aria-hidden="true"></i></a>
+                	<?php else: ?>
+                	<li>
+                    	<a href="<?php echo site_url('informativos/' . $informativos[$i]['informativo_id']); ?>" target="_blank"><i class="fa fa-file fa-white" aria-hidden="true"></i></a>
                     	<span class="list-content">
-							<strong>ALUNOS ESPECIAIS</strong>
-                    		<br>Laboratório de Tecnologia Educacional.
+							<strong><?php echo $informativos[$i]['categoria']; ?></strong>
+                    		<br><?php echo $informativos[$i]['titulo']; ?>.
                     	</span>
                     </li>
-                    <li>
-						<a href="#" target="_blank"><i class="fa fa-file fa-white" aria-hidden="true"></i></a>
-                    	<span class="list-content">
-							<strong>NOTÍCIA</strong>
-                    		<br>Laboratório de Políticas Educacionais.
-                    	</span>
-                    </li>
-                    <li>
-						<a href="#" target="_blank"><i class="fa fa-file fa-white" aria-hidden="true"></i></a>
-                    	<span class="list-content">
-							<strong>BOLSAS</strong>
-                    		<br>Laboratório de Tecnologia Assistiva do Centro de Educação.
-                    	</span>
-                    </li>
-                    <li>
-					<a href="" target="_blank"><i class="fa fa-file fa-white" aria-hidden="true"></i></a>
-                    	<span class="list-content">
-							<strong>NOTÍCIA</strong>
-                    		<br>Laboratório de História e Memória da Educação.
-                    	</span>
-                    </li>
+                	<?php endif; ?>
+                <?php endfor; ?>
                 </ul>
             </div>
             <div class="col-md-6 p-0 m-0">
@@ -75,7 +59,7 @@
 				<div class="media media-testimonial">
                     <div class="media-left">
                         <a href="#">
-                        <img src="http://ppged.ufrn.br/images/revista-ico.png" width="90" height="90">
+                        <?php echo img('images/revista-ico.png', FALSE, array('width' => '90', 'height' => '90')); ?>
                         </a>
                     </div>
                     <div class="media-body">
@@ -96,7 +80,7 @@
 
 		<div class="row mbr-justify-content-center">
 			<div class="col-lg-6 mbr-col-md-10">
-				<a href="O Programa/apresentacao.php">
+				<a href="<?php echo site_url('apresentacao'); ?>">
 					<div class="wrap">
 						<div class="ico-wrap">
 							<span class="mbr-iconfont fa-volume-up fa"></span>
@@ -131,7 +115,7 @@
 				</div>
 			</div>
 			<div class="col-lg-6 mbr-col-md-10">
-				<a href="O Programa/linhaDePesquisa.php">
+				<a href="<?php echo site_url('pesquisas'); ?>">
 					<div class="wrap">
 						<div class="ico-wrap">
 							<span class="mbr-iconfont fa-search fa"></span>

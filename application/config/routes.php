@@ -53,18 +53,29 @@ $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['apresentacao'] = 'apresentacao';
+$route['auditorios'] = 'auditorios';
+$route['convenios_nacionais'] = 'conveniosNacionais';
+$route['convenios_internacionais'] = 'conveniosInternacionais';
 $route['editais'] = 'editais';
 $route['eventos'] = 'eventos';
 $route['formularios'] = 'formularios';
 $route['informativos'] = 'informativos';
+$route['intercambios'] = 'intercambios';
 $route['noticias'] = 'noticias_anpae';
 $route['pesquisas'] = 'pesquisas';
 $route['professores'] = 'professores';
+$route['reconhecimento'] = 'reconhecimento';
+$route['regimento'] = 'regimento';
+$route['resolucoes'] = 'resolucoes';
+$route['selecoes'] = 'selecoes';
+$route['teses_dissertacoes'] = 'tesesDissertacoes';
 
 $route['eventos/(:num)'] = 'eventos/index/$1';
 $route['informativos/(:num)'] = 'informativos/index/$1';
 $route['noticias/(:num)'] = 'noticias_anpae/$1';
 $route['professores/(:num)'] = 'professores/index/$1';
+$route['selecoes/(:num)'] = 'selecoes/index/$1';
 
 $route['painel_controle'] = 'usuarios';
 

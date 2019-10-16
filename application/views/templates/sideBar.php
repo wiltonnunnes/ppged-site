@@ -8,10 +8,10 @@
 					<li><a href="#"><i class="fa fa-home"></i>O Programa</a>
 
 						<ul class="submenu">
-							<li><a href="apresentacao.php">apresentacao</a></li>
-							<li><a href="#">Docentes</a></li>
-							<li><a href="#">Linha de pesquisa</a></li>
-							<li><a href="#">Banco de teses e dissertações</a></li>
+							<li><a href="<?php echo site_url('apresentacao'); ?>">apresentacao</a></li>
+							<li><a href="<?php echo site_url('professores'); ?>">Docentes</a></li>
+							<li><a href="<?php echo site_url('pesquisas'); ?>">Linha de pesquisa</a></li>
+							<li><a href="<?php echo site_url('teses_dissertacoes'); ?>">Banco de teses e dissertações</a></li>
 							<li><a href="#">Publicações</a></li>
 						</ul>
 					</li>

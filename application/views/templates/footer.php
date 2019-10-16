@@ -1,4 +1,5 @@
 <section id="footer">
+<section id="footer">
 		<div class="container">
 			<div class="row text-center text-xs-center text-sm-left text-md-left">
 				<div class="col-xs-12 col-sm-3 col-md-3">
@@ -7,7 +8,7 @@
 				<div class="col-xs-12 col-sm-3 col-md-3">
 					<h5>Links Rápidos</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a href="index.php"><i class="fa fa-angle-double-right"></i>Início</a></li>
+						<li><a href="<?php echo base_url(); ?>"><i class="fa fa-angle-double-right"></i>Início</a></li>
 						<li><a href="sobre.php"><i class="fa fa-angle-double-right"></i>Notícias</a></li>
 						<li><a href="todasNoticias.php"><i class="fa fa-angle-double-right"></i>Agenda</a></li>
 						<li><a href="contato.php"><i class="fa fa-angle-double-right"></i>Contato</a></li>
@@ -55,3 +56,8 @@
 			</div>	
 		</div>
 	</section>
+	</section>
+
+</body>
+
+</html>

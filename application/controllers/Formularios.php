@@ -21,7 +21,9 @@ class Formularios extends MY_Controller {
 
 			$this->load->view('templates/header');
 			$this->load->view('templates/menu');
+			$this->load->view('templates/inicio');
 			$this->load->view('formularios/index', $data);
+			$this->load->view('templates/footer');
 		} else {
 			$data['formulario'] = $this->formularios_model->get_by_id($id);
 			$this->load->view('templates/header');
