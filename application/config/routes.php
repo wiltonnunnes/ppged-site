@@ -73,7 +73,7 @@ $route['teses_dissertacoes'] = 'tesesDissertacoes';
 
 $route['eventos/(:num)'] = 'eventos/index/$1';
 $route['informativos/(:num)'] = 'informativos/index/$1';
-$route['noticias/(:num)'] = 'noticias_anpae/$1';
+$route['noticias/(:num)'] = 'noticias_anpae/index/$1';
 $route['professores/(:num)'] = 'professores/index/$1';
 $route['selecoes/(:num)'] = 'selecoes/index/$1';
 

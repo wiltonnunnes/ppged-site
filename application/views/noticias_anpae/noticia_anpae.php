@@ -1,0 +1,1 @@
+<?php echo $noticia_anpae['titulo']; ?>

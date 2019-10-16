@@ -10,7 +10,7 @@ class Noticias_anpae extends MY_Controller {
 		if (is_null($id)) {
 			$config['base_url'] = site_url('noticias_anpae');
 			$config['total_rows'] = $this->noticias_anpae_model->get_count();
-			$config['per_page'] = 16;
+			$config['per_page'] = 6;
 
 			$this->pagination->initialize($config);
 
@@ -20,13 +20,17 @@ class Noticias_anpae extends MY_Controller {
 			$data['noticias_anpae'] = $this->noticias_anpae_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
 
 			$this->load->view('templates/header');
+			$this->load->view('templates/menu');
+			$this->load->view('templates/inicio');
 			$this->load->view('noticias_anpae/index', $data);
 			$this->load->view('templates/footer');
 		} else {
 			$noticia_anpae = $this->noticias_anpae_model->get_by_id($id);
 			$this->load->view('templates/header');
+			$this->load->view('templates/menu');
+			$this->load->view('templates/inicio');
 			$this->load->view('noticias_anpae/noticia_anpae', array('noticia_anpae' => $noticia_anpae));
-			$this->load->view('templates/foorer');
+			$this->load->view('templates/footer');
 		}
 	}
 
