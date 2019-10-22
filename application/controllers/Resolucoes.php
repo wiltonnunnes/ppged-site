@@ -20,10 +20,10 @@ class Resolucoes extends MY_Controller {
 		$data['resolucoes_consepe'] = $this->resolucoes_model->get(array('orgao' => 'CONSEPE'), -1, ($page - 1) * $config['per_page']);
 
 		$this->load->view('templates/header');
-		$this->load->view('Documentos/menu');
+		$this->load->view('templates/menu');
 		$this->load->view('templates/inicio');
-		$this->load->view('Documentos/resolucoes/index', $data);
-		$this->load->view('Documentos/footer');
+		$this->load->view('resolucoes/index', $data);
+		$this->load->view('templates/footer');
 	}
 
 	public function adicionar() {

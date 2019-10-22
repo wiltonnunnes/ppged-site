@@ -4,7 +4,7 @@
 
 			<div class="col-md-4 col-lg-4">
 				<?php 
-					include (APPPATH. "views/OPrograma/sideBar.php");	
+					include (APPPATH. "views/templates/sideBar.php");	
 				?>
 			</div>
 

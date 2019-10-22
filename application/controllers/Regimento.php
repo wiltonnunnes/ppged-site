@@ -9,7 +9,7 @@ class Regimento extends MY_Controller {
 		$this->load->view('templates/header');
 		$this->load->view('templates/menu');
 		$this->load->view('templates/inicio');
-		$this->load->view('Documentos/regimento/index');
+		$this->load->view('regimento/index');
 		$this->load->view('templates/footer');
 	}
 

@@ -9,7 +9,7 @@ class TesesDissertacoes extends MY_Controller {
 		$this->load->view('templates/header');
 		$this->load->view('templates/menu');
 		$this->load->view('templates/inicio');
-		$this->load->view('OPrograma/teses_dissertacoes/index');
+		$this->load->view('teses_dissertacoes/index');
 		$this->load->view('templates/footer');
 	}
 

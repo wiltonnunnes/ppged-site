@@ -7,10 +7,10 @@ class Reconhecimento extends MY_Controller {
 
 	public function index() {
 		$this->load->view('templates/header');
-		$this->load->view('Documentos/menu');
+		$this->load->view('templates/menu');
 		$this->load->view('templates/inicio');
-		$this->load->view('Documentos/reconhecimento/index');
-		$this->load->view('Documentos/footer');
+		$this->load->view('reconhecimento/index');
+		$this->load->view('templates/footer');
 	}
 
 }
