@@ -20,13 +20,20 @@ class Informativos extends MY_Controller {
 			$data['informativos'] = $this->professores_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
 
 			$this->load->view('templates/header');
+			if ($this->is_logged_in())
+				$this->load->view('templates/menuAdm');
+			else
+				$this->load->view('templates/menu');
+			$this->load->view('templates/inicio');
 			$this->load->view('informativos/index', $data);
 			$this->load->view('templates/footer');
 		} else {
 			$informativo = $this->informativos_model->get_by_id($id);
 			$this->load->view('templates/header');
+			$this->load->view('templates/menu');
+			$this->load->view('templates/inicio');
 			$this->load->view('informativos/informativo', array('informativo' => $informativo));
-			$this->load->view('templates/foorer');
+			$this->load->view('templates/footer');
 		}
 	}
 

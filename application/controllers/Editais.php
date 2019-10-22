@@ -19,7 +19,10 @@ class Editais extends MY_Controller {
 		$data['editais'] = $this->editais_model->get(array(), -1, ($page - 1) * $config['per_page']);
 
 		$this->load->view('templates/header');
-		$this->load->view('templates/menu');
+		if ($this->is_logged_in())
+			$this->load->view('templates/menuAdm');
+		else
+			$this->load->view('templates/menu');
 		$this->load->view('templates/inicio');
 		$this->load->view('editais/index', $data);
 		$this->load->view('templates/footer');

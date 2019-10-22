@@ -20,16 +20,14 @@
 					<a href="<?php echo site_url('informativos'); ?>"><h6 class="text-white text-underline-rb-white">Veja todos os nossos informes <i class="fa fa-plus-circle" aria-hidden="true" style="font-size:20px; margin-left:1%;"></i></h6></a>
 				</div>
                 <ul class="pl-5">
-                <?php for ($i = 0; $i < count($informativos); $i++): ?>
-                	<?php if ($i == 0): ?>
                     <li>
-						<a href="<?php echo site_url('informativos/' . $informativos[$i]['informativo_id']); ?>" target="_blank" style="color: white"><i class="fa fa-file fa-white" aria-hidden="true"></i>
+						<a href="<?php echo site_url('informativos/' . $informativos[0]['informativo_id']); ?>" target="_blank" style="color: white"><i class="fa fa-file fa-white" aria-hidden="true"></i>
                     	<span class="list-content">
-                    		<strong><?php echo $informativos[$i]['categoria']; ?></strong>
-                    		<br><?php echo $informativos[$i]['titulo']; ?>.
+                    		<strong><?php echo $informativos[0]['categoria']; ?></strong>
+                    		<br><?php echo $informativos[0]['titulo']; ?>.
                     	</span></a>
                 	</li>
-                	<?php else: ?>
+                <?php for ($i = 1; $i < count($informativos); $i++): ?>
                 	<li>
                     	<a href="<?php echo site_url('informativos/' . $informativos[$i]['informativo_id']); ?>" target="_blank"><i class="fa fa-file fa-white" aria-hidden="true"></i></a>
                     	<span class="list-content">
@@ -37,7 +35,6 @@
                     		<br><?php echo $informativos[$i]['titulo']; ?>.
                     	</span>
                     </li>
-                	<?php endif; ?>
                 <?php endfor; ?>
                 </ul>
             </div>

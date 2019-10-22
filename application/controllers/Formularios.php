@@ -20,7 +20,10 @@ class Formularios extends MY_Controller {
 			$data['formularios'] = $this->formularios_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
 
 			$this->load->view('templates/header');
-			$this->load->view('templates/menu');
+			if ($this->is_logged_in())
+				$this->load->view('templates/menuAdm');
+			else
+				$this->load->view('templates/menu');
 			$this->load->view('templates/inicio');
 			$this->load->view('formularios/index', $data);
 			$this->load->view('templates/footer');

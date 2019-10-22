@@ -20,7 +20,10 @@ class Eventos extends MY_Controller {
 			$data['eventos'] = $this->eventos_model->get(array(), -1, ($page - 1) * $config['per_page']);
 
 			$this->load->view('templates/header');
-			$this->load->view('templates/menu');
+			if ($this->is_logged_in())
+				$this->load->view('templates/menuAdm');
+			else
+				$this->load->view('templates/menu');
 			$this->load->view('templates/inicio');
 			$this->load->view('eventos/index', $data);
 			$this->load->view('templates/footer');
