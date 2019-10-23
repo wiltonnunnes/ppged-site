@@ -44,7 +44,7 @@
 							<a class="dropdown-item" href="<?php echo site_url('resolucoes'); ?>">RESOLUÇÕES</a>
 							<a class="dropdown-item" href="<?php echo site_url('formularios'); ?>">FORMULÁRIOS</a>
 							<a class="dropdown-item" href="<?php echo site_url('editais'); ?>">EDITAIS</a>
-							<a class="dropdown-item" href="https://drive.google.com/file/d/1_UAKSMdMwxNRnewEt3COJJPvDB99Dafj/view">ESTRUTURA CURRICULAR</a>
+							<a class="dropdown-item" href="https://drive.google.com/file/d/1_UAKSMdMwxNRnewEt3COJJPvDB99Dafj/view" target="_blank">ESTRUTURA CURRICULAR</a>
 						</div>
 		      </li>
 		      <li class="nav-item">
