@@ -21,7 +21,7 @@
 				</div>
                 <ul class="pl-5">
                     <li>
-						<a href="<?php echo site_url('informativos/' . $informativos[0]['informativo_id']); ?>" target="_blank" style="color: white"><i class="fa fa-file fa-white" aria-hidden="true"></i>
+						<a href="<?php echo site_url('informativos/' . $informativos[0]['informativo_id']); ?>" style="color: white"><i class="fa fa-file fa-white" aria-hidden="true"></i>
                     	<span class="list-content">
                     		<strong><?php echo $informativos[0]['categoria']; ?></strong>
                     		<br><?php echo $informativos[0]['titulo']; ?>.
@@ -29,7 +29,7 @@
                 	</li>
                 <?php for ($i = 1; $i < count($informativos); $i++): ?>
                 	<li>
-                    	<a href="<?php echo site_url('informativos/' . $informativos[$i]['informativo_id']); ?>" target="_blank"><i class="fa fa-file fa-white" aria-hidden="true"></i></a>
+                    	<a href="<?php echo site_url('informativos/' . $informativos[$i]['informativo_id']); ?>"><i class="fa fa-file fa-white" aria-hidden="true"></i></a>
                     	<span class="list-content">
 							<strong><?php echo $informativos[$i]['categoria']; ?></strong>
                     		<br><?php echo $informativos[$i]['titulo']; ?>.
