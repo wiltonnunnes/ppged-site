@@ -29,11 +29,11 @@
                                         <li>
                                             <spam class="bold">E-mail:</spam> <?php echo $professores[$j]['email']; ?>
                                         </li>
-                                        <li>
-                                            <spam class="bold"> Curriculum Lattes:</spam> <?php echo $professores[$j]['lattes']; ?>
+                                        <li style="background-color:white">
+                                            <spam class="bold"> Curriculum Lattes:</spam> <a href="<?php echo $professores[$j]['lattes']; ?>" style="background-color:white; color:black; padding:0px"><?php echo $professores[$j]['lattes']; ?></a>
                                         </li>
                                         <li>
-                                            <spam class="bold"> Página do SIGAA:</spam> <?php echo $professores[$j]['sigaa']; ?>
+                                            <spam class="bold"> Página do SIGAA:</spam><a href="<?php echo $professores[$j]['sigaa']; ?>"  style="background-color:white; color:black; padding:0px"><?php echo $professores[$j]['sigaa']; ?></a>
                                         </li>
                                     </ul>
                                 </div>
