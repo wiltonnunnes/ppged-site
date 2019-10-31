@@ -10,11 +10,11 @@
                 <div class="container-fluid gedf-wrapper">
                     <div class="row">
 
-                        <div class="col-md-4">
+                        <div class="col-md-4 gedf-main">
                             <div class="card gedf-card">
                                 <div class="card-body">
                                     <div class="h5">Notícias</div>
-                                    <div class="h7">Confira abaixo as novidades relacionadas ao LIFE e às suas instituições parceiras, produzidas pelo LIFE.</div>
+                                    <div class="h7">Confira aqui as novidades relacionadas ao PPGEd.</div>
                                     <form class="form-inline mt-5 ml-3">
                                         <div class="input-group">
                                             <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2" placeholder="Buscar Notícia" size="25%">
@@ -38,26 +38,17 @@
                                     <a class="card-link" href="../post/1">
                                         <h5 class="card-title"><?php echo $noticias_anpae_item['titulo']; ?></h5>
                                     </a>
-
-                                    <p class="card-text">
-                                        Legenda
-                                    </p>
-                                    <div>
-                                        <span class="badge badge-primary">a</span>
-                                        <span class="badge badge-primary">b</span>
-                                        <span class="badge badge-primary">c</span>
-                                        <span class="badge badge-primary">d</span>
-                                    </div>
+                                    
                                 </div>
                                 <div class="card-footer">
-                                    <div class="h7 text-muted">Laboratório Interdisciplinar de Formação de Educadores</div>
+                                    <div class="h7 text-muted">PPGEd</div>
                                 </div>
                             </div>
                         </div>
                         <!-- Post /////-->
                         <?php endforeach; ?>
 
-                        <nav class="navNoticia">
+                        <nav class="offset-md-5 navNoticia">
                             <?php echo $links; ?>
                         </nav>
 
