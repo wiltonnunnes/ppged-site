@@ -937,7 +937,11 @@ section .section-title {
 
 /* ========== DOCUMENTOS ========== */
 .card, .documento{
-    height: 90%;
+    height: 100%;
+}
+
+.gedf-main{
+    margin-bottom: 2%;
 }
 
 #what-we-do .card{
