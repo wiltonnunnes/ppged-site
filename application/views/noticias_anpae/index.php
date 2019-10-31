@@ -1,7 +1,7 @@
 <section class="info-section pt-6 mt-5">
 	<div class="container">
 		<div class="head-box text-center">
-			<h2>Notícias</h2>
+			<h2>Notícias da ANPED / FORPRED</h2>
 			<h6 class="text-underline-primary mb-5">Todas as notícias</h6>
         </div>
 
