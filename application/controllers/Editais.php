@@ -32,9 +32,11 @@ class Editais extends MY_Controller {
 		if (!$this->is_logged_in()) {
 			redirect('painel_controle');
 		}
-		$this->load->view('painel_controle/templates/header');
-		$this->load->view('painel_controle/editais/adicionar_alterar_editais');
-		$this->load->view('painel_controle/templates/footer');
+		$this->load->view('templates/header');
+		$this->load->view('templates/menuAdm');
+		$this->load->view('templates/inicio');
+		$this->load->view('editais/adicionar_alterar_editais', array('error' => ''));
+		$this->load->view('templates/footer');
 	}
 
 	public function recebe_processa_edital() {

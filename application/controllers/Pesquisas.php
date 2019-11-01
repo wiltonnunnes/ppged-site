@@ -67,9 +67,11 @@ class Pesquisas extends MY_Controller {
 		$data = $this->input->post();
 		if (isset($data['nome'])) $data['professores'][] = $this->professores_model->get(array('nome' => $data['nome']));
 
-		$this->load->view('painel_controle/templates/header');
-		$this->load->view('painel_controle/pesquisas/adicionar_alterar_pesquisas', $data);
-		$this->load->view('painel_controle/templates/footer');
+		$this->load->view('templates/header');
+		$this->load->view('templates/menu');
+		$this->load->view('templates/inicio');
+		$this->load->view('pesquisas/adicionar_alterar_pesquisas', $data);
+		$this->load->view('templates/footer');
 	}
 
 	public function listar() {
@@ -101,9 +103,11 @@ class Pesquisas extends MY_Controller {
 	public function alterar($id) {
 		if ($this->is_logged_in()) {
 			$pesquisa = $this->pesquisas_model->get_by_id($id);
-			$this->load->view('painel_controle/templates/header');
-			$this->load->view('painel_controle/pesquisas/adicionar_alterar_pesquisas', array('pesquisa' => $pesquisa));
-			$this->load->view('painel_controle/templates/footer');
+			$this->load->view('templates/header');
+			$this->load->view('templates/menu');
+			$this->load->view('templates/inicio');
+			$this->load->view('pesquisas/adicionar_alterar_pesquisas', array('pesquisa' => $pesquisa));
+			$this->load->view('templates/footer');
 		} else
 			redirect('painel_controle');
 	}

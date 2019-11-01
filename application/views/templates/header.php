@@ -4,6 +4,7 @@
 	<head>
 		<title>PPGED - Pograma de Pós Graduação em Educação</title>
 		<meta name="viewport" content="width=device-width">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 		<!-- CSS -->
 		<?php

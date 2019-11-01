@@ -4,10 +4,10 @@
 
 					if (scroll >= 100) {
 							$(".top-nav").addClass("light-header");
-							document.getElementById("logo").src="img/life.png";
+							document.getElementById("logo").src="<?php echo base_url('img/life.png'); ?>";
 					} else {
 							$(".top-nav").removeClass("light-header");
-							document.getElementById("logo").src="img/logo_FundoBlack.png";
+							document.getElementById("logo").src="<?php echo base_url('img/logo_FundoBlack.png'); ?>";
 							
 					}
 			});
