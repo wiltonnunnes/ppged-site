@@ -5,6 +5,7 @@ class Pesquisas extends MY_Controller {
 		parent::__construct();
 		$this->load->model('pesquisas_model');
 		$this->load->model('professores_pesquisas_model');
+		$this->load->model('professores_model');
 	}
 
 	public function index($id = NULL) {
@@ -60,17 +61,30 @@ class Pesquisas extends MY_Controller {
 		redirect('painel_controle/pesquisas');
 	}
 
-	public function adicionar() {
+	public function adicionar($id = NULL) {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
 
-		$data = $this->input->post();
-		if (isset($data['nome'])) $data['professores'][] = $this->professores_model->get(array('nome' => $data['nome']));
+		if (!is_null($id)) {
+			unset($_SESSION['professores'][$id]);
+		} elseif ($this->input->post('nome')) {
+			if ($this->session->has_userdata('professores')) {
+				$professores = $this->session->userdata('professores');
+				$this->session->unset_userdata('professores');
+			} else
+				$professores = array();
+			$professor = $this->professores_model->get(array('nome' => $this->input->post('nome')))[0];
+			$professores[$professor['professor_id']] = $professor;
+			$this->session->set_userdata('professores', $professores);
+		}
 
+		$pesquisa['titulo'] = $this->input->post('titulo');
+		$pesquisa['texto'] = $this->input->post('texto');
+		$pesquisa['pesquisa_id'] = $this->input->post('pesquisa_id');
 		$this->load->view('templates/header');
 		$this->load->view('templates/menu');
 		$this->load->view('templates/inicio');
-		$this->load->view('pesquisas/adicionar_alterar_pesquisas', $data);
+		$this->load->view('pesquisas/adicionar_alterar_pesquisas', array('pesquisa' => $pesquisa));
 		$this->load->view('templates/footer');
 	}
 

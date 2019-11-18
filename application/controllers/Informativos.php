@@ -9,15 +9,23 @@ class Informativos extends MY_Controller {
 	public function index($id = NULL) {
 		if (is_null($id)) {
 			$config['base_url'] = site_url('informativos');
-			$config['total_rows'] = $this->informativos_model->get_count();
-			$config['per_page'] = 16;
-
-			$this->pagination->initialize($config);
-
-			$data['links'] = $this->pagination->create_links();
+			//$config['total_rows'] = $this->informativos_model->get_count();
+			$config['per_page'] = 5;
 
 			$page = ($this->input->get('page')) ?: 1;
-			$data['informativos'] = $this->professores_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
+			$titulo = $this->input->get('titulo');
+			if ($titulo) {
+				$data['informativos'] = $this->informativos_model->search($titulo, $config['per_page'], ($page - 1) * $config['per_page']);
+				$config['suffix'] = '&titulo=' . $titulo;
+				$config['total_rows'] = count($data['informativos']);
+			} else {
+				$data['informativos'] = $this->informativos_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
+				$config['suffix'] = '';
+				$config['total_rows'] = $this->informativos_model->get_count();
+			}
+
+			$this->pagination->initialize($config);
+			$data['links'] = $this->pagination->create_links();
 
 			$this->load->view('templates/header');
 			if ($this->is_logged_in())

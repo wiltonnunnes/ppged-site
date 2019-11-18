@@ -9,15 +9,23 @@ class Noticias_anpae extends MY_Controller {
 	public function index($id = NULL) {
 		if (is_null($id)) {
 			$config['base_url'] = site_url('noticias_anpae');
-			$config['total_rows'] = $this->noticias_anpae_model->get_count();
+			//$config['total_rows'] = $this->noticias_anpae_model->get_count();
 			$config['per_page'] = 5;
 
-			$this->pagination->initialize($config);
-
-			$data['links'] = $this->pagination->create_links();
-
 			$page = ($this->input->get('page')) ?: 1;
-			$data['noticias_anpae'] = $this->noticias_anpae_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
+			$titulo = $this->input->get('titulo');
+			if ($titulo) {
+				$data['noticias_anpae'] = $this->noticias_anpae_model->search($titulo, $config['per_page'], ($page - 1) * $config['per_page']);
+				$config['suffix'] = '&titulo=' . $titulo;
+				$config['total_rows'] = count($data['noticias_anpae']);
+			} else {
+				$data['noticias_anpae'] = $this->noticias_anpae_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
+				$config['suffix'] = '';
+				$config['total_rows'] = $this->noticias_anpae_model->get_count();
+			}
+
+			$this->pagination->initialize($config);
+			$data['links'] = $this->pagination->create_links();
 
 			$this->load->view('templates/header');
 			$this->load->view('templates/menu');

@@ -12,12 +12,12 @@
 
 				<div class="form-group">
 					<label for="titulo">T&iacute;tulo:</label>
-					<?php echo form_input('titulo', isset($pesquisa['titulo']) ? $pesquisa['titulo'] : '', array('required' => 'required', 'id' => 'titulo', 'class' => 'form-control')); ?>
+					<?php echo form_input('titulo', isset($pesquisa['titulo']) ? $pesquisa['titulo'] : '', array('id' => 'titulo', 'class' => 'form-control')); ?>
 				</div>
 
 				<div class="form-group">
 					<label for="texto">Texto:</label>
-					<?php echo form_textarea('texto', isset($informativo['texto']) ? $informativo['texto'] : '', array('id' => 'texto', 'class' => 'form-control')); ?>
+					<?php echo form_textarea('texto', isset($pesquisa['texto']) ? $pesquisa['texto'] : '', array('id' => 'texto', 'class' => 'form-control')); ?>
 				</div>
 
 				<div class="form-group">
@@ -29,7 +29,7 @@
 				<button type="submit" class="btn btn-primary" id="add_professor" formaction="<?php echo site_url('pesquisas/adicionar') ?>" disabled>Adicionar Professor(a)</button>
 				<br /><br />
 
-				<?php if (isset($professores)): ?>
+				<?php if (!empty($_SESSION['professores'])): ?>
 				<h2 align="center"> PROFESSORES </h2>
 				<table id="example" class="table table-striped table-bordered mt-3" style="width:100%">
 					<caption>Professores</caption>
@@ -41,11 +41,11 @@
 						</tr>
 					</thead>
 					<tbody>
-					<?php foreach ($professores as $professores_item): ?>
+					<?php foreach ($_SESSION['professores'] as $professores_item): ?>
 						<tr>
 							<td><?php echo $professores_item['professor_id']; ?></td>
 							<td><?php echo $professores_item['nome']; ?></td>
-							<td><button type="button">Remover</button></td>
+							<td><button type="submit" formaction="<?php echo site_url('pesquisas/adicionar/' . $professores_item['professor_id']) ?>">Remover</button></td>
 						</tr>
 						<?php echo form_hidden('professor_id[]', $professores_item['professor_id']); ?>
 					<?php endforeach; ?>
@@ -66,16 +66,22 @@
 
 <script>
 function search(str) {
+	$select = $('#professor');
 	if (str.length == 0) {
-		$('#professor').hide();
+		$select.hide();
 		return;
 	}
 	$.ajax({
 		url: "<?php echo site_url('professores/get_professores'); ?>?q=" + str, 
 		success: function(result) {
-			var obj = JSON.parse(result), $select = $('#professor');
+			var obj = JSON.parse(result);
+			if (Object.keys(obj).length == 0) {
+				$select.hide();
+				return;
+			}
 			$select.hide();
 			$select.empty();
+			$select.append(new Option("", ""));
 			obj.forEach(function(professor) {
 				var option = new Option(professor['nome'], professor['professor_id']);
 				$select.append(option);
