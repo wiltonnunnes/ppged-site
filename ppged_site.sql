@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 15-Out-2019 às 13:45
+-- Generation Time: 20-Nov-2019 às 13:12
 -- Versão do servidor: 5.5.56-MariaDB
 -- PHP Version: 5.4.16
 
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `eventos` (
   `descricao` text CHARACTER SET latin1,
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `cartaz` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=389 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=394 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Extraindo dados da tabela `eventos`
@@ -489,7 +489,12 @@ INSERT INTO `eventos` (`evento_id`, `nome_evento`, `data`, `local`, `entidade_or
 (385, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | MARCILENE FRAN&Ccedil;A DA SILVA TABOSA', '2019-09-30', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Marcilene.pdf'),
 (386, 'DEFESA DE TESE | ROSANE DA SILVA NUNES', '2019-09-20', 'Audit&oacute;rio D - CCHLA', 'PPGED', '', 0, 'Cartaz - Rosane.pdf'),
 (387, 'DEFESA DE TESE | LISIE MARLENE DA SILVEIRA MELO MARTINS', '2019-10-14', 'Audit&oacute;rio do CE', 'PPGED', '', 0, 'Cartaz - Lisie.pdf'),
-(388, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | MARCIA BETANIA ALVES DA SILVA', '2019-10-25', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Marcia.pdf');
+(388, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | MARCIA BETANIA ALVES DA SILVA', '2019-10-25', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Marcia.pdf'),
+(389, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | KATYUSCIA MARIA DA SILVA', '2019-10-31', 'Audit&oacute;rio do Bloco de Aulas', 'PPGED', '', 0, 'Cartaz - Katyuscia.pdf'),
+(390, 'DEFESA DE TESE | MARIA CLARA PEREIRA SANTOS', '2019-11-28', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Maria Clara Pereira.pdf'),
+(391, 'DEFESA DE TESE | MARIA DA CONCEI&Ccedil;&Atilde;O DE OLIVEIRA ANDRADE', '2019-11-26', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Maria da ConceiÃ§Ã£o.pdf'),
+(392, 'DEFESA DE TESE | MAIZE SOUSA VIRGOLINO DE ARA&Uacute;JO', '2019-11-28', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Maize.pdf'),
+(393, 'Confer&ecirc;ncia: Escuta das crian&ccedil;as e (re)configura&ccedil;&atilde;o de identidades docentes', '2019-12-09', 'Audit&oacute;rio do Centro de Educa&ccedil;&atilde;o - UFRN', 'PPGED', '', 0, 'WhatsApp Image 2019-11-20 at 07.19.50.jpeg');
 
 -- --------------------------------------------------------
 
@@ -550,7 +555,7 @@ CREATE TABLE IF NOT EXISTS `informativos` (
   `data` date NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `imagem` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=86 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=89 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Extraindo dados da tabela `informativos`
@@ -625,7 +630,11 @@ INSERT INTO `informativos` (`informativo_id`, `titulo`, `categoria`, `texto`, `d
 (82, 'PPGEd oferece M&oacute;dulo &quot;G&ecirc;nero e Educa&ccedil;&atilde;o Profissional&quot;', 'not&iacute;cia', '<p style="text-align:justify">O Programa de P&oacute;s-Gradua&ccedil;&atilde;o em Educa&ccedil;&atilde;o da UFRN oferecer&aacute; o m&oacute;dulo&nbsp;<strong>PPGE0700 - T&Oacute;PICOS ESPECIAIS EM EDUCA&Ccedil;&Atilde;O I</strong> <strong>- &quot;G&ecirc;nero e Educa&ccedil;&atilde;o Profissional&quot;.</strong></p>\r\n\r\n<p style="text-align:justify"><u>Docentes</u>:&nbsp;Julie Thomas (Universidade de Saint &Eacute;tienne/Fran&ccedil;a) e Avelino A. de Lima Neto (PPGEd/UFRN)</p>\r\n\r\n<p style="text-align:justify"><u>Ementa</u>:&nbsp;<em>Introdu&ccedil;&atilde;o a&nbsp;um t&oacute;pico contempor&acirc;neo de educa&ccedil;&atilde;o. Principais refer&ecirc;ncias te&oacute;ricas, quest&otilde;es, grupos de trabalho, abordagens metodol&oacute;gicas.</em></p>\r\n\r\n<p><u>Observa&ccedil;&otilde;es:</u>&nbsp;Partindo de uma abordagem sociol&oacute;gica, as aulas versar&atilde;o sobre quest&otilde;es de g&ecirc;nero da Educa&ccedil;&atilde;o Profissional francesa, sobretudo no que concerne aos aspectos relacionados &agrave; profissionaliza&ccedil;&atilde;o das mulheres nos Liceus Profissionais e Institutos Universit&aacute;rios de Tecnologia.&nbsp;</p>\r\n\r\n<p style="text-align:justify"><u>Data</u>:&nbsp;<strong>11 e 13 de setembro, a partir das 14h.</strong></p>\r\n\r\n<p style="text-align:justify"><u>Local</u>:&nbsp;<strong>Miniaudit&oacute;rio da DIAC - IFRN/Natal-Central</strong></p>\r\n\r\n<p style="text-align:justify"><strong>Per&iacute;odo de matr&iacute;cula no <u>SIGAA</u> (p/ Alunos Regulares do PPGEd)</strong>: <strong>30/08/2019 a 03/09/2019.</strong></p>\r\n\r\n<p style="text-align:justify">&nbsp;</p>\r\n\r\n<h2 style="text-align:justify"><strong>Aten&ccedil;&atilde;o! Haver&aacute; 10 vagas para Alunos Especiais!</strong></h2>\r\n\r\n<p style="text-align:justify"><strong>Interessados devem participar do <u>processo seletivo</u> por meio do&nbsp; preenchimento deste&nbsp; <a href="https://forms.gle/q16DZogrYms8fQsE7">formul&aacute;rio</a>.</strong></p>\r\n\r\n<p style="text-align:justify"><strong>O formul&aacute;rio estar&aacute; aberto de 30/08/2019 a 03/09/2019.</strong></p>\r\n\r\n<p style="text-align:justify">&nbsp;</p>\r\n\r\n<p style="text-align:justify">&nbsp;</p>\r\n\r\n<p style="text-align:justify"><img alt="" src="https://uploaddeimagens.com.br/images/002/307/240/original/li.PNG?1567172603" style="height:856px; width:542px" /></p>\r\n', '2019-08-30', 0, NULL),
 (83, 'Resultado e Instru&ccedil;&otilde;es sobre as matr&iacute;culas - Alunos Especiais PPGE0700 ', 'not&iacute;cia', '<p>Clique <a href="https://drive.google.com/open?id=1utAMwoDqt0wSg2z_za_4H0IP15DF2GCF">aqui</a> para visualizar a lista dos<strong>&nbsp;Alunos Especiais aprovados e instru&ccedil;&otilde;es de matr&iacute;culas</strong> para o&nbsp;M&oacute;dulo&nbsp;PPGE0700 - T&Oacute;PICOS ESPECIAIS EM EDUCA&Ccedil;&Atilde;O I - <strong>&quot;G&ecirc;nero e Educa&ccedil;&atilde;o Profissional&quot;</strong></p>\r\n', '2019-09-09', 0, NULL),
 (84, 'Resultado da prova escrita do processo seletivo para Mestrado e Doutorado em Educa&ccedil;&atilde;o ', 'not&iacute;cia', '<p>Divulgado o resultado da prova escrita do processo seletivo para os n&iacute;veis&nbsp;de mestrado e doutorado em educa&ccedil;&atilde;o 2019.</p>\n\n<p>Confira as listas com os candidatos aprovados abaixo.</p>\n\n<p><a href="http://www.comperve.ufrn.br/conteudo/posgraduacao/ppged/202001/resultados/prova_escrita/relacao_mestrado.pdf">mestrado</a></p>\n\n<p><a href="http://www.comperve.ufrn.br/conteudo/posgraduacao/ppged/202001/resultados/prova_escrita/relacao_doutorado.pdf">doutorado</a></p>\n', '2019-09-18', 0, NULL),
-(85, 'Suspenso pedidos de aux&iacute;lio financeiro a estudantes', 'not&iacute;cia', '<p>Car@s estudantes,</p>\r\n\r\n<p>Informamos que, em decorr&ecirc;ncia dos cortes or&ccedil;ament&aacute;rios, o apoio financeiro &agrave; alunas(os) para a participa&ccedil;&atilde;o em eventos cient&iacute;ficos est&aacute; suspenso, por tempo indeterminado. Apenas as(os) alunas(os) com trabalhos aprovados na 39. ANPEd e que ainda n&atilde;o tenham recebido esse tipo de apoio em 2019, ter&atilde;o seus pedidos analisados pela coordena&ccedil;&atilde;o.&nbsp;</p>\r\n\r\n<p>Para isso, &eacute; necess&aacute;rio que a documenta&ccedil;&atilde;o referente ao pedido (Formul&aacute;rio de Solicita&ccedil;&atilde;o do Aux&iacute;lio, Carta de aceite, Trabalho em PDF, Justificativa do Orientador e Programa&ccedil;&atilde;o do Evento), seja encaminhada por e-mail (ppged@ce.ufrn.br) at&eacute; 23/09/2019.</p>\r\n', '2019-09-19', 1, NULL);
+(85, 'Suspenso pedidos de aux&iacute;lio financeiro a estudantes', 'not&iacute;cia', '<p>Car@s estudantes,</p>\r\n\r\n<p>Informamos que, em decorr&ecirc;ncia dos cortes or&ccedil;ament&aacute;rios, o apoio financeiro &agrave; alunas(os) para a participa&ccedil;&atilde;o em eventos cient&iacute;ficos est&aacute; suspenso, por tempo indeterminado. Apenas as(os) alunas(os) com trabalhos aprovados na 39. ANPEd e que ainda n&atilde;o tenham recebido esse tipo de apoio em 2019, ter&atilde;o seus pedidos analisados pela coordena&ccedil;&atilde;o.&nbsp;</p>\r\n\r\n<p>Para isso, &eacute; necess&aacute;rio que a documenta&ccedil;&atilde;o referente ao pedido (Formul&aacute;rio de Solicita&ccedil;&atilde;o do Aux&iacute;lio, Carta de aceite, Trabalho em PDF, Justificativa do Orientador e Programa&ccedil;&atilde;o do Evento), seja encaminhada por e-mail (ppged@ce.ufrn.br) at&eacute; 23/09/2019.</p>\r\n', '2019-09-19', 0, NULL);
+INSERT INTO `informativos` (`informativo_id`, `titulo`, `categoria`, `texto`, `data`, `status`, `imagem`) VALUES
+(86, ' Evento &quot;Paulo Freire mais que nunca&quot;.', 'not&iacute;cia', '<p><img alt="" src="https://imgur.com/XZ4NUL5" /><img alt="" src="https://i.imgur.com/XZ4NUL5.jpg" style="height:1500px; width:1061px" /></p>\r\n', '2019-11-07', 1, NULL),
+(87, 'Projeto Caf&eacute; Pegag&oacute;gico ', 'not&iacute;cia', '<p>Projeto Caf&eacute; Pegag&oacute;gico &eacute; uma iniciativa dos alunos do Programa de P&oacute;s-Gradua&ccedil;&atilde;o em Educa&ccedil;&atilde;o, sob a organiza&ccedil;&atilde;o da Representa&ccedil;&atilde;o Discente. A proposta tenta promover mais um espa&ccedil;o de di&aacute;logos genuinamente indisciplinar e que contemple quest&otilde;es que mobilizem os diversos campos do ensino, da pesquisa e da extens&atilde;o no &acirc;mbito das ci&ecirc;ncias da educa&ccedil;&atilde;o.<br />\r\nTem como objetivo central promover discuss&otilde;es entre pesquisadores, estudantes de gradua&ccedil;&atilde;o e de p&oacute;s-gradua&ccedil;&atilde;o, profissionais em forma&ccedil;&atilde;o continuada e profissionais que atuam para al&eacute;m da universidade.</p>\r\n\r\n<p>Data: 18 de novembro de 2019, &agrave;s 17h.<br />\r\nAudit&oacute;rio do Centro de Educa&ccedil;&atilde;o/UFRN.<br />\r\nOrganiza&ccedil;&atilde;o: Representa&ccedil;&atilde;o Discente do PPGEd.<br />\r\nConvidados: Maria da Concei&ccedil;&atilde;o de Almeida (PPGEd/CE) e Jaime Biella (DFIL).<br />\r\nApresenta&ccedil;&atilde;o Cultural: Artemisa Andrade, Marilia do Vale e Cadu Ara&uacute;jo.</p>\r\n\r\n<p><img alt="" src="https://i.imgur.com/hRyCMlT.png" style="height:824px; width:1160px" /></p>\r\n', '2019-11-07', 1, NULL),
+(88, 'Divulga&ccedil;&atilde;o do Calend&aacute;rio de Matriculas 2020.1', 'not&iacute;cia', '<p>Foi divulgado&nbsp; o calend&aacute;rio&nbsp; de matriculas 2020.1.</p>\r\n\r\n<p>Acesse o calend&aacute;rio atrav&eacute;s do menu: Documentos -&gt;&nbsp;Calend&aacute;rio de Matr&iacute;culas</p>\r\n', '2019-11-20', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -641,7 +650,7 @@ CREATE TABLE IF NOT EXISTS `noticias_anpae` (
   `data` date NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `imagem` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Extraindo dados da tabela `noticias_anpae`
@@ -675,7 +684,8 @@ INSERT INTO `noticias_anpae` (`noticia_id`, `titulo`, `categoria`, `texto`, `dat
 (46, 'Divulga&ccedil;&atilde;o da Chamada para publica&ccedil;&atilde;o na revista &quot;Cadernos para o p', 'revista', '<p>Divulga&ccedil;&atilde;o da Chamada para publica&ccedil;&atilde;o na revista &quot;Cadernos para o professor&quot; .</p>\r\n\r\n<p>Segue em anexo o arquivo com mais detalhes</p>\r\n', '2019-03-27', 0, NULL),
 (47, '39&ordf; Reuni&atilde;o Nacional da ANPEd - submiss&otilde;es prorrogadas at&eacute; 16.04', 'evento', '<p>Prezados (as) Coordenadores (as),</p>\r\n\r\n<p>A ANPEd estendeu at&eacute; o dia&nbsp;<strong>16 de abril</strong>&nbsp;(ter&ccedil;a-feira)&nbsp;<strong>o prazo final para a submiss&atilde;o de trabalhos na 39&ordf; Reuni&atilde;o Nacional</strong>&nbsp;&ndash; &eacute; necess&aacute;rio se associar previamente, com pagamento do boleto de anuidade at&eacute;&nbsp;domingo&nbsp;(14) para liberar a realiza&ccedil;&atilde;o do processo. J&aacute; a inscri&ccedil;&atilde;o no evento pode ser quitada at&eacute; julho e, assim como a anuidade, traz&nbsp;<strong>valores especiais para p&oacute;s-graduandos</strong>. A Reuni&atilde;o Nacional &eacute; o maior e mais importante encontro de visibilidade &agrave; pesquisa em Educa&ccedil;&atilde;o e de debate sobre pol&iacute;ticas educacionais e sociais com convidados nacionais e internacionais &ndash; a&nbsp;<strong>confer&ecirc;ncia de abertura</strong>&nbsp;contar&aacute; com&nbsp;<strong>Boaventura de Sousa</strong>&nbsp;(Universidade de Coimbra). A presen&ccedil;a de pesquisadores &ndash; docentes e discentes &ndash; &eacute; essencial neste sentido para mostrar a for&ccedil;a das investiga&ccedil;&otilde;es realizadas em nossa &aacute;rea e uni&atilde;o para enfrentar o dif&iacute;cil contexto atual. Para tal, pedimos ampla divulga&ccedil;&atilde;o.</p>\r\n\r\n<p>Trata-se de um tempo que exige profunda reflex&atilde;o sobre a nossa fr&aacute;gil democracia e a falta de rumo no campo da educa&ccedil;&atilde;o, com o desmonte completo do Estado brasileiro pelo atual governo. Mais do que nunca, a ANPEd convida a comunidade acad&ecirc;mica para discutir e analisar criticamente os ataques que v&ecirc;m sofrendo todo o sistema educacional e os pr&oacute;prios educadores, sendo estes &uacute;ltimos fortemente amea&ccedil;ados. Entendemos que &eacute; a discuss&atilde;o sobre esta situa&ccedil;&atilde;o que poder&aacute; ensejar estrat&eacute;gias de luta e resist&ecirc;ncia. Por isso, a ANPEd realizar&aacute; sua&nbsp;<strong>39&ordf; Reuni&atilde;o Nacional, de 20 a&nbsp;24 de outubro, em Niter&oacute;i, Rio&nbsp;de Janeiro, com o tema &ldquo;Educa&ccedil;&atilde;o P&uacute;blica e Pesquisa: ataques, lutas e resist&ecirc;ncias&rdquo;.</strong></p>\r\n\r\n<p><strong>Solicitamos de todos ampla divulga&ccedil;&atilde;o da 39&ordf; Reuni&atilde;o</strong>&nbsp;e seus prazos junto a professores e estudantes de seus programas, incentivando-os a se inscreverem para apresentar trabalhos desenvolvidos em suas universidades.&nbsp;</p>\r\n\r\n<p>Mais informa&ccedil;&otilde;es em&nbsp;<a href="https://linkprotect.cudasvc.com/url?a=http%3a%2f%2f39.reuniao.anped.org.br&amp;c=E,1,ddk68mbSdCZKIR3eZ9x6pU7AjvYUxo92tSkIxyhlrpIU1M-tFYwc4v_aQ9lvc0Mkmhk3SBeJczjFqH-iuqqaw2vLH3awZ8KgwYOb0Q9U3Uks0Q,,&amp;typo=1" style="color: rgb(0, 90, 149); text-decoration-line: none; cursor: pointer;" target="_blank">http://39.reuniao.anped.org.br</a>&nbsp;</p>\r\n', '2019-04-26', 0, NULL),
 (48, ' Revista Conflu&ecirc;ncias Culturais', 'evento', '<p>Caros leitores,</p>\r\n\r\n<p>A revista Revista Conflu&ecirc;ncias Culturais acaba de publicar seu &uacute;ltimo n&uacute;mero, dispon&iacute;vel em <a href="http://periodicos.univille.br/index.php/RCCult">http://periodicos.univille.br/index.php/RCCult</a></p>\r\n\r\n<p>A Revista Conflu&ecirc;ncias Culturais &eacute; a nova vers&atilde;o da Revista UNIVILLE, cuja primeira edi&ccedil;&atilde;o foi publicada em novembro de 1995. Na &eacute;poca a Revista foi estruturada com um Comit&ecirc; Editorial interno e consultores externos e internos, indicados por &aacute;rea de atua&ccedil;&atilde;o e titula&ccedil;&atilde;o formal.</p>\r\n\r\n<p>Convidamos a navegar no sum&aacute;rio da revista para acessar os artigos e outros itens de seu interesse.&nbsp; Agradecemos seu interesse e apoio cont&iacute;nuo em nosso trabalho</p>\r\n', '2019-04-29', 0, NULL),
-(49, 'Lan&ccedil;amento do livro F&iacute;sica, Cultura &amp; ensino de ci&ecirc;ncias', 'evento', '<p>O lan&ccedil;amento do livro F&iacute;sica, Cultura &amp; ensino de ci&ecirc;ncias, ocorrer&aacute; na pr&oacute;xima ter&ccedil;a-feira, 25/6/2019, das 18:30 as 20:00 no Sagu&atilde;o do CTEC - Complexo Tecnol&oacute;gico de Engenharia da UFRN, em Natal.</p>\r\n', '2019-06-19', 0, NULL);
+(49, 'Lan&ccedil;amento do livro F&iacute;sica, Cultura &amp; ensino de ci&ecirc;ncias', 'evento', '<p>O lan&ccedil;amento do livro F&iacute;sica, Cultura &amp; ensino de ci&ecirc;ncias, ocorrer&aacute; na pr&oacute;xima ter&ccedil;a-feira, 25/6/2019, das 18:30 as 20:00 no Sagu&atilde;o do CTEC - Complexo Tecnol&oacute;gico de Engenharia da UFRN, em Natal.</p>\r\n', '2019-06-19', 0, NULL),
+(51, 'Livro Vozes de estudantes com defici&ecirc;ncia intelectual: constru&ccedil;&otilde;es indenit&aacut', 'evento', '<p>Lan&ccedil;amento do Livro &#39;Vozes de estudantes com defici&ecirc;ncia intelectual: constru&ccedil;&otilde;es indenit&aacute;rias e estigma&#39; e Paletra &#39;o protagonismo das pesquisa e na educa&ccedil;&atilde;o&#39; ministrada pelo Prof. Dr. D&eacute;cio Nascimento Guimar&atilde;es.</p>\n\n<p>Data: 27 de novembro de 2019</p>\n<p>Hora: 18:30 h</p>\n<p>Local: Audit&oacute;rio do Centro de Educa&ccedil;&atilde;o - UFRN</p>\n', '2019-11-20', 0, 'WhatsApp Image 2019-11-20 at 09.23.59.jpeg');
 
 -- --------------------------------------------------------
 
@@ -1069,7 +1079,7 @@ CREATE TABLE IF NOT EXISTS `usuarios_adm` (
   `senha` blob NOT NULL,
   `tipo` int(11) NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Extraindo dados da tabela `usuarios_adm`
@@ -1077,6 +1087,7 @@ CREATE TABLE IF NOT EXISTS `usuarios_adm` (
 
 INSERT INTO `usuarios_adm` (`usuario_id`, `nome`, `email`, `telefone`, `celular`, `login`, `senha`, `tipo`, `status`) VALUES
 (1, 'Teste', NULL, NULL, NULL, 'teste', 0x37633461386430396361333736326166363165353935323039343364633236343934663839343162, 2, 0),
+(5, 'Pedro', NULL, NULL, NULL, 'pedro', 0x30353532656463346231666332646639643332613535666436636161396336383362666163646135, 1, 1),
 (3, 'PPGED', 'ppged@ce.ufrn.br', '8433422270230', '(84)991936457', 'ppged', 0x35663730343938336233383331663436326332323033393464353632356435626637326466316566, 1, 1);
 
 --
@@ -1198,7 +1209,7 @@ ALTER TABLE `editais`
 -- AUTO_INCREMENT for table `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `evento_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=389;
+  MODIFY `evento_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=394;
 --
 -- AUTO_INCREMENT for table `fale_conosco`
 --
@@ -1213,12 +1224,12 @@ ALTER TABLE `formularios`
 -- AUTO_INCREMENT for table `informativos`
 --
 ALTER TABLE `informativos`
-  MODIFY `informativo_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=86;
+  MODIFY `informativo_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=89;
 --
 -- AUTO_INCREMENT for table `noticias_anpae`
 --
 ALTER TABLE `noticias_anpae`
-  MODIFY `noticia_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=51;
+  MODIFY `noticia_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=52;
 --
 -- AUTO_INCREMENT for table `noticias_anpae_anexo`
 --
@@ -1263,7 +1274,7 @@ ALTER TABLE `selecoes_arquivos`
 -- AUTO_INCREMENT for table `usuarios_adm`
 --
 ALTER TABLE `usuarios_adm`
-  MODIFY `usuario_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `usuario_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

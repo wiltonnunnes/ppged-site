@@ -49,9 +49,11 @@ class Informativos extends MY_Controller {
 		if (!$this->is_logged_in()) {
 			redirect('painel_controle');
 		}
-		$this->load->view('painel_controle/templates/header');
-		$this->load->view('painel_controle/informativos/adicionar_alterar_informativos');
-		$this->load->view('painel_controle/templates/footer');
+		$this->load->view('templates/header');
+		$this->load->view('templates/menu');
+		$this->load->view('templates/inicio');
+		$this->load->view('informativos/adicionar_alterar_informativos');
+		$this->load->view('templates/footer');
 	}
 
 	public function recebe_processa_informativo() {

@@ -24,6 +24,7 @@
 		<!-- Edicao Tabela -->
 		<?php echo link_tag('css/tabela.css'); ?>
 		<script src="<?php echo base_url('js/jquery-tabela.js'); ?>"></script>
-		<script src="<?php echo base_url('js/bootstrap-tabela.js'); ?>"></script>  
+		<script src="<?php echo base_url('js/bootstrap-tabela.js'); ?>"></script>
+		<script src="<?php echo base_url('ckeditor/ckeditor.js'); ?>"></script>  
 	</head>
 	<body>

@@ -45,6 +45,7 @@
 							<a class="dropdown-item" href="<?php echo site_url('formularios'); ?>">FORMULÁRIOS</a>
 							<a class="dropdown-item" href="<?php echo site_url('editais'); ?>">EDITAIS</a>
 							<a class="dropdown-item" href="https://drive.google.com/file/d/1_UAKSMdMwxNRnewEt3COJJPvDB99Dafj/view" target="_blank">ESTRUTURA CURRICULAR</a>
+							<a class="dropdown-item" href="<?php echo base_url('arquivos/CALENDARIO DE MATRICULA 2020.1.pdf'); ?>" target="_blank">CALENDÁRIO DE MATRÍCULAS</a>
 						</div>
 		      </li>
 		      <li class="nav-item">
