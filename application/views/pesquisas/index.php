@@ -23,10 +23,12 @@
                                     <p class="p-accordion mt-3"> 
                                         <strong> PROFESSORES PESQUISADORES: </strong> <br>
                                     <?php
+                                    $links = array();
                                     foreach ($pesquisas[$i]['professores'] as $professores_item) {
-										echo anchor($professores_item['lattes'], $professores_item['nome']);
+										array_push($links, anchor($professores_item['lattes'], $professores_item['nome']));
 									}
-                                    ?>.
+                                    echo implode(", ", $links) . '.';
+                                    ?>
                                     </p>
                                     
                                     <p class="p-accordion"> 
