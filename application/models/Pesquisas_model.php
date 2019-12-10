@@ -10,7 +10,6 @@ class Pesquisas_model extends MY_Model {
 		$pesquisas = $this->get(array('pesquisa_id' => $id));
 		if (count($pesquisas) > 0) {
 			$pesquisa = $pesquisas[0];
-			$pesquisa['professores'] = $this->get_professores($id);
 			return $pesquisas[0];
 		}
 		return NULL;
@@ -18,13 +17,6 @@ class Pesquisas_model extends MY_Model {
 
 	public function remove($id) {
 		return parent::remove(array('pesquisa_id' => $id));
-	}
-
-	public function get_professores($id) {
-		$this->db->join('professores_pesquisas', 'professores_pesquisas.professor_id = professores.professor_id');
-		$this->db->where('professores_pesquisas.pesquisa_id', $id);
-		$query = $this->db->get('professores');
-		return $query->result_array();
 	}
 
 	public function insert($data) {

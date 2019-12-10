@@ -6,12 +6,8 @@ class Professores_pesquisas_model extends MY_Model {
 		$this->table = 'professores_pesquisas';
 	}
 
-	public function remove($id) {
-		return parent::remove(array('pesquisa_id' => $id));
-	}
-
-	public function insert($data) {
-		if (!$this->data_exists($data))
-			$this->set($data);
+	public function get_professores($pesquisa_id) {
+		$query = $this->db->query('SELECT * FROM professores INNER JOIN '.$this->table.' ON professores.professor_id='.$this->table.'.professor_id WHERE '.$this->table.'.pesquisa_id='.$pesquisa_id);
+		return $query->result_array();
 	}
 }

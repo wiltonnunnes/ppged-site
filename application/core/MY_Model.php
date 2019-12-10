@@ -38,7 +38,7 @@ class MY_Model extends CI_Model {
 
 	public function data_exists($data) {
 		$this->db->where($data);
-		return $this->db->count_all_results() > 0;
+		return $this->db->count_all_results($this->table) > 0;
 	}
 
 	private function get_primary_key() {

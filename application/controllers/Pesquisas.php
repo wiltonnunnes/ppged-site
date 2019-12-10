@@ -55,37 +55,65 @@ class Pesquisas extends MY_Controller {
 		else
 			$id = $this->pesquisas_model->insert($this->input->post(array('titulo', 'texto')));
 
-		if($professor_id = $this->input->post('professor_id'))
-			foreach ($professor_id as $professor_id_item)
-				$this->professores_pesquisas_model->insert(array('pesquisa_id' => $id, 'professor_id' => $professor_id_item));
+		$professor_ids = $this->input->post('professor_id');
+		foreach ($professor_ids as $professor_id) {
+			if (!$this->professores_pesquisas_model->data_exists(array('pesquisa_id' => $id, 'professor_id' => $professor_id)))
+				$this->professores_pesquisas_model->set(array('pesquisa_id' => $id, 'professor_id' => $professor_id));
+		}
+		foreach ($this->professores_pesquisas_model->get_professores($id) as $professor) {
+			if (!in_array($professor['professor_id'], $professor_ids))
+				$this->professores_pesquisas_model->remove(array('pesquisa_id' => $id, 'professor_id' => $professor['professor_id']));
+		}
 		redirect('painel_controle/pesquisas');
 	}
 
-	public function adicionar($id = NULL) {
+	public function adicionar() {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
+		if ($professor_id = $this->input->get('professor_id')) {
+			$pesquisa['titulo'] = $this->input->post('titulo');
+			$pesquisa['texto'] = $this->input->post('texto');
+			$pesquisa['pesquisa_id'] = $this->input->post('pesquisa_id');
 
-		if (!is_null($id)) {
-			unset($_SESSION['professores'][$id]);
-		} elseif ($this->input->post('nome')) {
-			if ($this->session->has_userdata('professores')) {
-				$professores = $this->session->userdata('professores');
-				$this->session->unset_userdata('professores');
-			} else
-				$professores = array();
-			$professor = $this->professores_model->get(array('nome' => $this->input->post('nome')))[0];
-			$professores[$professor['professor_id']] = $professor;
-			$this->session->set_userdata('professores', $professores);
+			$professor_ids = $this->input->post('professor_id');
+			if (is_null($professor_ids)) $professor_ids = array();
+
+			$professores = array();
+			foreach ($professor_ids as $id) {
+				if ($professor_id != $id)
+					array_push($professores, $this->professores_model->get_by_id($professor_id));
+			}
+
+			$this->load->view('templates/header');
+			$this->load->view('templates/menu');
+			$this->load->view('templates/inicio');
+			$this->load->view('pesquisas/adicionar_alterar_pesquisas', array('pesquisa' => $pesquisa, 'professores' => $professores));
+			$this->load->view('templates/footer');
+		} elseif ($nome = $this->input->post('nome')) {
+			$pesquisa['titulo'] = $this->input->post('titulo');
+			$pesquisa['texto'] = $this->input->post('texto');
+			$pesquisa['pesquisa_id'] = $this->input->post('pesquisa_id');
+
+			$professor_ids = $this->input->post('professor_id');
+			if (is_null($professor_ids)) $professor_ids = array();
+
+			$professores = array();
+			foreach ($professor_ids as $professor_id)
+				array_push($professores, $this->professores_model->get_by_id($professor_id));
+			array_push($professores, $this->professores_model->get_by_name($nome));
+
+			$this->load->view('templates/header');
+			$this->load->view('templates/menu');
+			$this->load->view('templates/inicio');
+			$this->load->view('pesquisas/adicionar_alterar_pesquisas', array('pesquisa' => $pesquisa, 'professores' => $professores));
+			$this->load->view('templates/footer');
+		} else {
+			$this->load->view('templates/header');
+			$this->load->view('templates/menu');
+			$this->load->view('templates/inicio');
+			$this->load->view('pesquisas/adicionar_alterar_pesquisas');
+			$this->load->view('templates/footer');
 		}
-
-		$pesquisa['titulo'] = $this->input->post('titulo');
-		$pesquisa['texto'] = $this->input->post('texto');
-		$pesquisa['pesquisa_id'] = $this->input->post('pesquisa_id');
-		$this->load->view('templates/header');
-		$this->load->view('templates/menu');
-		$this->load->view('templates/inicio');
-		$this->load->view('pesquisas/adicionar_alterar_pesquisas', array('pesquisa' => $pesquisa));
-		$this->load->view('templates/footer');
 	}
 
 	public function listar() {
@@ -109,20 +137,45 @@ class Pesquisas extends MY_Controller {
 
 	public function deletar($id) {
 		if ($this->pesquisas_model->remove($id)) {
-			$this->professores_pesquisas_model->remove($id);
+			$this->professores_pesquisas_model->remove(array('pesquisa_id' => $id));
 		}
 		redirect('painel_controle/pesquisas');
 	}
 
-	public function alterar($id) {
-		if ($this->is_logged_in()) {
-			$pesquisa = $this->pesquisas_model->get_by_id($id);
-			$this->load->view('templates/header');
-			$this->load->view('templates/menu');
-			$this->load->view('templates/inicio');
-			$this->load->view('pesquisas/adicionar_alterar_pesquisas', array('pesquisa' => $pesquisa));
-			$this->load->view('templates/footer');
-		} else
-			redirect('painel_controle');
+	public function remover_professor($professor_id) {
+		$pesquisa['pesquisa_id'] = $this->input->post('pesquisa_id'); 
+		$pesquisa['titulo'] = $this->input->post('titulo');
+		$pesquisa['texto'] = $this->input->post('texto');
+
+		$professores = array();
+		foreach ($this->input->post('professor_id') as $id) {
+			if ($professor_id != $id)
+				array_push($professores, $this->professores_model->get_by_id($id));
+		}
+
+		$this->load->view('templates/header');
+		$this->load->view('templates/menu');
+		$this->load->view('templates/inicio');
+		$this->load->view('pesquisas/adicionar_alterar_pesquisas', array('pesquisa' => $pesquisa, 'professores' => $professores));
+		$this->load->view('templates/footer');
+	}
+
+	public function adicionar_professor() {
+		$professor = $this->professores_model->get(array('nome' => $this->input->post('nome')))[0];
+		$professor_ids = $this->input->post('professor_id') ?: array();
+		
+		$professores = array($professor);
+		foreach ($professor_ids as $professor_id) {
+			array_push($professores, $this->professores_model->get_by_id($professor_id));
+		}
+
+		$pesquisa['pesquisa_id'] = $this->input->post('pesquisa_id');
+		$pesquisa['titulo'] = $this->input->post('titulo');
+		$pesquisa['texto'] = $this->input->post('texto');
+		$this->load->view('templates/header');
+		$this->load->view('templates/menu');
+		$this->load->view('templates/inicio');
+		$this->load->view('pesquisas/adicionar_alterar_pesquisas', array('pesquisa' => $pesquisa, 'professores' => $professores));
+		$this->load->view('templates/footer');
 	}
 }

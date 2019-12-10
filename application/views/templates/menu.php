@@ -23,12 +23,12 @@
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav ml-auto">
 		      <li class="nav-item">
-		        <a class="nav-link" href="<?php echo base_url(); ?>">Início<span class="sr-only">(current)</span></a>
+		        <a class="nav-link" href="<?php echo base_url(); ?>"><?php echo lang('menu_home'); ?><span class="sr-only">(current)</span></a>
 			  </li>
 			  <li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">O programa</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="<?php echo site_url('apresentacao'); ?>">APRESENTAÇÃO</a>
+							<a class="dropdown-item" href="<?php echo site_url('apresentacao'); ?>"><?php echo lang('menu_about'); ?></a>
 							<a class="dropdown-item" href="<?php echo site_url('professores'); ?>">DOCENTES</a>
 							<a class="dropdown-item" href="<?php echo site_url('pesquisas'); ?>">LINHAS DE PESQUISA</a>
 							<a class="dropdown-item" href="<?php echo site_url('teses_dissertacoes'); ?>">BANCO DE TESES E DISSERTAÇÕES</a>
@@ -37,7 +37,7 @@
 						</div>
 			  </li>
 			  <li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentos</a>
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo lang('menu_documents'); ?></a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="<?php echo site_url('regimento'); ?>">REGIMENTO</a>
 							<a class="dropdown-item" href="<?php echo site_url('reconhecimento'); ?>">RECONHECIMENTO DE DIPLOMAS</a>
@@ -52,7 +52,7 @@
 		        <a class="nav-link" href="<?php echo site_url('selecoes'); ?>">SELEÇÃO</a>
 		      </li>
 			  <li class="nav-item">
-		        <a class="nav-link" href="<?php echo site_url('eventos'); ?>">Eventos</a>
+		        <a class="nav-link" href="<?php echo site_url('eventos'); ?>"><?php echo lang('menu_events'); ?></a>
 		      </li>
 		      <li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Parcerias</a>

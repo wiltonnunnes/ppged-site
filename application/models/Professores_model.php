@@ -23,4 +23,12 @@ class Professores_model extends MY_Model {
 		$query = $this->db->get($this->table);
 		return $query->result_array();
 	}
+
+	public function get_by_name($name) {
+		$professores = $this->get(array('nome' => $name));
+		if (count($professores) > 0) {
+			return $professores[0];
+		}
+		return NULL;
+	}
 }

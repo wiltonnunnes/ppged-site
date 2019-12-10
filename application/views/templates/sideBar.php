@@ -5,7 +5,7 @@
 			<div id="jquery-accordion-menu" class="jquery-accordion-menu">
 				<div class="jquery-accordion-menu-header">Menu</div>
 				<ul>
-					<li><a href="#"><i class="fa fa-home"></i>Início</a></li>
+					<li><a href="<?php echo base_url(); ?>"><i class="fa fa-home"></i>Início</a></li>
 					<li>
 						<a href="#"><i class="fa fa-cog"></i>O Programa</a>
 						<ul class="submenu">

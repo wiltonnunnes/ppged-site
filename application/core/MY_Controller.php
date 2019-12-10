@@ -6,6 +6,8 @@ class MY_Controller extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->helper('html');
 		$this->lang->load('menu');
+		$this->lang->load('menu_lang', 'portuguese');
+		$this->load->helper('language');
 	}
 
 	public function is_logged_in() {

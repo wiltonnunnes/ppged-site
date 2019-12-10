@@ -93,5 +93,8 @@ $route['painel_controle/eventos/(:num)'] = 'eventos/view/$1';
 $route['painel_controle/usuarios/(:num)'] = 'usuarios/view/$1';
 
 $route['painel_controle/eventos/adicionar'] = 'eventos/adicionar';
-$route['painel_controle/professores/adicionar'] = 'professores/adicionar';
 $route['painel_controle/editais/adicionar'] = 'editais/adicionar';
+$route['pesquisas/adicionar'] = 'pesquisas/adicionar';
+$route['painel_controle/professores/adicionar'] = 'professores/adicionar';
+
+$route['pesquisas/alterar/(:num)'] = 'pesquisas/adicionar/$1';

@@ -29,7 +29,7 @@
 				<button type="submit" class="btn btn-primary" id="add_professor" formaction="<?php echo site_url('pesquisas/adicionar') ?>" disabled>Adicionar Professor(a)</button>
 				<br /><br />
 
-				<?php if (!empty($_SESSION['professores'])): ?>
+				<?php if (!empty($professores)): ?>
 				<h2 align="center"> PROFESSORES </h2>
 				<table id="example" class="table table-striped table-bordered mt-3" style="width:100%">
 					<caption>Professores</caption>
@@ -41,11 +41,11 @@
 						</tr>
 					</thead>
 					<tbody>
-					<?php foreach ($_SESSION['professores'] as $professores_item): ?>
+					<?php foreach ($professores as $professores_item): ?>
 						<tr>
 							<td><?php echo $professores_item['professor_id']; ?></td>
 							<td><?php echo $professores_item['nome']; ?></td>
-							<td><button type="submit" formaction="<?php echo site_url('pesquisas/adicionar/' . $professores_item['professor_id']) ?>">Remover</button></td>
+							<td><button type="submit" formaction="<?php echo site_url('pesquisas/adicionar?professor_id=' . $professores_item['professor_id']); ?>">Remover</button></td>
 						</tr>
 						<?php echo form_hidden('professor_id[]', $professores_item['professor_id']); ?>
 					<?php endforeach; ?>
