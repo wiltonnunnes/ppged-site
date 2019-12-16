@@ -22,8 +22,8 @@ class MY_Model extends CI_Model {
 
 	public function set($data, $where = array()) {
 		if ($where) {
-			$this->db->where($where);
 			$this->db->set($data);
+			$this->db->where($where);
 			$this->db->update($this->table);
 		} else
 			$this->db->insert($this->table, $data);

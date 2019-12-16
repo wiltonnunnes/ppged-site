@@ -28,4 +28,10 @@ class Informativos_model extends MY_Model {
 		$query = $noticias_anpae = $this->db->get($this->table, $limit, $start);
 		return $query->result_array();
 	}
+
+	public function change_status($id, $new_status) {
+		$this->db->set('status', $new_status);
+		$this->db->where('informativo_id', $id);
+		$this->db->update($this->table);
+	}
 }

@@ -60,6 +60,7 @@ class Noticias_anpae extends MY_Controller {
 	public function listar() {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
+		/*
 		$config['base_url'] = base_url('index.php/painel_controle/noticias_anpae');
 		$config['total_rows'] = $this->noticias_anpae_model->get_count();
 		$config['per_page'] = 16;
@@ -69,11 +70,13 @@ class Noticias_anpae extends MY_Controller {
 		$data['links'] = $this->pagination->create_links();
 
 		$page = ($this->input->get('page')) ?: 1;
+		$data['noticias_anpae'] = $this->noticias_anpae_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
+		*/
+		$data['noticias_anpae'] = $this->noticias_anpae_model->get();
 
-		$keyword = $this->input->get('q');
-		$data['noticias_anpae'] = isset($keyword) ? $this->noticias_anpae_model->search($keyword, $config['per_page'], ($page - 1) * $config['per_page']) : $this->noticias_anpae_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
-
-		$this->load->view('painel_controle/templates/header', $data);
+		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
+		$this->load->view('templates/inicio');
 		$this->load->view('painel_controle/noticias_anpae/listar_noticias_anpae', $data);
 		$this->load->view('painel_controle/templates/footer');
 	}

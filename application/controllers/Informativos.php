@@ -49,15 +49,16 @@ class Informativos extends MY_Controller {
 		if (!$this->is_logged_in()) {
 			redirect('painel_controle');
 		}
-		$this->load->view('templates/header');
-		$this->load->view('templates/menu');
+		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
 		$this->load->view('templates/inicio');
-		$this->load->view('informativos/adicionar_alterar_informativos');
-		$this->load->view('templates/footer');
+		$this->load->view('painel_controle/informativos/adicionar_alterar_informativos');
+		$this->load->view('painel_controle/templates/footer');
 	}
 
 	public function recebe_processa_informativo() {
 		$data = $this->input->post();
+		if (!isset($data['status'])) $data['status'] = "0";
 
 		$config['upload_path'] = './uploads/arquivos/informativos/';
 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
@@ -84,9 +85,12 @@ class Informativos extends MY_Controller {
 		$data['links'] = $this->pagination->create_links();
 
 		$page = ($this->input->get('page')) ?: 1;
-		$data['informativos'] = $this->informativos_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
+		//$data['informativos'] = $this->informativos_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
+		$data['informativos'] = $this->informativos_model->get();
 
-		$this->load->view('painel_controle/templates/header', $data);
+		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
+		$this->load->view('templates/inicio');
 		$this->load->view('painel_controle/informativos/listar_informativos', $data);
 		$this->load->view('painel_controle/templates/footer');
 	}
@@ -106,5 +110,12 @@ class Informativos extends MY_Controller {
 			$this->load->view('painel_controle/templates/footer');
 		} else
 			redirect('painel_controle');
+	}
+
+	public function alterar_status($id) {
+		$informativo = $this->informativos_model->get_by_id($id);
+		$new_status = $informativo['status'] == '0' ? '1' : '0';
+		$this->informativos_model->change_status($id, $new_status);
+		redirect('painel_controle/informativos');
 	}
 }

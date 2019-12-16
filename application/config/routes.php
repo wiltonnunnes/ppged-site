@@ -88,6 +88,7 @@ $route['painel_controle/noticias_anpae'] = 'noticias_anpae/listar';
 $route['painel_controle/pesquisas'] = 'pesquisas/listar';
 $route['painel_controle/professores'] = 'professores/listar';
 $route['painel_controle/publicacoes'] = 'publicacoes/listar';
+$route['painel_controle/usuarios'] = 'usuarios/listar';
 
 $route['painel_controle/eventos/(:num)'] = 'eventos/view/$1';
 $route['painel_controle/usuarios/(:num)'] = 'usuarios/view/$1';

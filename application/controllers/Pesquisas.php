@@ -130,9 +130,11 @@ class Pesquisas extends MY_Controller {
 		$page = ($this->input->get('page')) ?: 1;
 		$data['pesquisas'] = $this->pesquisas_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
 
-		$this->load->view('painel_controle/templates/header');
-		$this->load->view('painel_controle/pesquisas/listar_pesquisas', $data);
-		$this->load->view('painel_controle/templates/footer');
+		$this->load->view('templates/header');
+		$this->load->view('templates/menu');
+		$this->load->view('templates/inicio');
+		$this->load->view('pesquisas/listar_pesquisas', $data);
+		$this->load->view('templates/footer');
 	}
 
 	public function deletar($id) {
