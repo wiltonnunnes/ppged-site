@@ -90,9 +90,12 @@ class Eventos extends MY_Controller {
 		$data['links'] = $this->pagination->create_links();
 
 		$page = ($this->input->get('page')) ?: 0;
-		$data['eventos'] = $this->eventos_model->get(array(), $config['per_page'], $page * $config['per_page']);
+		//$data['eventos'] = $this->eventos_model->get(array(), $config['per_page'], $page * $config['per_page']);
+		$data['eventos'] = $this->eventos_model->get();
 
 		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
+		$this->load->view('templates/inicio');
 		$this->load->view('painel_controle/eventos/listar_eventos', $data);
 		$this->load->view('painel_controle/templates/footer');
 	}

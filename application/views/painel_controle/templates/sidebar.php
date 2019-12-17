@@ -14,7 +14,7 @@
 						<a href="#"><i class="fa fa-cog"></i>Menu</a>
 						<ul class="submenu">
 							<li><a href="convenio.php">Convênios</a></li>
-							<li><a href="evento.php">Eventos</a></li>
+							<li><a href="<?php echo site_url('painel_controle/eventos'); ?>">Eventos</a></li>
 							<li><a href="<?php echo site_url('painel_controle/informativos'); ?>">Informativos</a></li>
 							<li><a href="<?php echo site_url('painel_controle/noticias_anpae'); ?>">Noticias da ANPRED/FORPRED</a></li>
 							<li><a href="#">Linha de Pesquisa</a></li>
