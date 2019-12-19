@@ -1,26 +1,66 @@
-<?php echo form_open_multipart('professores/recebe_processa_professor');?>
+<!-- sobre -->
+<section class="info-section">
+	<div class="container">
+		<div class="row">   
+			<div class="col-md-4 col-lg-4">
+                <?php 
+                        include (APPPATH . "views/painel_controle/templates/sideBar.php");	
+                    ?>
+            </div>
 
-Nome: <?php echo form_input('nome', isset($professor['nome']) ? $professor['nome'] : '', 'required="required"'); ?>
-<br /><br />
+			<div class="col-md-8 col-lg-8">
+                <div class="content" style="width:100%">
+                    <div id="jquery-accordion-menu" class="jquery-accordion-menu" style="width:100%">
+                        <div class="jquery-accordion-menu-header">Alterar Professor</div>
+                        <div class="container">
+							<div class="row">
+								<div class="col-md-12 col-lg-12 mt-2">
+                                    
+                                    <p>Preencha os dados abaixo para efetuar o cadastro de uma novo professor:</p>
+                                    
+                                    <?php echo form_open_multipart('professores/recebe_processa_professor');?>
+                                        <div class="form-row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="nome">Nome</label>
+                                                <input type="text" name="nome" id="nome" value="<?php echo isset($professor['nome']) ? $professor['nome'] : ''; ?>" class="form-control" placeholder="Nome" required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="lattes">Lattes</label>
+                                                <?php echo form_input('lattes', isset($professor['lattes']) ? $professor['lattes'] : '', array('required' => 'required', 'id' => 'lattes', 'class' => 'form-control', 'placeholder' => 'Lattes')); ?>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                        	<div class="col-md-6 mb-3">
+                                                <label for="sigaa">SIGAA</label>
+                                                <?php echo form_input('sigaa', isset($professor['sigaa']) ? $professor['sigaa'] : '', array('required' => 'required', 'id' => 'sigaa', 'class' => 'form-control', 'placeholder' => 'SIGAA')); ?>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="email">E-mail</label>
+                                                <?php echo form_input('email', isset($professor['email']) ? $professor['email'] : '', array('required' => 'required', 'id' => 'email', 'class' => 'form-control', 'placeholder' => 'E-mail')); ?>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="titulo">T&iacute;tulo</label>
+                                                <?php 
+                                                $options = array('' => '', 'Doutor' => 'Doutor', 'Mestre' => 'Mestre');
+                                                echo form_dropdown('titulo', $options, isset($professor['titulo']) ? $professor['titulo'] : '', 'class="form-control" id="titulo"'); 
+                                                ?>
+                                            </div>
+                                        </div>
 
-Curriculum Lattes: <?php echo form_input('lattes', isset($professor['lattes']) ? $professor['lattes'] : '', 'required="required"'); ?>
-<br /><br />
+                                        <?php if (isset($professor['professor_id'])) echo form_hidden('professor_id', $professor['professor_id']); ?>
 
-SIGAA: <?php echo form_input('sigaa', isset($professor['sigaa']) ? $professor['sigaa'] : '', 'required="required"'); ?>
-<br /><br />
+                                        <input type="reset" value="Limpar" class="button btn btn-primary">
+                                        <button class="btn btn-primary" type="submit">Enviar dados</button>
+                                    </form>
 
-T&iacute;tulo: 
-<?php
-$options = array('' => '', 'Doutor' => 'Doutor', 'Mestre' => 'Mestre');
-echo form_dropdown('titulo', $options, isset($professor['titulo']) ? $professor['titulo'] : '');
-?>
-
-E-mail: <input type="email" name="email" value="<?php echo isset($professor['email']) ? $professor['email'] : ''; ?>" required>
-<br /><br />
-
-<?php if (isset($professor['professor_id'])) echo form_hidden('professor_id', $professor['professor_id']); ?>
-
-<input type="reset" value="Limpar" />
-<input type="submit" value="Enviar" />
-
-</form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+</section>

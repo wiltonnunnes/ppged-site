@@ -41,6 +41,7 @@ class Professores extends MY_Controller {
 	public function listar() {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
+		/*
 		$config['base_url'] = base_url('index.php/painel_controle/professores');
 		$config['total_rows'] = $this->professores_model->get_count();
 		$config['per_page'] = 16;
@@ -54,8 +55,12 @@ class Professores extends MY_Controller {
 
 		$page = ($this->input->get('page')) ?: 0;
 		$data['professores'] = $this->professores_model->get(array(), $config['per_page'], $page * $config['per_page']);
+		*/
+		$data['professores'] = $this->professores_model->get();
 
-		$this->load->view('painel_controle/templates/header', $data);
+		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
+		$this->load->view('templates/inicio');
 		$this->load->view('painel_controle/professores/listar_professores', $data);
 		$this->load->view('painel_controle/templates/footer');
 	}
@@ -69,6 +74,8 @@ class Professores extends MY_Controller {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
 		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
+		$this->load->view('templates/inicio');
 		$this->load->view('painel_controle/professores/adicionar_alterar_professores');
 		$this->load->view('painel_controle/templates/footer');
 	}

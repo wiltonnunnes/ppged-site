@@ -119,6 +119,7 @@ class Pesquisas extends MY_Controller {
 	public function listar() {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
+		/*
 		$config['base_url'] = site_url('painel_controle/pesquisas');
 		$config['total_rows'] = $this->pesquisas_model->get_count();
 		$config['per_page'] = 16;
@@ -129,12 +130,14 @@ class Pesquisas extends MY_Controller {
 
 		$page = ($this->input->get('page')) ?: 1;
 		$data['pesquisas'] = $this->pesquisas_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
+		*/
+		$data['pesquisas'] = $this->pesquisas_model->get();
 
-		$this->load->view('templates/header');
-		$this->load->view('templates/menu');
+		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
 		$this->load->view('templates/inicio');
-		$this->load->view('pesquisas/listar_pesquisas', $data);
-		$this->load->view('templates/footer');
+		$this->load->view('painel_controle/pesquisas/listar_pesquisas', $data);
+		$this->load->view('painel_controle/templates/footer');
 	}
 
 	public function deletar($id) {

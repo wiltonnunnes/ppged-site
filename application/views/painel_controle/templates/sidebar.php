@@ -17,9 +17,9 @@
 							<li><a href="<?php echo site_url('painel_controle/eventos'); ?>">Eventos</a></li>
 							<li><a href="<?php echo site_url('painel_controle/informativos'); ?>">Informativos</a></li>
 							<li><a href="<?php echo site_url('painel_controle/noticias_anpae'); ?>">Noticias da ANPRED/FORPRED</a></li>
-							<li><a href="#">Linha de Pesquisa</a></li>
+							<li><a href="<?php echo site_url('painel_controle/pesquisas'); ?>">Linha de Pesquisa</a></li>
 							<li><a href="#">Notícias</a></li>
-							<li><a href="#">Professores</a></li>
+							<li><a href="<?php echo site_url('painel_controle/professores'); ?>">Professores</a></li>
 							<li><a href="#">Publicações</a></li>
 							<li><a href="#">Editais</a></li>
 						</ul>

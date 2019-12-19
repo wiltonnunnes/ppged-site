@@ -16,8 +16,8 @@
 							<div class="row">
 								<div class="col-md-12 col-lg-12 mt-2">
                                     
-                                    <p>Abaixo é exibida uma lista com todos as notícias cadastradas no sistema. Você pode editá-las, excluí-las ou buscá-las através da tabela abaixo:</p>
-                                    <a href="adicionarInformativo.php"><input type="submit" value="Criar Novo" class="button btn btn-primary mb-3"></a>
+                                    <p>Abaixo é exibida uma lista com todas as notícias cadastradas no sistema. Você pode editá-las, excluí-las ou buscá-las através da tabela abaixo:</p>
+                                    <a href="<?php echo site_url('noticias_anpae/adicionar'); ?>"><input type="submit" value="Criar Novo" class="button btn btn-primary mb-3"></a>
                                     <table id="example" class="table table-striped table-bordered mt-3" style="width:100%">
                                         <thead style="text-align:center">
                                             <tr>

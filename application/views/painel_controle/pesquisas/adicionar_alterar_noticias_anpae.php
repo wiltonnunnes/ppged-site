@@ -18,19 +18,19 @@
                                     
                                     <p>Preencha os dados abaixo para efetuar o cadastro de uma nova notícia:</p>
 
-                                    <?php echo form_open_multipart('noticia_anpaes/recebe_processa_noticia_anpae');?>
                                     <label for="destaque">
                                         <?php echo form_checkbox('status', '1', isset($noticia_anpae['status']) ? boolval($noticia_anpae['status']) : FALSE, 'id="destaque"'); ?>
                                         Notícia destaque (aparecerá de forma destacada na página inicial do site)
                                     </label>
                                     
+                                    <?php echo form_open_multipart('noticia_anpaes/recebe_processa_noticia_anpae');?>
                                         <div class="form-row">
                                             <div class="col-md-6 mb-3">
                                                 <label for="data">Data</label>
                                                 <input type="date" name="data" id="data" value="<?php echo isset($noticia_anpae['data']) ? $noticia_anpae['data'] : ''; ?>" class="form-control" placeholder="00/00/0000" required>
                                             </div>
                                             <div class="col-md-6 mb-3">
-                                                <label for="Título">Título</label>
+                                                <label for="email">Título</label>
                                                 <?php echo form_input('titulo', isset($noticia_anpae['titulo']) ? $noticia_anpae['titulo'] : '', array('required' => 'required', 'id' => 'Título', 'class' => 'form-control', 'placeholder' => 'Título')); ?>
                                             </div>
                                         </div>

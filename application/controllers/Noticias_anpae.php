@@ -92,6 +92,8 @@ class Noticias_anpae extends MY_Controller {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
 		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
+		$this->load->view('templates/inicio');
 		$this->load->view('painel_controle/noticias_anpae/adicionar_alterar_noticias_anpae');
 		$this->load->view('painel_controle/templates/footer');
 	}
@@ -100,6 +102,8 @@ class Noticias_anpae extends MY_Controller {
 		if ($this->is_logged_in()) {
 			$noticia_anpae = $this->noticias_anpae_model->get_by_id($id);
 			$this->load->view('painel_controle/templates/header');
+			$this->load->view('painel_controle/templates/menu');
+			$this->load->view('templates/inicio');
 			$this->load->view('painel_controle/noticias_anpae/adicionar_alterar_noticias_anpae', array('noticia_anpae' => $noticia_anpae));
 			$this->load->view('painel_controle/templates/footer');
 		} else
