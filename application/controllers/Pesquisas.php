@@ -183,4 +183,10 @@ class Pesquisas extends MY_Controller {
 		$this->load->view('pesquisas/adicionar_alterar_pesquisas', array('pesquisa' => $pesquisa, 'professores' => $professores));
 		$this->load->view('templates/footer');
 	}
+
+	public function get_pesquisas() {
+		$titulo_pesquisa = $this->input->get('titulo_pesquisa');
+		$pesquisas = $this->pesquisas_model->search($titulo_pesquisa);
+		echo json_encode($pesquisas);
+	}
 }

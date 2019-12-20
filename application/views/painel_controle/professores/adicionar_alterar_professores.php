@@ -47,6 +47,11 @@
                                                 echo form_dropdown('titulo', $options, isset($professor['titulo']) ? $professor['titulo'] : '', 'class="form-control" id="titulo"'); 
                                                 ?>
                                             </div>
+                                            <div class="col-md-6 mb-3">
+                                            	<label for="titulo_pesquisa">Linha de Pesquisa</label>
+                                            	<input type="text" name="titulo_pesquisa" id="titulo_pesquisa" class="form-control" oninput="get_pesquisas(this.value)">
+                                            	<select id="pesquisa" style="display: none;"></select>
+                                            </div>
                                         </div>
 
                                         <?php if (isset($professor['professor_id'])) echo form_hidden('professor_id', $professor['professor_id']); ?>
@@ -64,3 +69,20 @@
 		</div>
 	</div>
 </section>
+
+<script type="text/javascript">
+    var $select = $('#pesquisa');
+	function get_pesquisas(str) {
+        if (str.length > 0) {
+            $.get("<?php echo site_url('pesquisas/get_pesquisas') ?>", {'titulo_pesquisa' : str}, function(data, status) {
+                var pesquisas = Object.values(data);
+                $select.hide();
+                if (pesquisas.length > 0) {
+                    $select.show();
+                }
+            }, "json");
+        } else {
+            $select.hide();
+        }
+    }
+</script>

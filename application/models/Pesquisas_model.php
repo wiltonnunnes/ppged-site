@@ -29,4 +29,10 @@ class Pesquisas_model extends MY_Model {
 		$this->db->where('pesquisa_id', $id);
 		return $this->db->update($this->table, $data);
 	}
+
+	public function search($keyword) {
+		$this->db->like('titulo', $keyword, 'after');
+		$query = $this->db->get($this->table);
+		return $query->result_array();
+	}
 }
