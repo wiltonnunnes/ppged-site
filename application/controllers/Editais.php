@@ -32,11 +32,11 @@ class Editais extends MY_Controller {
 		if (!$this->is_logged_in()) {
 			redirect('painel_controle');
 		}
-		$this->load->view('templates/header');
-		$this->load->view('templates/menuAdm');
+		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
 		$this->load->view('templates/inicio');
-		$this->load->view('editais/adicionar_alterar_editais', array('error' => ''));
-		$this->load->view('templates/footer');
+		$this->load->view('painel_controle/editais/adicionar_alterar_editais');
+		$this->load->view('painel_controle/templates/footer');
 	}
 
 	public function recebe_processa_edital() {
@@ -62,6 +62,7 @@ class Editais extends MY_Controller {
 	public function listar() {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
+		/*
 		$config['base_url'] = site_url('painel_controle/editais');
 		$config['total_rows'] = $this->editais_model->get_count();
 		$config['per_page'] = 16;
@@ -75,8 +76,12 @@ class Editais extends MY_Controller {
 
 		$page = ($this->input->get('page')) ?: 0;
 		$data['editais'] = $this->editais_model->get(array(), $config['per_page'], $page * $config['per_page']);
+		*/
+		$data['editais'] = $this->editais_model->get();
 
-		$this->load->view('painel_controle/templates/header', $data);
+		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
+		$this->load->view('templates/inicio');
 		$this->load->view('painel_controle/editais/listar_editais', $data);
 		$this->load->view('painel_controle/templates/footer');
 	}

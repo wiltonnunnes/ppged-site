@@ -21,10 +21,10 @@
 							<li><a href="#">Notícias</a></li>
 							<li><a href="<?php echo site_url('painel_controle/professores'); ?>">Professores</a></li>
 							<li><a href="#">Publicações</a></li>
-							<li><a href="#">Editais</a></li>
+							<li><a href="<?php echo site_url('painel_controle/editais'); ?>">Editais</a></li>
 						</ul>
 					</li>
-					<li><a href="#"><i class="fa fa-sign-out"></i>Sair</a></li>
+					<li><a href="<?php echo site_url('usuarios/logout'); ?>"><i class="fa fa-sign-out"></i>Sair</a></li>
 				</ul>
 				<div class="jquery-accordion-menu-footer">Footer</div>
 			</div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 20-Nov-2019 às 13:12
+-- Generation Time: 08-Jan-2020 às 17:25
 -- Versão do servidor: 5.5.56-MariaDB
 -- PHP Version: 5.4.16
 
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `editais` (
   `titulo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `arquivo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `data` date DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Extraindo dados da tabela `editais`
@@ -94,7 +94,9 @@ INSERT INTO `editais` (`edital_id`, `titulo`, `arquivo`, `data`) VALUES
 (18, 'EDITAL N&ordm; 01/2019 - CONCESS&Atilde;O DE BOLSAS PARA ALUNOS DE MESTRADO E DOUTORADO ', 'Edital_bolsas_2019_versaofinal.pdf', '2019-02-26'),
 (21, 'EDITAL N&ordm; 03/2019 - CREDENCIAMENTO DE NOVOS DOCENTES PERMANENTES - PPGEd/UFRN (Cronograma retificado dia 13/06/2019)', 'Edital Credenciamento_PPGEd_2019 - Retificado dia 13-06-2019.pdf', '2019-06-13'),
 (24, 'EDITAL N&deg; 04/2019 &ndash; REINGRESSO - PPGED/UFRN', 'Edital - Reingresso 2019.2.pdf', '2019-07-15'),
-(25, 'EDITAL N&ordm; 05/2019 &ndash; PROCESSO SELETIVO 2020 PPGEd', 'Edital retificado 23.07.19.pdf', '2019-07-11');
+(25, 'EDITAL N&ordm; 05/2019 &ndash; PROCESSO SELETIVO 2020 PPGEd', 'Edital retificado 23.07.19.pdf', '2019-07-11'),
+(26, 'EDITAL N&deg; 06/2019 &ndash; REINGRESSO - PPGED/UFRN', 'Edital - Reingresso 2020.1.pdf', '2020-01-07'),
+(27, 'EDITAL N&deg; 07/2019 &ndash; MUDAN&Ccedil;A DE N&Iacute;VEL - PPGED/UFRN', 'Edital - MudanÃ§a de NÃ­vel 2020.1.pdf', '2020-01-07');
 
 -- --------------------------------------------------------
 
@@ -111,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `eventos` (
   `descricao` text CHARACTER SET latin1,
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `cartaz` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=394 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=398 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Extraindo dados da tabela `eventos`
@@ -494,7 +496,11 @@ INSERT INTO `eventos` (`evento_id`, `nome_evento`, `data`, `local`, `entidade_or
 (390, 'DEFESA DE TESE | MARIA CLARA PEREIRA SANTOS', '2019-11-28', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Maria Clara Pereira.pdf'),
 (391, 'DEFESA DE TESE | MARIA DA CONCEI&Ccedil;&Atilde;O DE OLIVEIRA ANDRADE', '2019-11-26', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Maria da ConceiÃ§Ã£o.pdf'),
 (392, 'DEFESA DE TESE | MAIZE SOUSA VIRGOLINO DE ARA&Uacute;JO', '2019-11-28', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Maize.pdf'),
-(393, 'Confer&ecirc;ncia: Escuta das crian&ccedil;as e (re)configura&ccedil;&atilde;o de identidades docentes', '2019-12-09', 'Audit&oacute;rio do Centro de Educa&ccedil;&atilde;o - UFRN', 'PPGED', '', 0, 'WhatsApp Image 2019-11-20 at 07.19.50.jpeg');
+(393, 'Confer&ecirc;ncia: Escuta das crian&ccedil;as e (re)configura&ccedil;&atilde;o de identidades docentes', '2019-12-09', 'Audit&oacute;rio do Centro de Educa&ccedil;&atilde;o - UFRN', 'PPGED', '', 0, 'WhatsApp Image 2019-11-20 at 07.19.50.jpeg'),
+(394, 'Debate em foco', '2019-12-05', 'Audit&oacute;rio do NEPSA I  - CCSA/UFRN', 'UFRN', '', 0, 'debate em foco banner.jpg'),
+(395, 'DEFESA DE TESE | ANA PAULA DOS SANTOS OLIVEIRA FLOR', '2019-12-06', 'Audit&oacute;rio do NEPSA I', 'PPGED', '', 0, 'Cartaz - Ana Paula.pdf'),
+(396, 'DEFESA DE TESE | JOSIELLE SOARES DA SILVA', '2019-12-12', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Josielle.pdf'),
+(397, 'DEFESA DE TESE | LUCIANA MEDEIROS DA CUNHA', '2019-12-17', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Luciana.pdf');
 
 -- --------------------------------------------------------
 
@@ -555,7 +561,7 @@ CREATE TABLE IF NOT EXISTS `informativos` (
   `data` date NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `imagem` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=89 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=90 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Extraindo dados da tabela `informativos`
@@ -632,9 +638,10 @@ INSERT INTO `informativos` (`informativo_id`, `titulo`, `categoria`, `texto`, `d
 (84, 'Resultado da prova escrita do processo seletivo para Mestrado e Doutorado em Educa&ccedil;&atilde;o ', 'not&iacute;cia', '<p>Divulgado o resultado da prova escrita do processo seletivo para os n&iacute;veis&nbsp;de mestrado e doutorado em educa&ccedil;&atilde;o 2019.</p>\n\n<p>Confira as listas com os candidatos aprovados abaixo.</p>\n\n<p><a href="http://www.comperve.ufrn.br/conteudo/posgraduacao/ppged/202001/resultados/prova_escrita/relacao_mestrado.pdf">mestrado</a></p>\n\n<p><a href="http://www.comperve.ufrn.br/conteudo/posgraduacao/ppged/202001/resultados/prova_escrita/relacao_doutorado.pdf">doutorado</a></p>\n', '2019-09-18', 0, NULL),
 (85, 'Suspenso pedidos de aux&iacute;lio financeiro a estudantes', 'not&iacute;cia', '<p>Car@s estudantes,</p>\r\n\r\n<p>Informamos que, em decorr&ecirc;ncia dos cortes or&ccedil;ament&aacute;rios, o apoio financeiro &agrave; alunas(os) para a participa&ccedil;&atilde;o em eventos cient&iacute;ficos est&aacute; suspenso, por tempo indeterminado. Apenas as(os) alunas(os) com trabalhos aprovados na 39. ANPEd e que ainda n&atilde;o tenham recebido esse tipo de apoio em 2019, ter&atilde;o seus pedidos analisados pela coordena&ccedil;&atilde;o.&nbsp;</p>\r\n\r\n<p>Para isso, &eacute; necess&aacute;rio que a documenta&ccedil;&atilde;o referente ao pedido (Formul&aacute;rio de Solicita&ccedil;&atilde;o do Aux&iacute;lio, Carta de aceite, Trabalho em PDF, Justificativa do Orientador e Programa&ccedil;&atilde;o do Evento), seja encaminhada por e-mail (ppged@ce.ufrn.br) at&eacute; 23/09/2019.</p>\r\n', '2019-09-19', 0, NULL);
 INSERT INTO `informativos` (`informativo_id`, `titulo`, `categoria`, `texto`, `data`, `status`, `imagem`) VALUES
-(86, ' Evento &quot;Paulo Freire mais que nunca&quot;.', 'not&iacute;cia', '<p><img alt="" src="https://imgur.com/XZ4NUL5" /><img alt="" src="https://i.imgur.com/XZ4NUL5.jpg" style="height:1500px; width:1061px" /></p>\r\n', '2019-11-07', 1, NULL),
-(87, 'Projeto Caf&eacute; Pegag&oacute;gico ', 'not&iacute;cia', '<p>Projeto Caf&eacute; Pegag&oacute;gico &eacute; uma iniciativa dos alunos do Programa de P&oacute;s-Gradua&ccedil;&atilde;o em Educa&ccedil;&atilde;o, sob a organiza&ccedil;&atilde;o da Representa&ccedil;&atilde;o Discente. A proposta tenta promover mais um espa&ccedil;o de di&aacute;logos genuinamente indisciplinar e que contemple quest&otilde;es que mobilizem os diversos campos do ensino, da pesquisa e da extens&atilde;o no &acirc;mbito das ci&ecirc;ncias da educa&ccedil;&atilde;o.<br />\r\nTem como objetivo central promover discuss&otilde;es entre pesquisadores, estudantes de gradua&ccedil;&atilde;o e de p&oacute;s-gradua&ccedil;&atilde;o, profissionais em forma&ccedil;&atilde;o continuada e profissionais que atuam para al&eacute;m da universidade.</p>\r\n\r\n<p>Data: 18 de novembro de 2019, &agrave;s 17h.<br />\r\nAudit&oacute;rio do Centro de Educa&ccedil;&atilde;o/UFRN.<br />\r\nOrganiza&ccedil;&atilde;o: Representa&ccedil;&atilde;o Discente do PPGEd.<br />\r\nConvidados: Maria da Concei&ccedil;&atilde;o de Almeida (PPGEd/CE) e Jaime Biella (DFIL).<br />\r\nApresenta&ccedil;&atilde;o Cultural: Artemisa Andrade, Marilia do Vale e Cadu Ara&uacute;jo.</p>\r\n\r\n<p><img alt="" src="https://i.imgur.com/hRyCMlT.png" style="height:824px; width:1160px" /></p>\r\n', '2019-11-07', 1, NULL),
-(88, 'Divulga&ccedil;&atilde;o do Calend&aacute;rio de Matriculas 2020.1', 'not&iacute;cia', '<p>Foi divulgado&nbsp; o calend&aacute;rio&nbsp; de matriculas 2020.1.</p>\r\n\r\n<p>Acesse o calend&aacute;rio atrav&eacute;s do menu: Documentos -&gt;&nbsp;Calend&aacute;rio de Matr&iacute;culas</p>\r\n', '2019-11-20', 0, NULL);
+(86, ' Evento &quot;Paulo Freire mais que nunca&quot;.', 'not&iacute;cia', '<p><img alt="" src="https://imgur.com/XZ4NUL5" /><img alt="" src="https://i.imgur.com/XZ4NUL5.jpg" style="height:1500px; width:1061px" /></p>\r\n', '2019-11-07', 0, NULL),
+(87, 'Projeto Caf&eacute; Pegag&oacute;gico ', 'not&iacute;cia', '<p>Projeto Caf&eacute; Pegag&oacute;gico &eacute; uma iniciativa dos alunos do Programa de P&oacute;s-Gradua&ccedil;&atilde;o em Educa&ccedil;&atilde;o, sob a organiza&ccedil;&atilde;o da Representa&ccedil;&atilde;o Discente. A proposta tenta promover mais um espa&ccedil;o de di&aacute;logos genuinamente indisciplinar e que contemple quest&otilde;es que mobilizem os diversos campos do ensino, da pesquisa e da extens&atilde;o no &acirc;mbito das ci&ecirc;ncias da educa&ccedil;&atilde;o.<br />\r\nTem como objetivo central promover discuss&otilde;es entre pesquisadores, estudantes de gradua&ccedil;&atilde;o e de p&oacute;s-gradua&ccedil;&atilde;o, profissionais em forma&ccedil;&atilde;o continuada e profissionais que atuam para al&eacute;m da universidade.</p>\r\n\r\n<p>Data: 18 de novembro de 2019, &agrave;s 17h.<br />\r\nAudit&oacute;rio do Centro de Educa&ccedil;&atilde;o/UFRN.<br />\r\nOrganiza&ccedil;&atilde;o: Representa&ccedil;&atilde;o Discente do PPGEd.<br />\r\nConvidados: Maria da Concei&ccedil;&atilde;o de Almeida (PPGEd/CE) e Jaime Biella (DFIL).<br />\r\nApresenta&ccedil;&atilde;o Cultural: Artemisa Andrade, Marilia do Vale e Cadu Ara&uacute;jo.</p>\r\n\r\n<p><img alt="" src="https://i.imgur.com/hRyCMlT.png" style="height:824px; width:1160px" /></p>\r\n', '2019-11-07', 0, NULL),
+(88, 'Divulga&ccedil;&atilde;o do Calend&aacute;rio de Matriculas 2020.1', 'not&iacute;cia', '<p>Foi divulgado&nbsp; o calend&aacute;rio&nbsp; de matriculas 2020.1.</p>\r\n\r\n<p>Acesse o calend&aacute;rio atrav&eacute;s do menu: Documentos -&gt;&nbsp;Calend&aacute;rio de Matr&iacute;culas</p>\r\n', '2019-11-20', 0, NULL),
+(89, 'Divulgado Editais de Reingresso e Mudan&ccedil;a de N&iacute;vel para 2020.1', 'not&iacute;cia', '<p>Acesse no Menu DOCUMENTOS &gt;&gt; <a href="http://ppged.ufrn.br/editais.php">EDITAIS</a></p>\r\n', '2020-01-07', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -745,148 +752,77 @@ CREATE TABLE IF NOT EXISTS `professores` (
   `sigaa` varchar(250) CHARACTER SET latin1 DEFAULT NULL,
   `titulo` varchar(100) CHARACTER SET latin1 DEFAULT NULL,
   `email` varchar(250) CHARACTER SET latin1 DEFAULT NULL,
-  `data_nasc` date DEFAULT NULL
+  `data_nasc` date DEFAULT NULL,
+  `pesquisa_id` bigint(20) unsigned DEFAULT NULL
 ) ENGINE=MyISAM AUTO_INCREMENT=82 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Extraindo dados da tabela `professores`
 --
 
-INSERT INTO `professores` (`professor_id`, `nome`, `lattes`, `sigaa`, `titulo`, `email`, `data_nasc`) VALUES
-(1, 'Adir Luiz Ferreira', 'http://lattes.cnpq.br/0341824719316863', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=926826', 'Doutor', 'adirlf@digizap.com.br ', NULL),
-(2, 'Alda Maria Duarte Ara&uacute;jo Castro', 'http://lattes.cnpq.br/1267050454995209 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2346663', 'Doutor', 'alda@ufrnet.br', NULL),
-(3, 'Alessandra Cardozo de Freitas', 'http://lattes.cnpq.br/4424220937257634 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1801922', 'Doutor', 'alessandracardozof@yahoo.com.br', NULL),
-(73, 'Dante Henrique Moura', 'http://lattes.cnpq.br/1720357515433453', '', 'Doutor', 'dante.moura@ifrn.edu.br', '0000-00-00'),
-(74, 'Alessandro Augusto de Azevedo', 'http://lattes.cnpq.br/3521226970305887', '', 'Doutor', 'alessandroazevedo.ufrn@gmail.com', '0000-00-00'),
-(5, 'Andr&eacute; Ferrer Pinto Martins', 'Link Lattes;http://lattes.cnpq.br/2557880242678680 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1451196', 'Doutor', 'aferrer34@yahoo.com.br ', NULL),
-(6, 'Ant&ocirc;nio Bas&iacute;lio Novaes Thomaz de Menezes', 'Link Lattes;http://lattes.cnpq.br/5195640047312319 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1149638', 'Doutor', 'gpfe@ufrnet.br', NULL),
-(7, 'Antonio Cabral Neto', 'http://lattes.cnpq.br/2272273005907974 ', '', 'Doutor', 'cabraln@ufrnet.br', NULL),
-(72, 'Avelino Aldo de Lima Neto', 'http://lattes.cnpq.br/3231870235953025', '', 'Mestre', 'ave.neto@hotmail.com', '0000-00-00'),
-(71, 'Josineide Silveira de Oliveira', 'http://lattes.cnpq.br/5439210347544379', '', 'Doutor', 'josilveira02@gmail.com', '0000-00-00'),
-(11, 'Betania Leite Ramalho', 'http://lattes.cnpq.br/1326690619078211 ', '', 'Doutor', 'betania.ramalho@terra.com.br ', NULL),
-(12, 'Claudianny Amorim Noronha', 'http://lattes.cnpq.br/3258090174478169 ', '', 'Doutor', 'claunoronha@ufrnet.br', NULL),
-(13, 'D&eacute;bora Regina de Paula Nunes', 'http://lattes.cnpq.br/1188086132826132 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1545096', 'Doutor', 'deboranunes@ufrnet.br', NULL),
-(70, 'Azemar dos Santos Soares Junior', 'http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4210977Z8', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2310142', 'Doutor', 'azemar@ce.ufrn.br', '0000-00-00'),
-(15, 'Denise Maria de Carvalho Lopes', 'http://lattes.cnpq.br/1935167361851222 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=6347805', 'Doutor', 'denisemcl@terra.com.br ', NULL),
-(69, 'Marlecio Maknamara da Silva Cunha', 'http://lattes.cnpq.br/2947750321164221', 'https://sigaa.ufba.br/sigaa/public/docente/portal.jsf?siape=1501013', 'Doutor', 'escrevequeeuleio@yahoo.com.br', '0000-00-00'),
-(17, 'Erika dos Reis Gusm&atilde;o Andrade', 'http://lattes.cnpq.br/0778953049451033 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=4197701', 'Doutor', 'ergandrade@ufrnet.br', NULL),
-(68, 'V&acirc;ndiner Ribeiro', 'http://lattes.cnpq.br/5257845839536488', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1324875', 'Doutor', 'vandiner@gmail.com', '0000-00-00'),
-(67, 'Fredy Enrique Gonzalez', 'http://lattes.cnpq.br/4034449429973970', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=3007926', 'Doutor', 'fredygonzalezdem@gmail.com', '0000-00-00'),
-(66, 'Olivia Morais de Medeiros Neta', 'http://lattes.cnpq.br/7542482401254815', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2527711', 'Doutor', 'olivianeta@gmail.com', '0000-00-00'),
-(21, 'Francisco Ricardo Lins Vieira de Melo', 'http://lattes.cnpq.br/6848746516562543 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1149542', 'Doutor', 'ricardolins@ufrnet.br', NULL),
-(22, 'Iran Abreu Mendes', 'http://lattes.cnpq.br/4490674057492872 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1359083', 'Doutor', 'iamendes1@gmail.com, iamendes@ccet.ufrn.br', NULL),
-(23, 'Isauro Beltr&aacute;n Nu&ntilde;ez', 'http://lattes.cnpq.br/8921901031367516 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2298026', 'Doutor', 'isaurobeltran@yahoo.com.br ', NULL),
-(24, 'Jefferson Fernandes Alves', 'http://lattes.cnpq.br/1834832958808690 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1149574', 'Doutor', ' jfa_alves@msn.com', NULL),
-(63, 'Maria Aparecida Dias', 'http://lattes.cnpq.br/1131977255034974', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1714249', 'Doutor', 'cidaufrn@gmail.com', '0000-00-00'),
-(64, 'Maria Goretti Cabral Barbalho', 'http://lattes.cnpq.br/9999709754863111', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=347594', 'Doutor', 'goretti_cabral@yahoo.com.br', '0000-00-00'),
-(27, 'Jos&eacute; Pereira de Melo', 'http://lattes.cnpq.br/9283008377235258 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1149620', 'Doutor', 'melo@digi.com.br ', NULL),
-(65, 'Mariangela Momo', 'http://lattes.cnpq.br/6061996250283917', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1672888', 'Doutor', 'marimomo@terra.com.br', '0000-00-00'),
-(29, 'Karenine de Oliveira Porpino', 'http://lattes.cnpq.br/5255588024266396 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1038320', 'Doutor', 'karenine@supercabo.com.br', NULL),
-(30, 'L&uacute;cia de Ara&uacute;jo Ramos Martins', 'http://lattes.cnpq.br/4028503466396532 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1149418', 'Doutor', 'luc.martins@terra.com.br ', NULL),
-(31, 'Luciane Terra dos Santos Garcia', 'http://lattes.cnpq.br/2546503141542893 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1646204', 'Doutor', 'ltsgarcia@gmail.com', NULL),
-(32, 'Luzia Guacira dos Santos Silva', 'http://lattes.cnpq.br/1032425601643160 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=3315373', 'Doutor', 'guaciraufrn@hotmail.com', NULL),
-(33, 'Magna Fran&ccedil;a', 'http://lattes.cnpq.br/1964589133589645 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=6350650', 'Doutor', 'magna@ufrnet.br', NULL),
-(58, 'Cynara Teixeira Ribeiro', 'http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4730775U7', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2621064', 'Doutor', 'cynara_ribeiro@yahoo.com.br', '0000-00-00'),
-(59, 'Gilmar Barbosa Guedes', 'http://lattes.cnpq.br/2027157262023382', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1458867', 'Doutor', 'gbguedes@uol.com.br', '0000-00-00'),
-(36, 'Maria Aparecida de Queiroz', 'http://lattes.cnpq.br/0642511546307992 ', '', 'Doutor', 'cidinha@ufrnet.br ', NULL),
-(37, 'Maria Arisnete C&acirc;mara de Morais', 'http://lattes.cnpq.br/4223328278394193 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1149346', 'Doutor', 'arisnete@terra.com.br ', NULL),
-(38, 'Maria da Concei&ccedil;&atilde;o Ferrer B.S. Passeggi', 'http://lattes.cnpq.br/5015707256397317 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=7346845', 'Doutor', 'cpasseggi@digizap.com.br', NULL),
-(39, 'Maria da Concei&ccedil;&atilde;o Xavier de Almeida', 'http://lattes.cnpq.br/9961862139964562 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=347048', 'Doutor', 'calmeida17@hotmail.com ', NULL),
-(40, 'Maria das Gra&ccedil;as Pinto Coelho', 'http://lattes.cnpq.br/8288579916239009 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2179219', 'Doutor', 'gpcoelho@ufrnet.br ', NULL),
-(62, 'Karyne Dias Coutinho', 'http://lattes.cnpq.br/6013805360280552', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1755707', 'Doutor', 'kdiascoutinho@gmail.com', '0000-00-00'),
-(42, 'Maria Estela Costa Holanda Campelo', 'http://lattes.cnpq.br/2527223181575594 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=6347260', 'Doutor', 'estelacampelo@hotmail.com ', NULL),
-(43, 'Maria In&ecirc;s Sucupira Stamatto', 'http://lattes.cnpq.br/7289548301555477 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1149455', 'Doutor', 'inescdd@digizap.com.br', NULL),
-(45, 'Marl&uacute;cia Menezes de Paiva', 'http://lattes.cnpq.br/2624591870785039 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=6347203', 'Doutor', 'marlup@ufrnet.br', NULL),
-(46, 'Marly Amarilha', 'http://lattes.cnpq.br/7415412765980423 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=350833', 'Doutor', 'marlyamarilha@yahoo.com.br', NULL),
-(57, 'Crislane Barbosa de Azevedo', 'http://lattes.cnpq.br/6943286950201331', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2482088', 'Doutor', 'crislaneazevedo@yahoo.com.br', '0000-00-00'),
-(48, 'Marta Maria de Ara&uacute;jo', 'http://lattes.cnpq.br/6905794496420579 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=347267', 'Doutor', 'martaujo@digi.com.br ', NULL),
-(49, 'Mois&eacute;s Domingos Sobrinho', 'http://lattes.cnpq.br/4006015131926244 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1149636', 'Doutor', 'moises_sobrinho@uol.com.br', NULL),
-(50, 'Rita de C&aacute;ssia Barbosa Paiva Magalh&atilde;es', 'http://lattes.cnpq.br/0351736925269307 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1756133', 'Doutor', 'ritafora@hotmail.com', NULL),
-(60, 'Elda Silva do Nascimento Melo', 'http://lattes.cnpq.br/1296070757502494', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=3465197', 'Doutor', 'eldasnmelo@hotmail.com', '0000-00-00'),
-(52, 'Ros&aacute;lia de F&aacute;tima e Silva', 'http://lattes.cnpq.br/2560174506689869 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=349752', 'Doutor', 'roslia64@gmail.com', NULL),
-(53, 'Tatyana Mabel Nobre Barbosa', 'http://lattes.cnpq.br/6982452047842223 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2507717', 'Doutor', 'tatyanamabel@uol.com.br', NULL),
-(54, 'Terezinha Petr&uacute;cia da N&oacute;brega', 'http://lattes.cnpq.br/6743881635494941 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1049922', 'Doutor', 'pnobrega@ufrnet.br', NULL),
-(55, 'Walter Pinheiro Barbosa Junior', 'http://lattes.cnpq.br/7532911538772143', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=3280986', 'Doutor', 'walterjrnatal@hotmail.com', NULL),
-(61, 'Josivania Marisa Dantas', 'http://lattes.cnpq.br/6685565063970044', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1630751', 'Doutor', 'josivaniamd@yahoo.com.br', '0000-00-00'),
-(75, 'Gessica Fabiely Fonseca', 'http://lattes.cnpq.br/2836927327702138', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=3144003', 'Mestre', 'GESSICAFABIELY@HOTMAIL.COM', '0000-00-00'),
-(76, 'Flavia Roldan Viana', 'http://lattes.cnpq.br/4756646407294958', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2313711', 'Doutor', 'flaviarviana.ufrn@gmail.com', '0000-00-00'),
-(77, 'Eugenia Maria Dantas', 'http://lattes.cnpq.br/6296149707446296', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=6350736', 'Mestre', 'eugeniadantas@yahoo.com.br', '0000-00-00'),
-(78, 'Maria Carmem Freire Diogenes Rego', 'http://lattes.cnpq.br/9793207619191846', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=349111', 'Mestre', 'camemrego@ufrnet.br', '0000-00-00'),
-(79, 'Allyson Carvalho De Araujo', 'http://lattes.cnpq.br/3443942683481696', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1645961', 'Doutor', 'allyssoncarvalho@hotmail.com', '0000-00-00'),
-(80, 'Rosie Marie Nascimento De Medeiros', 'http://lattes.cnpq.br/4739820420408872', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1672476', 'Doutor', 'marie.medeiros@gmail.com', '0000-00-00'),
-(81, 'Andreia Da Silva Quintanilha Sousa', 'http://lattes.cnpq.br/9086814725183565', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=6396421', 'Doutor', 'andreia_quintanilha_sousa@hotmail.com', '0000-00-00');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `professores_pesquisas`
---
-
-CREATE TABLE IF NOT EXISTS `professores_pesquisas` (
-  `professor_pesquisa_id` bigint(20) unsigned NOT NULL,
-  `professor_id` bigint(20) unsigned NOT NULL,
-  `pesquisa_id` bigint(20) unsigned NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Extraindo dados da tabela `professores_pesquisas`
---
-
-INSERT INTO `professores_pesquisas` (`professor_pesquisa_id`, `professor_id`, `pesquisa_id`) VALUES
-(1, 13, 16),
-(2, 21, 16),
-(3, 24, 16),
-(4, 30, 16),
-(5, 32, 16),
-(7, 5, 17),
-(8, 12, 17),
-(9, 67, 17),
-(10, 22, 17),
-(11, 61, 17),
-(12, 39, 17),
-(13, 42, 17),
-(14, 69, 17),
-(16, 53, 17),
-(17, 3, 18),
-(18, 27, 18),
-(19, 29, 18),
-(20, 40, 18),
-(21, 46, 18),
-(22, 54, 18),
-(23, 1, 20),
-(24, 11, 20),
-(25, 58, 20),
-(26, 60, 20),
-(27, 23, 20),
-(28, 49, 20),
-(30, 6, 21),
-(31, 70, 21),
-(32, 37, 21),
-(33, 38, 21),
-(34, 43, 21),
-(35, 45, 21),
-(36, 48, 21),
-(37, 66, 21),
-(38, 2, 22),
-(39, 7, 22),
-(40, 59, 22),
-(41, 31, 22),
-(42, 33, 22),
-(43, 36, 22),
-(44, 64, 22),
-(45, 55, 22),
-(46, 57, 23),
-(47, 15, 23),
-(48, 17, 23),
-(49, 62, 23),
-(50, 65, 23),
-(51, 52, 23),
-(52, 68, 23),
-(53, 63, 16),
-(54, 50, 16),
-(55, 72, 18),
-(56, 73, 22),
-(57, 74, 23);
+INSERT INTO `professores` (`professor_id`, `nome`, `lattes`, `sigaa`, `titulo`, `email`, `data_nasc`, `pesquisa_id`) VALUES
+(1, 'Adir Luiz Ferreira', 'http://lattes.cnpq.br/0341824719316863', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=926826', 'Doutor', 'adirlf@digizap.com.br ', NULL, 20),
+(2, 'Alda Maria Duarte Ara&uacute;jo Castro', 'http://lattes.cnpq.br/1267050454995209 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2346663', 'Doutor', 'alda@ufrnet.br', NULL, 22),
+(3, 'Alessandra Cardozo de Freitas', 'http://lattes.cnpq.br/4424220937257634 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1801922', 'Doutor', 'alessandracardozof@yahoo.com.br', NULL, 18),
+(73, 'Dante Henrique Moura', 'http://lattes.cnpq.br/1720357515433453', '', 'Doutor', 'dante.moura@ifrn.edu.br', '0000-00-00', 22),
+(74, 'Alessandro Augusto de Azevedo', 'http://lattes.cnpq.br/3521226970305887', '', 'Doutor', 'alessandroazevedo.ufrn@gmail.com', '0000-00-00', 23),
+(5, 'Andr&eacute; Ferrer Pinto Martins', 'Link Lattes;http://lattes.cnpq.br/2557880242678680 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1451196', 'Doutor', 'aferrer34@yahoo.com.br ', NULL, 17),
+(6, 'Ant&ocirc;nio Bas&iacute;lio Novaes Thomaz de Menezes', 'Link Lattes;http://lattes.cnpq.br/5195640047312319 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1149638', 'Doutor', 'gpfe@ufrnet.br', NULL, 21),
+(7, 'Antonio Cabral Neto', 'http://lattes.cnpq.br/2272273005907974 ', '', 'Doutor', 'cabraln@ufrnet.br', NULL, 22),
+(72, 'Avelino Aldo de Lima Neto', 'http://lattes.cnpq.br/3231870235953025', '', 'Mestre', 'ave.neto@hotmail.com', '0000-00-00', 18),
+(71, 'Josineide Silveira de Oliveira', 'http://lattes.cnpq.br/5439210347544379', '', 'Doutor', 'josilveira02@gmail.com', '0000-00-00', NULL),
+(11, 'Betania Leite Ramalho', 'http://lattes.cnpq.br/1326690619078211 ', '', 'Doutor', 'betania.ramalho@terra.com.br ', NULL, 20),
+(12, 'Claudianny Amorim Noronha', 'http://lattes.cnpq.br/3258090174478169 ', '', 'Doutor', 'claunoronha@ufrnet.br', NULL, 17),
+(13, 'D&eacute;bora Regina de Paula Nunes', 'http://lattes.cnpq.br/1188086132826132 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1545096', 'Doutor', 'deboranunes@ufrnet.br', NULL, 16),
+(70, 'Azemar dos Santos Soares Junior', 'http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4210977Z8', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2310142', 'Doutor', 'azemar@ce.ufrn.br', '0000-00-00', 21),
+(15, 'Denise Maria de Carvalho Lopes', 'http://lattes.cnpq.br/1935167361851222 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=6347805', 'Doutor', 'denisemcl@terra.com.br ', NULL, 23),
+(69, 'Marlecio Maknamara da Silva Cunha', 'http://lattes.cnpq.br/2947750321164221', 'https://sigaa.ufba.br/sigaa/public/docente/portal.jsf?siape=1501013', 'Doutor', 'escrevequeeuleio@yahoo.com.br', '0000-00-00', 17),
+(17, 'Erika dos Reis Gusm&atilde;o Andrade', 'http://lattes.cnpq.br/0778953049451033 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=4197701', 'Doutor', 'ergandrade@ufrnet.br', NULL, 23),
+(68, 'V&acirc;ndiner Ribeiro', 'http://lattes.cnpq.br/5257845839536488', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1324875', 'Doutor', 'vandiner@gmail.com', '0000-00-00', 23),
+(67, 'Fredy Enrique Gonzalez', 'http://lattes.cnpq.br/4034449429973970', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=3007926', 'Doutor', 'fredygonzalezdem@gmail.com', '0000-00-00', 17),
+(66, 'Olivia Morais de Medeiros Neta', 'http://lattes.cnpq.br/7542482401254815', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2527711', 'Doutor', 'olivianeta@gmail.com', '0000-00-00', 21),
+(21, 'Francisco Ricardo Lins Vieira de Melo', 'http://lattes.cnpq.br/6848746516562543 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1149542', 'Doutor', 'ricardolins@ufrnet.br', NULL, 16),
+(22, 'Iran Abreu Mendes', 'http://lattes.cnpq.br/4490674057492872 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1359083', 'Doutor', 'iamendes1@gmail.com, iamendes@ccet.ufrn.br', NULL, 17),
+(23, 'Isauro Beltr&aacute;n Nu&ntilde;ez', 'http://lattes.cnpq.br/8921901031367516 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2298026', 'Doutor', 'isaurobeltran@yahoo.com.br ', NULL, 20),
+(24, 'Jefferson Fernandes Alves', 'http://lattes.cnpq.br/1834832958808690 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1149574', 'Doutor', ' jfa_alves@msn.com', NULL, 16),
+(63, 'Maria Aparecida Dias', 'http://lattes.cnpq.br/1131977255034974', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1714249', 'Doutor', 'cidaufrn@gmail.com', '0000-00-00', 16),
+(64, 'Maria Goretti Cabral Barbalho', 'http://lattes.cnpq.br/9999709754863111', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=347594', 'Doutor', 'goretti_cabral@yahoo.com.br', '0000-00-00', 22),
+(27, 'Jos&eacute; Pereira de Melo', 'http://lattes.cnpq.br/9283008377235258 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1149620', 'Doutor', 'melo@digi.com.br ', NULL, 18),
+(65, 'Mariangela Momo', 'http://lattes.cnpq.br/6061996250283917', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1672888', 'Doutor', 'marimomo@terra.com.br', '0000-00-00', 23),
+(29, 'Karenine de Oliveira Porpino', 'http://lattes.cnpq.br/5255588024266396 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1038320', 'Doutor', 'karenine@supercabo.com.br', NULL, 18),
+(30, 'L&uacute;cia de Ara&uacute;jo Ramos Martins', 'http://lattes.cnpq.br/4028503466396532 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1149418', 'Doutor', 'luc.martins@terra.com.br ', NULL, 16),
+(31, 'Luciane Terra dos Santos Garcia', 'http://lattes.cnpq.br/2546503141542893 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1646204', 'Doutor', 'ltsgarcia@gmail.com', NULL, 22),
+(32, 'Luzia Guacira dos Santos Silva', 'http://lattes.cnpq.br/1032425601643160 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=3315373', 'Doutor', 'guaciraufrn@hotmail.com', NULL, 16),
+(33, 'Magna Fran&ccedil;a', 'http://lattes.cnpq.br/1964589133589645 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=6350650', 'Doutor', 'magna@ufrnet.br', NULL, 22),
+(58, 'Cynara Teixeira Ribeiro', 'http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4730775U7', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2621064', 'Doutor', 'cynara_ribeiro@yahoo.com.br', '0000-00-00', 20),
+(59, 'Gilmar Barbosa Guedes', 'http://lattes.cnpq.br/2027157262023382', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1458867', 'Doutor', 'gbguedes@uol.com.br', '0000-00-00', 22),
+(36, 'Maria Aparecida de Queiroz', 'http://lattes.cnpq.br/0642511546307992 ', '', 'Doutor', 'cidinha@ufrnet.br ', NULL, 22),
+(37, 'Maria Arisnete C&acirc;mara de Morais', 'http://lattes.cnpq.br/4223328278394193 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1149346', 'Doutor', 'arisnete@terra.com.br ', NULL, 21),
+(38, 'Maria da Concei&ccedil;&atilde;o Ferrer B.S. Passeggi', 'http://lattes.cnpq.br/5015707256397317 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=7346845', 'Doutor', 'cpasseggi@digizap.com.br', NULL, 21),
+(39, 'Maria da Concei&ccedil;&atilde;o Xavier de Almeida', 'http://lattes.cnpq.br/9961862139964562 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=347048', 'Doutor', 'calmeida17@hotmail.com ', NULL, 17),
+(40, 'Maria das Gra&ccedil;as Pinto Coelho', 'http://lattes.cnpq.br/8288579916239009 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2179219', 'Doutor', 'gpcoelho@ufrnet.br ', NULL, 18),
+(62, 'Karyne Dias Coutinho', 'http://lattes.cnpq.br/6013805360280552', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1755707', 'Doutor', 'kdiascoutinho@gmail.com', '0000-00-00', 23),
+(42, 'Maria Estela Costa Holanda Campelo', 'http://lattes.cnpq.br/2527223181575594 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=6347260', 'Doutor', 'estelacampelo@hotmail.com ', NULL, 17),
+(43, 'Maria In&ecirc;s Sucupira Stamatto', 'http://lattes.cnpq.br/7289548301555477 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1149455', 'Doutor', 'inescdd@digizap.com.br', NULL, 21),
+(45, 'Marl&uacute;cia Menezes de Paiva', 'http://lattes.cnpq.br/2624591870785039 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=6347203', 'Doutor', 'marlup@ufrnet.br', NULL, 21),
+(46, 'Marly Amarilha', 'http://lattes.cnpq.br/7415412765980423 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=350833', 'Doutor', 'marlyamarilha@yahoo.com.br', NULL, 18),
+(57, 'Crislane Barbosa de Azevedo', 'http://lattes.cnpq.br/6943286950201331', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2482088', 'Doutor', 'crislaneazevedo@yahoo.com.br', '0000-00-00', 23),
+(48, 'Marta Maria de Ara&uacute;jo', 'http://lattes.cnpq.br/6905794496420579 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=347267', 'Doutor', 'martaujo@digi.com.br ', NULL, 21),
+(49, 'Mois&eacute;s Domingos Sobrinho', 'http://lattes.cnpq.br/4006015131926244 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1149636', 'Doutor', 'moises_sobrinho@uol.com.br', NULL, 20),
+(50, 'Rita de C&aacute;ssia Barbosa Paiva Magalh&atilde;es', 'http://lattes.cnpq.br/0351736925269307 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1756133', 'Doutor', 'ritafora@hotmail.com', NULL, 16),
+(60, 'Elda Silva do Nascimento Melo', 'http://lattes.cnpq.br/1296070757502494', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=3465197', 'Doutor', 'eldasnmelo@hotmail.com', '0000-00-00', 20),
+(52, 'Ros&aacute;lia de F&aacute;tima e Silva', 'http://lattes.cnpq.br/2560174506689869 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=349752', 'Doutor', 'roslia64@gmail.com', NULL, 23),
+(53, 'Tatyana Mabel Nobre Barbosa', 'http://lattes.cnpq.br/6982452047842223 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2507717', 'Doutor', 'tatyanamabel@uol.com.br', NULL, 17),
+(54, 'Terezinha Petr&uacute;cia da N&oacute;brega', 'http://lattes.cnpq.br/6743881635494941 ', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1049922', 'Doutor', 'pnobrega@ufrnet.br', NULL, 18),
+(55, 'Walter Pinheiro Barbosa Junior', 'http://lattes.cnpq.br/7532911538772143', 'http://www.sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=3280986', 'Doutor', 'walterjrnatal@hotmail.com', NULL, 22),
+(61, 'Josivania Marisa Dantas', 'http://lattes.cnpq.br/6685565063970044', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1630751', 'Doutor', 'josivaniamd@yahoo.com.br', '0000-00-00', 17),
+(75, 'Gessica Fabiely Fonseca', 'http://lattes.cnpq.br/2836927327702138', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=3144003', 'Mestre', 'GESSICAFABIELY@HOTMAIL.COM', '0000-00-00', NULL),
+(76, 'Flavia Roldan Viana', 'http://lattes.cnpq.br/4756646407294958', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2313711', 'Doutor', 'flaviarviana.ufrn@gmail.com', '0000-00-00', NULL),
+(77, 'Eugenia Maria Dantas', 'http://lattes.cnpq.br/6296149707446296', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=6350736', 'Mestre', 'eugeniadantas@yahoo.com.br', '0000-00-00', NULL),
+(78, 'Maria Carmem Freire Diogenes Rego', 'http://lattes.cnpq.br/9793207619191846', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=349111', 'Mestre', 'camemrego@ufrnet.br', '0000-00-00', NULL),
+(79, 'Allyson Carvalho De Araujo', 'http://lattes.cnpq.br/3443942683481696', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1645961', 'Doutor', 'allyssoncarvalho@hotmail.com', '0000-00-00', NULL),
+(80, 'Rosie Marie Nascimento De Medeiros', 'http://lattes.cnpq.br/4739820420408872', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=1672476', 'Doutor', 'marie.medeiros@gmail.com', '0000-00-00', NULL),
+(81, 'Andreia Da Silva Quintanilha Sousa', 'http://lattes.cnpq.br/9086814725183565', 'https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=6396421', 'Doutor', 'andreia_quintanilha_sousa@hotmail.com', '0000-00-00', NULL);
 
 -- --------------------------------------------------------
 
@@ -1156,12 +1092,6 @@ ALTER TABLE `professores`
   ADD UNIQUE KEY `professor_id` (`professor_id`);
 
 --
--- Indexes for table `professores_pesquisas`
---
-ALTER TABLE `professores_pesquisas`
-  ADD PRIMARY KEY (`professor_pesquisa_id`);
-
---
 -- Indexes for table `publicacoes`
 --
 ALTER TABLE `publicacoes`
@@ -1204,12 +1134,12 @@ ALTER TABLE `convenios`
 -- AUTO_INCREMENT for table `editais`
 --
 ALTER TABLE `editais`
-  MODIFY `edital_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
+  MODIFY `edital_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `evento_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=394;
+  MODIFY `evento_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=398;
 --
 -- AUTO_INCREMENT for table `fale_conosco`
 --
@@ -1224,7 +1154,7 @@ ALTER TABLE `formularios`
 -- AUTO_INCREMENT for table `informativos`
 --
 ALTER TABLE `informativos`
-  MODIFY `informativo_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=89;
+  MODIFY `informativo_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=90;
 --
 -- AUTO_INCREMENT for table `noticias_anpae`
 --
@@ -1245,11 +1175,6 @@ ALTER TABLE `pesquisas`
 --
 ALTER TABLE `professores`
   MODIFY `professor_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=82;
---
--- AUTO_INCREMENT for table `professores_pesquisas`
---
-ALTER TABLE `professores_pesquisas`
-  MODIFY `professor_pesquisa_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=58;
 --
 -- AUTO_INCREMENT for table `publicacoes`
 --

@@ -4,6 +4,7 @@ class Professores extends MY_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('professores_model');
+		$this->load->model('pesquisas_model');
 	}
 
 	public function index($id = NULL) {
@@ -73,18 +74,20 @@ class Professores extends MY_Controller {
 	public function adicionar() {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
+		$data['pesquisas'] = $this->pesquisas_model->get();
 		$this->load->view('painel_controle/templates/header');
 		$this->load->view('painel_controle/templates/menu');
 		$this->load->view('templates/inicio');
-		$this->load->view('painel_controle/professores/adicionar_alterar_professores');
+		$this->load->view('painel_controle/professores/adicionar_alterar_professores', $data);
 		$this->load->view('painel_controle/templates/footer');
 	}
 
 	public function alterar($id) {
 		if ($this->is_logged_in()) {
-			$professor = $this->professores_model->get_by_id($id);
+			$data['professor'] = $this->professores_model->get_by_id($id);
+			$data['pesquisas'] = $this->pesquisas_model->get();
 			$this->load->view('painel_controle/templates/header');
-			$this->load->view('painel_controle/professores/adicionar_alterar_professores', array('professor' => $professor));
+			$this->load->view('painel_controle/professores/adicionar_alterar_professores', $data);
 			$this->load->view('painel_controle/templates/footer');
 		} else
 			redirect('painel_controle');

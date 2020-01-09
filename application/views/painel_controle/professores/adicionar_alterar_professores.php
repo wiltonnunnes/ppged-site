@@ -48,9 +48,14 @@
                                                 ?>
                                             </div>
                                             <div class="col-md-6 mb-3">
-                                            	<label for="titulo_pesquisa">Linha de Pesquisa</label>
-                                            	<input type="text" name="titulo_pesquisa" id="titulo_pesquisa" class="form-control" oninput="get_pesquisas(this.value)">
-                                            	<select id="pesquisa" style="display: none;"></select>
+                                                <label for="pesquisa">Linha de Pesquisa</label>
+                                                <?php
+                                                $options = array();
+                                                foreach ($pesquisas as $pesquisas_item) {
+                                                    $options[$pesquisas_item['pesquisa_id']] = $pesquisas_item['titulo'];
+                                                }
+                                                echo form_dropdown('pesquisa_id', $options, isset($professor['pesquisa_id']) ? $options[array_key_first($options)] : '', 'class="form-control" id="pesquisa"'); 
+                                                ?>
                                             </div>
                                         </div>
 
@@ -78,6 +83,9 @@
                 var pesquisas = Object.values(data);
                 $select.hide();
                 if (pesquisas.length > 0) {
+                    pesquisas.forEach(function(item) {
+                        select.appendChild(new Option(item['titulo'], item['pesquisa_id']));
+                    })
                     $select.show();
                 }
             }, "json");
