@@ -98,4 +98,4 @@ $route['painel_controle/editais/adicionar'] = 'editais/adicionar';
 $route['pesquisas/adicionar'] = 'pesquisas/adicionar';
 $route['painel_controle/professores/adicionar'] = 'professores/adicionar';
 
-$route['pesquisas/alterar/(:num)'] = 'pesquisas/adicionar/$1';
+//$route['pesquisas/alterar/(:num)'] = 'pesquisas/adicionar/$1';

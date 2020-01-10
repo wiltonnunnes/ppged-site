@@ -39,8 +39,8 @@
 												<td><?php echo anchor($professores_item['sigaa'], 'SIGAA'); ?></td>
                                                 <td>
                                                     <!--<a href="#" title="Visualizar dados completos do usuário"><i class="fa fa-user-circle"></i></a>-->
-                                                    <a href="<?php echo site_url('professores/alterar' . $professores_item['professor_id']); ?>" title="Alterar dados do professor"><i class="fa fa-pencil"></i></a>
-                                                    <a href="<?php echo site_url('professores/deletar' . $professores_item['professor_id']); ?>" title="Remover professor. CUIDADO: NÃO PODE SER DESFEITO"><i class="fa fa-trash"></i></a>
+                                                    <a href="<?php echo site_url('professores/alterar/' . $professores_item['professor_id']); ?>" title="Alterar dados do professor"><i class="fa fa-pencil"></i></a>
+                                                    <a href="<?php echo site_url('professores/deletar/' . $professores_item['professor_id']); ?>" title="Remover professor. CUIDADO: NÃO PODE SER DESFEITO"><i class="fa fa-trash"></i></a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>           

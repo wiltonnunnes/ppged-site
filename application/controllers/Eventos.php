@@ -71,6 +71,8 @@ class Eventos extends MY_Controller {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
 		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
+		$this->load->view('templates/inicio');
 		$this->load->view('painel_controle/eventos/adicionar_alterar_eventos');
 		$this->load->view('painel_controle/templates/footer');
 	}
@@ -112,6 +114,8 @@ class Eventos extends MY_Controller {
 		if ($this->is_logged_in()) {
 			$evento = $this->eventos_model->get_by_id($id);
 			$this->load->view('painel_controle/templates/header');
+			$this->load->view('painel_controle/templates/menu');
+			$this->load->view('templates/inicio');
 			$this->load->view('painel_controle/eventos/adicionar_alterar_eventos', array('evento' => $evento));
 			$this->load->view('painel_controle/templates/footer');
 		} else

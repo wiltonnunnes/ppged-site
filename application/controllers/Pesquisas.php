@@ -50,70 +50,32 @@ class Pesquisas extends MY_Controller {
 	}
 
 	public function recebe_processa_pesquisa() {
-		if ($id = $this->input->post('pesquisa_id'))
-			$this->pesquisas_model->update($this->input->post(array('titulo', 'texto')), $id);
-		else
-			$id = $this->pesquisas_model->insert($this->input->post(array('titulo', 'texto')));
-
-		$professor_ids = $this->input->post('professor_id');
-		foreach ($professor_ids as $professor_id) {
-			if (!$this->professores_pesquisas_model->data_exists(array('pesquisa_id' => $id, 'professor_id' => $professor_id)))
-				$this->professores_pesquisas_model->set(array('pesquisa_id' => $id, 'professor_id' => $professor_id));
-		}
-		foreach ($this->professores_pesquisas_model->get_professores($id) as $professor) {
-			if (!in_array($professor['professor_id'], $professor_ids))
-				$this->professores_pesquisas_model->remove(array('pesquisa_id' => $id, 'professor_id' => $professor['professor_id']));
-		}
+		$data = $this->input->post();
+		$this->pesquisas_model->set($data, array_key_exists('pesquisa_id', $data) ? array('pesquisa_id', $data['pesquisa_id']) : array());
 		redirect('painel_controle/pesquisas');
 	}
 
 	public function adicionar() {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
-		if ($professor_id = $this->input->get('professor_id')) {
-			$pesquisa['titulo'] = $this->input->post('titulo');
-			$pesquisa['texto'] = $this->input->post('texto');
-			$pesquisa['pesquisa_id'] = $this->input->post('pesquisa_id');
 
-			$professor_ids = $this->input->post('professor_id');
-			if (is_null($professor_ids)) $professor_ids = array();
+		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
+		$this->load->view('templates/inicio');
+		$this->load->view('painel_controle/pesquisas/adicionar_alterar_pesquisas');
+		$this->load->view('painel_controle/templates/footer');
+	}
 
-			$professores = array();
-			foreach ($professor_ids as $id) {
-				if ($professor_id != $id)
-					array_push($professores, $this->professores_model->get_by_id($professor_id));
-			}
+	public function alterar($id) {
+		if (!$this->is_logged_in())
+			redirect('painel_controle');
 
-			$this->load->view('templates/header');
-			$this->load->view('templates/menu');
-			$this->load->view('templates/inicio');
-			$this->load->view('pesquisas/adicionar_alterar_pesquisas', array('pesquisa' => $pesquisa, 'professores' => $professores));
-			$this->load->view('templates/footer');
-		} elseif ($nome = $this->input->post('nome')) {
-			$pesquisa['titulo'] = $this->input->post('titulo');
-			$pesquisa['texto'] = $this->input->post('texto');
-			$pesquisa['pesquisa_id'] = $this->input->post('pesquisa_id');
-
-			$professor_ids = $this->input->post('professor_id');
-			if (is_null($professor_ids)) $professor_ids = array();
-
-			$professores = array();
-			foreach ($professor_ids as $professor_id)
-				array_push($professores, $this->professores_model->get_by_id($professor_id));
-			array_push($professores, $this->professores_model->get_by_name($nome));
-
-			$this->load->view('templates/header');
-			$this->load->view('templates/menu');
-			$this->load->view('templates/inicio');
-			$this->load->view('pesquisas/adicionar_alterar_pesquisas', array('pesquisa' => $pesquisa, 'professores' => $professores));
-			$this->load->view('templates/footer');
-		} else {
-			$this->load->view('templates/header');
-			$this->load->view('templates/menu');
-			$this->load->view('templates/inicio');
-			$this->load->view('pesquisas/adicionar_alterar_pesquisas');
-			$this->load->view('templates/footer');
-		}
+		$pesquisa = $this->pesquisas_model->get_by_id($id);
+		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
+		$this->load->view('templates/inicio');
+		$this->load->view('painel_controle/pesquisas/adicionar_alterar_pesquisas', array('pesquisa' => $pesquisa));
+		$this->load->view('painel_controle/templates/footer');
 	}
 
 	public function listar() {

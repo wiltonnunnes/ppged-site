@@ -35,8 +35,8 @@
                                                 <td><?php echo $noticias_anpae_item['titulo']; ?></td>
                                                 <td>
                                                     <!--<a href="#" title="Visualizar dados completos do usuário"><i class="fa fa-user-circle"></i></a>-->
-                                                    <a href="<?php echo site_url('noticias_anpae/alterar' . $noticias_anpae_item['noticia_id']); ?>" title="Alterar dados da notícia"><i class="fa fa-pencil"></i></a>
-                                                    <a href="<?php echo site_url('noticias_anpae/deletar' . $noticias_anpae_item['noticia_id']); ?>" title="Remover notícia. CUIDADO: NÃO PODE SER DESFEITO"><i class="fa fa-trash"></i></a>
+                                                    <a href="<?php echo site_url('noticias_anpae/alterar/' . $noticias_anpae_item['noticia_id']); ?>" title="Alterar dados da notícia"><i class="fa fa-pencil"></i></a>
+                                                    <a href="<?php echo site_url('noticias_anpae/deletar/' . $noticias_anpae_item['noticia_id']); ?>" title="Remover notícia. CUIDADO: NÃO PODE SER DESFEITO"><i class="fa fa-trash"></i></a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>           

@@ -1,72 +1,62 @@
-<?php echo form_open_multipart('pesquisas/recebe_processa_pesquisa');?>
+<!-- sobre -->
+<section class="info-section">
+	<div class="container">
+		<div class="row">   
+			<div class="col-md-4 col-lg-4">
+                <?php 
+                        include (APPPATH . "views/painel_controle/templates/sideBar.php");	
+                    ?>
+            </div>
 
-T&iacute;tulo: <?php echo form_input('titulo', isset($pesquisa['titulo']) ? $pesquisa['titulo'] : '', 'required="required"'); ?>
-<br /><br />
+			<div class="col-md-8 col-lg-8">
+                <div class="content" style="width:100%">
+                    <div id="jquery-accordion-menu" class="jquery-accordion-menu" style="width:100%">
+                        <div class="jquery-accordion-menu-header">Alterar Pesquisa</div>
+                        <div class="container">
+							<div class="row">
+								<div class="col-md-12 col-lg-12 mt-2">
+                                    
+                                    <p>Preencha os dados abaixo para efetuar o cadastro de uma nova pesquisa:</p>
+                                    
+                                    <?php echo form_open_multipart('pesquisas/recebe_processa_pesquisa');?>
 
-Texto: <?php echo form_textarea('texto', isset($informativo['texto']) ? $informativo['texto'] : ''); ?>
-<br /><br />
+                                        <div class="form-row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="email">Título</label>
+                                                <?php echo form_input('titulo', isset($pesquisa['titulo']) ? $pesquisa['titulo'] : '', array('required' => 'required', 'id' => 'Título', 'class' => 'form-control', 'placeholder' => 'Título')); ?>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-12 mb-3">
+                                                <label for="editor1">Texto:</label>
+                                                <textarea cols="80" id="editor1" name="texto" rows="10">
+                                                    <?php if (isset($pesquisa['texto'])) echo $pesquisa['texto']; ?>
+                                                </textarea>
+                                                <script>
+                                                    CKEDITOR.replace('editor1', {
+                                                    fullPage: true,
+                                                    extraPlugins: 'docprops',
+                                                    // Disable content filtering because if you use full page mode, you probably
+                                                    // want to  freely enter any HTML content in source mode without any limitations.
+                                                    allowedContent: true,
+                                                    height: 320
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
 
-Nome do Professor(a): <input type="text" oninput="search(this.value)" id="nome_professor" name="nome">
-<select style="display: none;" id="professor"></select>
-<br /><br />
+                                        <?php if (isset($pesquisa['pesquisa_id'])) echo form_hidden('pesquisa_id', $pesquisa['pesquisa_id']); ?>
 
-<button type="submit" id="add_professor" formaction="<?php echo site_url('pesquisas/adicionar') ?>" disabled>Adicionar Professor(a)</button>
-<br /><br />
+                                        <input type="reset" value="Limpar" class="button btn btn-primary">
+                                        <button class="btn btn-primary" type="submit">Enviar dados</button>
+                                    </form>
 
-<?php if (isset($professores)): ?>
-<table>
-	<caption>Professores</caption>
-	<thead>
-		<tr>
-			<th>Id</th>
-			<th>Nome</th>
-			<th>Op&ccedil;&otilde;es</th>
-		</tr>
-	</thead>
-	<tbody>
-	<?php foreach ($professores as $professores_item): ?>
-		<tr>
-			<td><?php echo $professores_item['professor_id']; ?></td>
-			<td><?php echo $professores_item['nome']; ?></td>
-			<td><button type="button">Remover</button></td>
-		</tr>
-		<?php echo form_hidden('professor_id[]', $professores_item['professor_id']); ?>
-	<?php endforeach; ?>
-	</tbody>
-</table>
-<?php endif; ?>
-
-<?php if (isset($pesquisa['pesquisa_id'])) echo form_hidden('pesquisa_id', $pesquisa['pesquisa_id']); ?>
-
-<input type="reset" value="Limpar" />
-<input type="submit" value="Enviar" />
-
-</form>
-<script>
-function search(str) {
-	if (str.length == 0) {
-		$('#professor').hide();
-		return;
-	}
-	$.ajax({
-		url: "<?php echo site_url('professores/get_professores'); ?>?q=" + str, 
-		success: function(result) {
-			var obj = JSON.parse(result), $select = $('#professor');
-			$select.hide();
-			$select.empty();
-			obj.forEach(function(professor) {
-				var option = new Option(professor['nome'], professor['professor_id']);
-				$select.append(option);
-			});
-			$select.attr("size", obj.length);
-			$select.show();
-		}
-	});
-}
-$('#professor').change(function(){
-	var option = this.options[this.selectedIndex];
-	$('#nome_professor').val(option.text);
-	this.style.display = "none";
-	$('#add_professor').removeAttr("disabled");
-});
-</script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+</section>

@@ -98,6 +98,8 @@ class Editais extends MY_Controller {
 		if ($this->is_logged_in()) {
 			$edital = $this->editais_model->get_by_id($id);
 			$this->load->view('painel_controle/templates/header');
+			$this->load->view('painel_controle/templates/menu');
+			$this->load->view('templates/inicio');
 			$this->load->view('painel_controle/editais/adicionar_alterar_editais', array('edital' => $edital));
 			$this->load->view('painel_controle/templates/footer');
 		} else

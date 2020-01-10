@@ -35,8 +35,8 @@
 												<td><?php echo anchor(base_url('uploads/arquivos/editais/' . $editais_item['arquivo']), $editais_item['arquivo']); ?></td>
                                                 <td>
                                                     <!--<a href="#" title="Visualizar dados completos do usuário"><i class="fa fa-user-circle"></i></a>-->
-                                                    <a href="<?php echo site_url('editais/alterar' . $editais_item['edital_id']); ?>" title="Alterar dados do edital"><i class="fa fa-pencil"></i></a>
-                                                    <a href="<?php echo site_url('editais/deletar' . $editais_item['edital_id']); ?>" title="Remover edital. CUIDADO: NÃO PODE SER DESFEITO"><i class="fa fa-trash"></i></a>
+                                                    <a href="<?php echo site_url('editais/alterar/' . $editais_item['edital_id']); ?>" title="Alterar dados do edital"><i class="fa fa-pencil"></i></a>
+                                                    <a href="<?php echo site_url('editais/deletar/' . $editais_item['edital_id']); ?>" title="Remover edital. CUIDADO: NÃO PODE SER DESFEITO"><i class="fa fa-trash"></i></a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>           

@@ -31,8 +31,8 @@
                                                 <td><?php echo $pesquisas_item['titulo']; ?></td>
                                                 <td>
                                                     <!--<a href="#" title="Visualizar dados completos do usuário"><i class="fa fa-user-circle"></i></a>-->
-                                                    <a href="<?php echo site_url('pesquisas/alterar' . $pesquisas_item['pesquisa_id']); ?>" title="Alterar dados da notícia"><i class="fa fa-pencil"></i></a>
-                                                    <a href="<?php echo site_url('pesquisas/deletar' . $pesquisas_item['pesquisa_id']); ?>" title="Remover notícia. CUIDADO: NÃO PODE SER DESFEITO"><i class="fa fa-trash"></i></a>
+                                                    <a href="<?php echo site_url('pesquisas/alterar/' . $pesquisas_item['pesquisa_id']); ?>" title="Alterar dados da notícia"><i class="fa fa-pencil"></i></a>
+                                                    <a href="<?php echo site_url('pesquisas/deletar/' . $pesquisas_item['pesquisa_id']); ?>" title="Remover notícia. CUIDADO: NÃO PODE SER DESFEITO"><i class="fa fa-trash"></i></a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>           

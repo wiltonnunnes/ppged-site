@@ -17,13 +17,13 @@
 								<div class="col-md-12 col-lg-12 mt-2">
                                     
                                     <p>Preencha os dados abaixo para efetuar o cadastro de um novo informativo:</p>
-
-                                    <label for="destaque">
-                                        <?php echo form_checkbox('status', '1', isset($informativo['status']) ? boolval($informativo['status']) : FALSE, 'id="destaque"'); ?>
-                                        Notícia destaque (aparecerá de forma destacada na página inicial do site)
-                                    </label>
                                     
                                     <?php echo form_open_multipart('informativos/recebe_processa_informativo');?>
+                                        <label for="destaque">
+                                            <?php echo form_checkbox('status', '1', isset($informativo['status']) ? boolval($informativo['status']) : FALSE, 'id="destaque"'); ?>
+                                            Notícia destaque (aparecerá de forma destacada na página inicial do site)
+                                        </label>
+
                                         <div class="form-row">
                                             <div class="col-md-6 mb-3">
                                                 <label for="data">Data</label>
