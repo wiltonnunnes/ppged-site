@@ -20,9 +20,10 @@ class Pesquisas extends MY_Controller {
 
 			$page = ($this->input->get('page')) ?: 1;
 
-			$pesquisas = $this->pesquisas_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
+			//$pesquisas = $this->pesquisas_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
+			$pesquisas = $this->pesquisas_model->get();
 			foreach ($pesquisas as &$pesquisas_item)
-				$pesquisas_item['professores'] = $this->pesquisas_model->get_professores($pesquisas_item['pesquisa_id']);
+				$pesquisas_item['professores'] = $this->professores_model->get(array('pesquisa_id' => $pesquisas_item['pesquisa_id']));
 			unset($pesquisas_item);
 
 			$data['pesquisas'] = $pesquisas;

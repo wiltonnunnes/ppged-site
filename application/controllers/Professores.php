@@ -18,7 +18,8 @@ class Professores extends MY_Controller {
 			$data['links'] = $this->pagination->create_links();
 
 			$page = ($this->input->get('page')) ?: 1;
-			$data['professores'] = $this->professores_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
+			//$data['professores'] = $this->professores_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
+			$data['professores'] = $this->professores_model->get();
 
 			$this->load->view('templates/header');
 			$this->load->view('templates/menu');
