@@ -6,8 +6,9 @@ class Publicacoes extends MY_Controller {
 		$this->load->model('publicacoes_model');
 	}
 
-	public function index($id = NULL) {
-		if (is_null($id)) {
+	public function index($ano = NULL) {
+		if (is_null($ano)) {
+			/*
 			$config['base_url'] = site_url('publicacoes');
 			$config['total_rows'] = $this->publicacoes_model->get_count();
 			$config['per_page'] = 16;
@@ -18,15 +19,19 @@ class Publicacoes extends MY_Controller {
 
 			$page = ($this->input->get('page')) ?: 1;
 			$data['publicacoes'] = $this->publicacoes_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
+			*/
+			$anos = $this->publicacoes_model->get_anos();
+			$data['publicacoes'] = $this->publicacoes_model->get(array('ano' => $anos[array_key_first($anos)]));
+			$data['anos'] = $anos;
 
 			$this->load->view('templates/header');
+			$this->load->view('templates/menu');
+			$this->load->view('templates/inicio');
 			$this->load->view('publicacoes/index', $data);
 			$this->load->view('templates/footer');
 		} else {
-			$publicacao = $this->publicacoes_model->get_by_id($id);
-			$this->load->view('templates/header');
-			$this->load->view('publicacoes/publicacao', array('publicacao' => $publicacao));
-			$this->load->view('templates/foorer');
+			$data['publicacoes'] = $this->publicacoes_model->get(array('ano' => $ano));
+			echo json_encode($data);
 		}
 	}
 

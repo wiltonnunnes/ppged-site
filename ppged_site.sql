@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 08-Jan-2020 às 17:25
+-- Generation Time: 10-Fev-2020 às 11:53
 -- Versão do servidor: 5.5.56-MariaDB
 -- PHP Version: 5.4.16
 
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `editais` (
   `titulo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `arquivo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `data` date DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Extraindo dados da tabela `editais`
@@ -96,7 +96,8 @@ INSERT INTO `editais` (`edital_id`, `titulo`, `arquivo`, `data`) VALUES
 (24, 'EDITAL N&deg; 04/2019 &ndash; REINGRESSO - PPGED/UFRN', 'Edital - Reingresso 2019.2.pdf', '2019-07-15'),
 (25, 'EDITAL N&ordm; 05/2019 &ndash; PROCESSO SELETIVO 2020 PPGEd', 'Edital retificado 23.07.19.pdf', '2019-07-11'),
 (26, 'EDITAL N&deg; 06/2019 &ndash; REINGRESSO - PPGED/UFRN', 'Edital - Reingresso 2020.1.pdf', '2020-01-07'),
-(27, 'EDITAL N&deg; 07/2019 &ndash; MUDAN&Ccedil;A DE N&Iacute;VEL - PPGED/UFRN', 'Edital - MudanÃ§a de NÃ­vel 2020.1.pdf', '2020-01-07');
+(27, 'EDITAL N&deg; 07/2019 &ndash; MUDAN&Ccedil;A DE N&Iacute;VEL - PPGED/UFRN', 'Edital - MudanÃ§a de NÃ­vel 2020.1.pdf', '2020-01-07'),
+(28, 'EDITAL N&deg; 01/2020 - CADASTRAMENTO PARA CANDIDATOS APROVADOS NA SELE&Ccedil;&Atilde;O PARA MESTRADO/DOUTORADO EM EDUCA&Ccedil;&Atilde;O COM INGRESSO EM 2020.1 - PPGEd/UFRN', 'Edital de Cadastramento 2020.pdf', '2020-02-04');
 
 -- --------------------------------------------------------
 
@@ -113,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `eventos` (
   `descricao` text CHARACTER SET latin1,
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `cartaz` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=398 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=441 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Extraindo dados da tabela `eventos`
@@ -500,7 +501,50 @@ INSERT INTO `eventos` (`evento_id`, `nome_evento`, `data`, `local`, `entidade_or
 (394, 'Debate em foco', '2019-12-05', 'Audit&oacute;rio do NEPSA I  - CCSA/UFRN', 'UFRN', '', 0, 'debate em foco banner.jpg'),
 (395, 'DEFESA DE TESE | ANA PAULA DOS SANTOS OLIVEIRA FLOR', '2019-12-06', 'Audit&oacute;rio do NEPSA I', 'PPGED', '', 0, 'Cartaz - Ana Paula.pdf'),
 (396, 'DEFESA DE TESE | JOSIELLE SOARES DA SILVA', '2019-12-12', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Josielle.pdf'),
-(397, 'DEFESA DE TESE | LUCIANA MEDEIROS DA CUNHA', '2019-12-17', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Luciana.pdf');
+(397, 'DEFESA DE TESE | LUCIANA MEDEIROS DA CUNHA', '2019-12-17', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Luciana.pdf'),
+(398, 'DEFESA DE TESE | R&Ocirc;MULO ALEXANDRE SILVA', '2020-01-31', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Romulo.pdf'),
+(399, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | THIAGO DE LIMA TORRE&Atilde;O CEREJEIRA', '2020-02-07', 'Multimeios 01 - CE', 'PPGED', '', 0, 'Cartaz - Thiago.pdf'),
+(400, 'DEFESA DE TESE | NANAEL SIM&Atilde;O DE ARA&Uacute;JO', '2020-02-20', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Nanael.pdf'),
+(401, 'DEFESA DE TESE | R&Ocirc;MULO ALEXANDRE SILVA', '2020-01-31', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Romulo.pdf'),
+(402, 'DEFESA DE TESE | MARIA GENILDA MARQUES CARDOSO', '2020-02-28', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Genilda.pdf'),
+(403, 'DEFESA DE TESE | MARLENE FERNANDES RIBEIRO', '2020-02-17', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Marlene.pdf'),
+(404, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | VICTOR VARELA FERREIRA MEDEIROS DE OLIVEIRA', '2020-02-27', 'Multimeios 01 - CE', 'PPGED', '', 0, 'Cartaz - Victor.pdf'),
+(405, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | ANDRIALEX WILLIAM DA SILVA', '2020-02-19', 'Multimeios 01 - CE', 'PPGED', '', 0, 'Cartaz - Andrialex.pdf'),
+(406, 'MUDAN&Ccedil;A DE N&Iacute;VEL | ANDRIALEX WILLIAM DA SILVA', '2020-02-19', 'Multimeios 01 - CE', 'PPGED', '', 0, 'Cartaz MN - Andrialex.pdf');
+INSERT INTO `eventos` (`evento_id`, `nome_evento`, `data`, `local`, `entidade_organizadora`, `descricao`, `status`, `cartaz`) VALUES
+(407, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | TATIANA LAPITZ MACHADO DOS SANTOS SEVERO', '2020-02-27', 'Audit&oacute;rio 02 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Tatiana.pdf'),
+(408, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | LA&Iacute;S PAULA DE MEDEIROS CAMPOS AZEVEDO', '2020-02-18', 'Audit&oacute;rio 02 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Lais.pdf'),
+(409, 'MUDAN&Ccedil;A DE N&Iacute;VEL | LA&Iacute;S PAULA DE MEDEIROS CAMPOS AZEVEDO', '2020-02-18', 'Audit&oacute;rio 02 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz MN - Lais.pdf'),
+(410, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | FELIPE DANIEL BARROS DINIZ', '2020-02-18', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Felipe.pdf'),
+(411, 'MUDAN&Ccedil;A DE N&Iacute;VEL | FELIPE DANIEL BARROS DINIZ', '2020-02-18', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz MN - Felipe.pdf'),
+(412, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | MARIA AUXILEIDE DA SILVA OLIVEIRA', '2020-02-18', 'Audit&oacute;rio 02 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Maria Auxileide.pdf'),
+(413, 'MUDAN&Ccedil;A DE N&Iacute;VEL | MARIA AUXILEIDE DA SILVA OLIVEIRA', '2020-02-18', 'Audit&oacute;rio 02 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz MN - Maria Auxileide.pdf'),
+(414, 'DEFESA DE TESE | RAPHAEL RAMOS DE OLIVEIRA LOPES', '2020-02-28', 'Audit&oacute;rio VER - Departamento de Educa&ccedil;&atilde;o F&iacute;sica', 'PPGED', '', 0, 'Cartaz - Raphael.pdf'),
+(415, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | ARTHUR BESERRA DE MELO', '2020-02-18', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Arthur.pdf'),
+(416, 'MUDAN&Ccedil;A DE N&Iacute;VEL | ARTHUR BESERRA DE MELO', '2020-02-18', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz MN - Arthur.pdf'),
+(417, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | JEANE LOPES DA SILVA', '2020-02-27', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Jeane.pdf'),
+(418, 'DEFESA DE TESE | PAULO GON&Ccedil;ALO FARIAS GON&Ccedil;ALVES', '2020-02-27', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Paulo.pdf'),
+(419, 'DEFESA DE TESE | ANA CLAUDIA ALBANO VIANA', '2020-02-27', 'Audit&oacute;rio VER - Departamento de Educa&ccedil;&atilde;o F&iacute;sica', 'PPGED', '', 0, 'Cartaz - Ana Claudia.pdf'),
+(420, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | MAR&Iacute;LIA DO VALE G&Oacute;IS PACHECO MEDEIROS', '2020-02-20', 'Audit&oacute;rio 02 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Marilia.pdf'),
+(421, 'DEFESA DE TESE | EDILZA ALVES DAMASCENA', '2020-02-28', 'Multimeios 01 - CE', 'PPGED', '', 0, 'Cartaz - Edilza.pdf'),
+(422, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | JONATHAN ALVES MARTINS', '2020-02-20', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Jonathan.pdf'),
+(423, 'MUDAN&Ccedil;A DE N&Iacute;VEL | JONATHAN ALVES MARTINS', '2020-02-20', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz MN - Jonathan.pdf'),
+(424, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | ANA APARECIDA TAVARES DA SILVEIRA', '2020-02-19', 'Audit&oacute;rio 02 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Ana Aparecida.pdf'),
+(425, 'MUDAN&Ccedil;A DE N&Iacute;VEL | ANA APARECIDA TAVARES DA SILVEIRA', '2020-02-19', 'Audit&oacute;rio 02 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz MN - Ana Aparecida.pdf'),
+(426, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | FABIANA ARA&Uacute;JO NOGUEIRA', '2020-02-19', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Fabiana.pdf'),
+(427, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | AMANDA VIT&Oacute;RIA BARBOSA ALVES FERNANDES', '2020-02-19', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Amanda.pdf'),
+(428, 'MUDAN&Ccedil;A DE N&Iacute;VEL | AMANDA VIT&Oacute;RIA BARBOSA ALVES FERNANDES', '2020-02-19', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz MN - Amanda.pdf'),
+(429, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | FABYANA SOARES DE OLIVEIRA', '2020-02-19', 'Audit&oacute;rio 02 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Fabyana.pdf'),
+(430, 'MUDAN&Ccedil;A DE N&Iacute;VEL | FABYANA SOARES DE OLIVEIRA', '2020-02-19', 'Audit&oacute;rio 02 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz MN - Fabyana.pdf'),
+(431, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | HELRY COSTA DA SILVA', '2020-02-28', 'Multimeios 02 - CE', 'PPGED', '', 0, 'Cartaz - Helry.pdf'),
+(432, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | JESSICA LIRA DA SILVA', '2020-02-20', 'Audit&oacute;rio 02 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Jessica.pdf'),
+(433, 'DEFESA DE TESE | ANA Z&Eacute;LIA ALVES VIEIRA BELO', '2020-02-28', 'Audit&oacute;rio VER - Departamento de Educa&ccedil;&atilde;o F&iacute;sica', 'PPGED', '', 0, 'Cartaz - Ana Zelia.pdf'),
+(434, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | ALINE CONSTANCIA DE FIGUEIREDO E SOUZA', '2020-03-04', 'Audit&oacute;rio 01 do PPGEd - NEPSA II', 'PPGED', '', 0, 'Cartaz - Aline.pdf'),
+(435, 'DEFESA DE TESE | FABIOLA FONTENELE GIRARDI', '2020-02-27', 'Multimeios 01 - CE', 'PPGED', '', 0, 'Cartaz - Fabiola.pdf'),
+(436, 'DEFESA DE TESE | MARIA ELIZABETE SOBRAL PAIVA DE AQUINO', '2020-02-27', 'Audit&oacute;rio VER - Departamento de Educa&ccedil;&atilde;o F&iacute;sica', 'PPGED', '', 0, 'Cartaz - Maria Elizabete.pdf'),
+(438, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | JEANE LOPES DA SILVA', '2020-02-27', 'Multimeios 02 - CE', 'PPGED', '', 0, 'Cartaz - Jeane.pdf'),
+(439, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | TATIANA LAPITZ MACHADO DOS SANTOS SEVERO', '2020-02-27', 'Multimeios 02 - CE', 'PPGED', '', 0, 'Cartaz - Tatiana.pdf'),
+(440, 'DEFESA DE DISSERTA&Ccedil;&Atilde;O | HELRY COSTA DA SILVA', '2020-02-28', 'Multimeios 02 - CE', 'PPGED', '', 0, 'Cartaz - Helry.pdf');
 
 -- --------------------------------------------------------
 
@@ -538,8 +582,8 @@ CREATE TABLE IF NOT EXISTS `formularios` (
 INSERT INTO `formularios` (`formularios_id`, `titulo`, `arquivo_docx`, `arquivo_pdf`) VALUES
 (11, 'Relatório do bolsista - 2019', 'Relatório do bolsista - 2019.doc', 'Relatório do bolsista - 2019.pdf'),
 (12, 'Modelo de relatório: Seminário de Formação Doutoral II', 'Relatório_seminário_de_formação_doutoral.doc', 'Relatório_seminário_de_formação_doutoral.pdf'),
-(14, 'Indicação de banca de defesa de tese', 'Formulário de Indicação de Banca - Doutorado.docx', 'Formulário de Indicação de Banca - Doutorado.pdf'),
-(15, 'Indicação de banca de defesa de dissertação', 'Formulário de Indicação de Banca - Mestrado.docx', 'Formulário de Indicação de Banca - Mestrado.pdf'),
+(14, 'Indicação de banca de defesa de tese', 'Formulário de Indicação de Banca - Doutorado4.doc', 'Formulário de Indicação de Banca - Doutorado4 - PDF.pdf'),
+(15, 'Indicação de banca de defesa de dissertação', 'Formulário de Indicação de Banca - Mestrado4.doc', 'Formulário de Indicação de Banca - Mestrado4 - PDF.pdf'),
 (16, 'Relatório de Prestação de Conta', 'Relatório de prestação de contas.doc', 'Relatório de prestação de contas.pdf'),
 (17, 'Aproveitamento de Disciplina', 'formulario_aproveitamento_disciplina.doc', 'formulario_aproveitamento_disciplina.pdf'),
 (19, 'Candidatura à Bolsa De Estudo', 'formulario_candidatura_bolsa_estudos.doc', 'formulario_candidatura_bolsa_estudos.pdf'),
@@ -561,7 +605,7 @@ CREATE TABLE IF NOT EXISTS `informativos` (
   `data` date NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `imagem` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=90 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=94 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Extraindo dados da tabela `informativos`
@@ -641,7 +685,11 @@ INSERT INTO `informativos` (`informativo_id`, `titulo`, `categoria`, `texto`, `d
 (86, ' Evento &quot;Paulo Freire mais que nunca&quot;.', 'not&iacute;cia', '<p><img alt="" src="https://imgur.com/XZ4NUL5" /><img alt="" src="https://i.imgur.com/XZ4NUL5.jpg" style="height:1500px; width:1061px" /></p>\r\n', '2019-11-07', 0, NULL),
 (87, 'Projeto Caf&eacute; Pegag&oacute;gico ', 'not&iacute;cia', '<p>Projeto Caf&eacute; Pegag&oacute;gico &eacute; uma iniciativa dos alunos do Programa de P&oacute;s-Gradua&ccedil;&atilde;o em Educa&ccedil;&atilde;o, sob a organiza&ccedil;&atilde;o da Representa&ccedil;&atilde;o Discente. A proposta tenta promover mais um espa&ccedil;o de di&aacute;logos genuinamente indisciplinar e que contemple quest&otilde;es que mobilizem os diversos campos do ensino, da pesquisa e da extens&atilde;o no &acirc;mbito das ci&ecirc;ncias da educa&ccedil;&atilde;o.<br />\r\nTem como objetivo central promover discuss&otilde;es entre pesquisadores, estudantes de gradua&ccedil;&atilde;o e de p&oacute;s-gradua&ccedil;&atilde;o, profissionais em forma&ccedil;&atilde;o continuada e profissionais que atuam para al&eacute;m da universidade.</p>\r\n\r\n<p>Data: 18 de novembro de 2019, &agrave;s 17h.<br />\r\nAudit&oacute;rio do Centro de Educa&ccedil;&atilde;o/UFRN.<br />\r\nOrganiza&ccedil;&atilde;o: Representa&ccedil;&atilde;o Discente do PPGEd.<br />\r\nConvidados: Maria da Concei&ccedil;&atilde;o de Almeida (PPGEd/CE) e Jaime Biella (DFIL).<br />\r\nApresenta&ccedil;&atilde;o Cultural: Artemisa Andrade, Marilia do Vale e Cadu Ara&uacute;jo.</p>\r\n\r\n<p><img alt="" src="https://i.imgur.com/hRyCMlT.png" style="height:824px; width:1160px" /></p>\r\n', '2019-11-07', 0, NULL),
 (88, 'Divulga&ccedil;&atilde;o do Calend&aacute;rio de Matriculas 2020.1', 'not&iacute;cia', '<p>Foi divulgado&nbsp; o calend&aacute;rio&nbsp; de matriculas 2020.1.</p>\r\n\r\n<p>Acesse o calend&aacute;rio atrav&eacute;s do menu: Documentos -&gt;&nbsp;Calend&aacute;rio de Matr&iacute;culas</p>\r\n', '2019-11-20', 0, NULL),
-(89, 'Divulgado Editais de Reingresso e Mudan&ccedil;a de N&iacute;vel para 2020.1', 'not&iacute;cia', '<p>Acesse no Menu DOCUMENTOS &gt;&gt; <a href="http://ppged.ufrn.br/editais.php">EDITAIS</a></p>\r\n', '2020-01-07', 1, NULL);
+(89, 'Divulgado Editais de Reingresso e Mudan&ccedil;a de N&iacute;vel para 2020.1', 'not&iacute;cia', '<p>Acesse no Menu DOCUMENTOS &gt;&gt; <a href="http://ppged.ufrn.br/editais.php">EDITAIS</a></p>\r\n', '2020-01-07', 0, NULL),
+(90, 'Oferta de Disciplinas Atualizado - 2020.1', 'not&iacute;cia', '<p>Segue <a href="https://drive.google.com/open?id=1SRdRbVQm0whYYekib453WMSWdrSAFP6A">aqui&nbsp;</a>a oferta de disciplinas atualizada, com local da turma, divulgada para o semestre 2020.1 pelo PPGEd/UFRN.</p>\r\n\r\n<p>Na oferta tamb&eacute;m consta quais disciplinas ser&atilde;o oferecidas para Alunos Especiais (formul&aacute;rio de inscri&ccedil;&atilde;o estar&aacute; dispon&iacute;vel&nbsp;nos dias 13 e 14 de fevereiro de 2020).</p>\r\n', '2020-01-24', 0, NULL),
+(91, 'ORIENTA&Ccedil;&Atilde;O DE MATR&Iacute;CULAS - MESTRADO E DOUTORADO - PPGEd', 'not&iacute;cia', '<a href="https://drive.google.com/file/d/1GPNb_pILgxq0Eh01BBtrmEWKbzCpOUZK/view">Clique aqui </a>para acessar o documento com orienta&ccedil;&otilde;es de matr&iacute;cula e outras instru&ccedil;&otilde;es, ao longo de todo curso de Mestrado e Doutorado, disponibilizado pela coordena&ccedil;&atilde;o do PPGEd.\r\n', '2020-01-28', 0, NULL),
+(92, 'Divulgado Edital de Cadastramento para os Aprovados na Sele&ccedil;&atilde;o para Aluno Regular', 'not&iacute;cia', '<p>Foi divulgado o&nbsp;<strong>EDITAL </strong><strong>N&deg; 01/2020 - </strong><strong>CADASTRAMENTO PARA CANDIDATOS APROVADOS NA SELE&Ccedil;&Atilde;O PARA MESTRADO/DOUTORADO EM EDUCA&Ccedil;&Atilde;O COM INGRESSO EM 2020.1</strong><strong>&nbsp;- PPGEd/UFRN</strong></p>\r\n\r\n<p>Acesse no Menu DOCUMENTOS &gt;&gt; <a href="http://ppged.ufrn.br/editais.php">EDITAIS</a></p>\r\n', '2020-02-04', 1, NULL),
+(93, 'Formul&aacute;rio de Inscri&ccedil;&atilde;o - Alunos Especiais 2020.1', 'not&iacute;cia', '<p style="text-align:justify">Estar&aacute; aberta a&nbsp;<strong>inscri&ccedil;&atilde;o&nbsp;</strong>para&nbsp;<strong>Alunos Especiais</strong>&nbsp;nas vagas ofertadas no per&iacute;odo 2020.1, impreterivelmente, no&nbsp;<strong>per&iacute;odo de 13 a&nbsp;14 de fevereiro de 2020, por meio de formul&aacute;rio dispon&iacute;vel no link abaixo</strong>. Qualquer inscri&ccedil;&atilde;o feita depois desse per&iacute;odo ser&aacute; considerada &quot;erro de sistema&quot; e n&atilde;o ser&aacute; considerada.</p>\r\n\r\n<p>O n&uacute;mero de vagas &eacute; limitado, considerando a estrutura f&iacute;sica dispon&iacute;vel para as aulas e os candidatos interessados s&atilde;o selecionados pelos professores das disciplinas.&nbsp;</p>\r\n\r\n<p>A lista de oferta de disciplinas que ter&atilde;o vagas para alunos especiais, constando a ementa, dia e hor&aacute;rio das aulas, bem como local, j&aacute; est&atilde;o dispon&iacute;veis no <a href="http://ppged.ufrn.br/informativos.php?informativo=VZlSXRFWwplYGpEWadEdXZFMaZVVB1TP">site do PPGEd</a>.</p>\r\n\r\n<p>A matr&iacute;cula do Aluno Especial em disciplina n&atilde;o constitui v&iacute;nculo efetivo com o PPGEd, nem como aluno da UFRN. No entanto, o desempenho nas disciplinas ser&aacute; registrado em hist&oacute;rico, podendo as disciplinas serem posteriormente aproveitadas no PPGEd e em alguns Programas de P&oacute;s-gradua&ccedil;&atilde;o, de acordo com as respectivas Resolu&ccedil;&otilde;es que tratam do tema.&nbsp;</p>\r\n\r\n<p><strong>IMPORTANTE 1</strong>: De acordo com a Resolu&ccedil;&atilde;o n&ordm; 197/2013 - CONSEPE, inciso II, par&aacute;grafo 4&ordm;, Art. 38, o aluno poder&aacute; permanecer na condi&ccedil;&atilde;o de aluno especial por no m&aacute;ximo 2 semestres, consecutivos ou n&atilde;o.</p>\r\n\r\n<p><strong>IMPORTANTE 2:</strong> O quadro de oferta de disciplinas poder&aacute; sofrer altera&ccedil;&atilde;o(&otilde;es) a qualquer tempo, podendo ter componente(s) exclu&iacute;da(s) ou substitu&iacute;da(s) sem aviso pr&eacute;vio, mesmo ap&oacute;s divulga&ccedil;&atilde;o de resultado.</p>\r\n\r\n<p><strong>IMPORTANTE 3: </strong>O sistema s&oacute; permite cadastrar alunos(as) que N&Atilde;O tenham v&iacute;nculos com outras P&oacute;s-Gradua&ccedil;&otilde;es. Caso voc&ecirc; seja aprovado para alguma disciplina, ter&aacute; que cancelar seu v&iacute;nculo com outros programas de p&oacute;s-gradua&ccedil;&atilde;o para receber sua matr&iacute;cula no PPGEd.</p>\r\n\r\n<p><strong>IMPORTANTE 4</strong>: O PPGEd n&atilde;o se responsabiliza por solicita&ccedil;&atilde;o de inscri&ccedil;&atilde;o n&atilde;o recebida por motivos de ordem t&eacute;cnica dos computadores, falhas de comunica&ccedil;&atilde;o, congestionamento das linhas de comunica&ccedil;&atilde;o, falhas de smartphone e aplicativo, bem como outros fatores que impossibilitem a transmiss&atilde;o dos dados.</p>\r\n\r\n<p style="text-align:justify">&nbsp;</p>\r\n\r\n<p style="text-align:justify">D&uacute;vidas sobre a sele&ccedil;&atilde;o dever&atilde;o ser encaminhadas para o e-mail do programa:&nbsp;<strong>ppged@ce.ufrn.br</strong></p>\r\n\r\n<p style="text-align:justify"><strong><a href="https://forms.gle/n9snEGpczNAJkxAd9">Link para o formul&aacute;rio de inscri&ccedil;&atilde;o</a> &gt;&gt;&gt;<a href="https://goo.gl/forms/mDb1GRc59tAEIBDW2" style="box-sizing: border-box; color: rgb(0, 90, 171); text-decoration-line: none; background-color: transparent; margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline;">&nbsp;</a>&nbsp;(formul&aacute;rio dispon&iacute;vel somente a partir de 13/02/2020)</strong></p>\r\n', '2020-02-10', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -901,7 +949,7 @@ CREATE TABLE IF NOT EXISTS `resolucoes` (
   `arquivo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `ano` char(4) COLLATE utf8_unicode_ci NOT NULL,
   `orgao` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Extraindo dados da tabela `resolucoes`
@@ -920,7 +968,8 @@ INSERT INTO `resolucoes` (`resolucao_id`, `titulo`, `arquivo`, `ano`, `orgao`) V
 (10, 'PRORROGAÇÃO DE CURSO', 'res_03-97.pdf', '1997', 'PPGED'),
 (11, 'SEMINÁRIO DE FORMAÇÃO DOUTORAL', 'res_05-97.pdf', '1997', 'PPGED'),
 (12, 'NORMAS DOS PROGRAMAS E CURSOS DE PÓS-GRADUAÇÃO DA UFRN', 'https://goo.gl/PW1jcn', '2013', 'CONSEPE'),
-(13, 'ESTÁGIO DOCÊNCIA', 'RESOLUÇÃO 041-2019 - Docencia Assistida.pdf', '2019', 'CONSEPE');
+(13, 'ESTÁGIO DOCÊNCIA', 'RESOLUÇÃO 041-2019 - Docencia Assistida.pdf', '2019', 'CONSEPE'),
+(14, 'CREDENCIAMENTO E RECREDENCIAMENTO DE DOCENTES', 'Resolução credenciamento e recredenciamento docente - PPGEd-UFRN 2019.docx', '2019', 'PPGED');
 
 -- --------------------------------------------------------
 
@@ -1134,12 +1183,12 @@ ALTER TABLE `convenios`
 -- AUTO_INCREMENT for table `editais`
 --
 ALTER TABLE `editais`
-  MODIFY `edital_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
+  MODIFY `edital_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `evento_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=398;
+  MODIFY `evento_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=441;
 --
 -- AUTO_INCREMENT for table `fale_conosco`
 --
@@ -1154,7 +1203,7 @@ ALTER TABLE `formularios`
 -- AUTO_INCREMENT for table `informativos`
 --
 ALTER TABLE `informativos`
-  MODIFY `informativo_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=90;
+  MODIFY `informativo_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=94;
 --
 -- AUTO_INCREMENT for table `noticias_anpae`
 --
@@ -1184,7 +1233,7 @@ ALTER TABLE `publicacoes`
 -- AUTO_INCREMENT for table `resolucoes`
 --
 ALTER TABLE `resolucoes`
-  MODIFY `resolucao_id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+  MODIFY `resolucao_id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `selecoes`
 --

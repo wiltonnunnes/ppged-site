@@ -29,35 +29,35 @@
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">O programa</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="<?php echo site_url('apresentacao'); ?>"><?php echo lang('menu_about'); ?></a>
-							<a class="dropdown-item" href="<?php echo site_url('professores'); ?>">DOCENTES</a>
-							<a class="dropdown-item" href="<?php echo site_url('pesquisas'); ?>">LINHAS DE PESQUISA</a>
-							<a class="dropdown-item" href="<?php echo site_url('teses_dissertacoes'); ?>">BANCO DE TESES E DISSERTAÇÕES</a>
-							<a class="dropdown-item" href="">PUBLICAÇÕES</a>
+							<a class="dropdown-item" href="<?php echo site_url('professores'); ?>"><?php echo lang('menu_teachers'); ?></a>
+							<a class="dropdown-item" href="<?php echo site_url('pesquisas'); ?>"><?php echo lang('menu_research_lines'); ?></a>
+							<a class="dropdown-item" href="<?php echo site_url('teses_dissertacoes'); ?>"><?php echo lang('menu_bank_of_theses_and_dissertations'); ?></a>
+							<a class="dropdown-item" href="<?php echo site_url('publicacoes'); ?>"><?php echo lang('menu_publications'); ?></a>
 							<a class="dropdown-item" href="">CURSOS</a>
 						</div>
 			  </li>
 			  <li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo lang('menu_documents'); ?></a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="<?php echo site_url('regimento'); ?>">REGIMENTO</a>
-							<a class="dropdown-item" href="<?php echo site_url('reconhecimento'); ?>">RECONHECIMENTO DE DIPLOMAS</a>
-							<a class="dropdown-item" href="<?php echo site_url('resolucoes'); ?>">RESOLUÇÕES</a>
-							<a class="dropdown-item" href="<?php echo site_url('formularios'); ?>">FORMULÁRIOS</a>
-							<a class="dropdown-item" href="<?php echo site_url('editais'); ?>">EDITAIS</a>
+							<a class="dropdown-item" href="<?php echo site_url('regimento'); ?>"><?php echo lang('menu_regiment'); ?></a>
+							<a class="dropdown-item" href="<?php echo site_url('reconhecimento'); ?>"><?php echo lang('menu_recognition_of_diplomas'); ?></a>
+							<a class="dropdown-item" href="<?php echo site_url('resolucoes'); ?>"><?php echo lang('menu_resolutions'); ?></a>
+							<a class="dropdown-item" href="<?php echo site_url('formularios'); ?>"><?php echo lang('menu_forms'); ?></a>
+							<a class="dropdown-item" href="<?php echo site_url('editais'); ?>"><?php echo lang('menu_notices'); ?></a>
 							<a class="dropdown-item" href="https://drive.google.com/file/d/1_UAKSMdMwxNRnewEt3COJJPvDB99Dafj/view" target="_blank">ESTRUTURA CURRICULAR</a>
 							<a class="dropdown-item" href="<?php echo base_url('arquivos/CALENDARIO DE MATRICULA 2020.1.pdf'); ?>" target="_blank">CALENDÁRIO DE MATRÍCULAS</a>
 						</div>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="<?php echo site_url('selecoes'); ?>">SELEÇÃO</a>
+		        <a class="nav-link" href="<?php echo site_url('selecoes'); ?>"><?php echo lang('menu_selection'); ?></a>
 		      </li>
 			  <li class="nav-item">
 		        <a class="nav-link" href="<?php echo site_url('eventos'); ?>"><?php echo lang('menu_events'); ?></a>
 		      </li>
 		      <li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Parcerias</a>
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo lang('menu_partnerships'); ?></a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="<?php echo site_url('intercambios'); ?>">INTERCÂMBIOS</a>
+							<a class="dropdown-item" href="<?php echo site_url('intercambios'); ?>"><?php echo lang('menu_exchanges'); ?></a>
 							<a class="dropdown-item" href="<?php echo site_url('convenios_nacionais'); ?>">CONVÊNIOS NACIONAIS</a>
 							<a class="dropdown-item" href="<?php echo site_url('convenios_internacionais'); ?>">CONVÊNIOS INTERNACIONAIS</a>
 						</div>

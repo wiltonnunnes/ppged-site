@@ -10,14 +10,14 @@ class Eventos extends MY_Controller {
 		if (is_null($id)) {
 			$config['base_url'] = base_url('index.php/eventos');
 			$config['total_rows'] = $this->eventos_model->get_count();
-			$config['per_page'] = 16;
+			$config['per_page'] = 10;
 
 			$this->pagination->initialize($config);
 
 			$data['links'] = $this->pagination->create_links();
 
 			$page = ($this->input->get('page')) ?: 1;
-			$data['eventos'] = $this->eventos_model->get(array(), -1, ($page - 1) * $config['per_page']);
+			$data['eventos'] = $this->eventos_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
 
 			$this->load->view('templates/header');
 			if ($this->is_logged_in())
@@ -30,6 +30,10 @@ class Eventos extends MY_Controller {
 		} else {
 			$data['evento'] = $this->eventos_model->get_by_id($id);
 			$this->load->view('templates/header');
+			if ($this->is_logged_in())
+				$this->load->view('templates/menuAdm');
+			else
+				$this->load->view('templates/menu');
 			$this->load->view('eventos/evento', $data);
 			$this->load->view('templates/footer');
 		}
