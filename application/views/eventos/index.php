@@ -27,7 +27,9 @@
                             </div>
                             <?php endforeach; ?>
 
-                            <?php echo $links; ?>
+                            <nav class="offset-md-5 navNoticia mt-2">
+                                <?php echo $links; ?>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -35,18 +37,3 @@
 		</div>
 	</div>
 </section>
-
-<script>
-    $(document).ready(function(){
-        $('#example').DataTable({
-            "language": {
-                "lengthMenu": "Mostrando _MENU_ registros por página",
-                "zeroRecords": "Nada encontrado",
-                "info": "Mostrando página _PAGE_ de _PAGES_",
-                "infoEmpty": "Nenhum registro disponível",
-                "infoFiltered": "(filtrado de _MAX_ registros no total)",
-                "sSearch" : "Pesquisar"
-            }
-        });
-    });
-</script>

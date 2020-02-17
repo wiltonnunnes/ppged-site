@@ -20,7 +20,7 @@
                             <p>Entidade(s) organizadora(s): <?php echo $evento['entidade_organizadora']; ?></p>
 
                             <?php if (!is_null($evento['cartaz'])): ?>
-                            <div class="embed-responsive embed-responsive-16by9">
+                            <div class="embed-responsive embed-responsive-1by1">
                                 <embed class="embed-responsive-item" src="<?php echo base_url('uploads/arquivos/eventos/' . $evento['cartaz']); ?>"></embed>
                             </div>
                             <?php endif; ?>

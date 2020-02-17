@@ -17,20 +17,19 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12 col-lg-12 mt-3">
-									
-                                <ol>
-                                <?php
-                                $size = count($formularios);
-                                for ($i = 0; $i < $size; $i++): 
-                                ?>
-								    <li>
-								        <?php echo $formularios[$i]['titulo']; ?> (<a href="<?php echo base_url('uploads/arquivos/formularios/docx/' . $formularios[$i]['arquivo_docx']); ?>" target="_blank">.docx</a>) (<a href="<?php echo base_url('uploads/arquivos/formularios/pdf/' . $formularios[$i]['arquivo_pdf']); ?>" target="_blank">.pdf</a>)
-							        </li>
-                                <?php
-                                if ($i != ($size-1)) echo '<hr/>';
-                            	endfor; 
-                            	?>
-                                </ol>
+
+									<table class="table">
+										<tbody>
+											<?php foreach ($formularios as $formularios_item): ?>
+											<tr>
+												<td><span><?php echo $formularios_item['titulo']; ?></span></td>
+												<td>
+													(<a href="<?php echo base_url('uploads/arquivos/formularios/docx/' . $formularios_item['arquivo_docx']); ?>" target="_blank">.docx</a>) (<a href="<?php echo base_url('uploads/arquivos/formularios/pdf/' . $formularios_item['arquivo_pdf']); ?>" target="_blank">.pdf</a>)
+												</td>
+											</tr>
+											<?php endforeach; ?>
+										</tbody>
+									</table>
                                     
 								</div>
 							</div>

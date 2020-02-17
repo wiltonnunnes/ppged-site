@@ -33,7 +33,7 @@
                                                 <td>
                                                 	<?php echo anchor($editais_item['arquivo'], $editais_item['titulo']); ?>
                                                 </td>
-                                                <td><?php echo $editais_item['data']; ?></td>
+                                                <td><?php echo date_format(date_create($editais_item['data']), 'd/m/Y'); ?></td>
                                             </tr>
                                         <?php endforeach; ?>
                                         </tbody>
