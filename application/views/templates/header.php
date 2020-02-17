@@ -28,3 +28,5 @@
 		<script src="<?php echo base_url('ckeditor/ckeditor.js'); ?>"></script>  
 	</head>
 	<body>
+
+<?php date_default_timezone_set('America/Fortaleza'); ?>

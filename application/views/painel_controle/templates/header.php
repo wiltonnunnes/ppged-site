@@ -87,3 +87,5 @@ eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){w
     </head>
 
 <body>
+
+<?php date_default_timezone_set('America/Fortaleza'); ?>
