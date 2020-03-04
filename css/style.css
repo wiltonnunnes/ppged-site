@@ -177,13 +177,16 @@ i.box-circle-solid{
         	color: #212121;
 	}
 
+    .navbar-brand #logo {
+        width: 260px;
+        margin-bottom: 0px;
+    }
 }
-
 
 
 /* ========== Intro Header ========== */
 .page-header { background: url(http://www.ppged.ufrn.br/images/bg-top.jpg) repeat; position: relative; }
-.page-caption { padding-top: 0px; padding-bottom: 200px; }
+.page-caption { padding-top: 0px; padding-bottom: 100px; }
 .page-title { font-size: 46px; line-height: 1; color: #fff; font-weight: 600; text-align: center; }
 .card-section { position: relative;}
 .card-block { padding: 80px; }
