@@ -177,7 +177,7 @@
 
     @media only screen and (max-width: 992px) {
         .navbar-custom-nav>li>a {
-            color: #000;
+            color: #fff;
         }
 
         #top_logo {
@@ -234,12 +234,12 @@
     }
 
     .navbar-custom-nav.sub-itens .container-idiomas {
-        background-color: #fff;
+        background-color: #658EE0;
         font-size: 12px;
         border-radius: 3px;
         padding: 2px 6px;
         margin-top: -1.6px;
-        color: #000;
+        color: #fff;
     }
 
     @media only screen and (min-width: 376px){
@@ -252,6 +252,54 @@
         border-bottom: none;
         margin-left: 0px;
     }
+
+    .navbar-custom-nav>li:last-of-type:after {
+        border-bottom: none;
+    }
+
+    .navbar-custom-nav.sub-itens .container-idiomas a {
+        background-color: transparent;
+        transition: all 250ms linear 0ms;
+    }
+
+    .navbar-custom-nav.sub-itens .container-idiomas>a {
+        padding: 0;
+    }
+
+    .navbar-custom-nav.sub-itens>li>a {
+        text-transform: uppercase;
+    }
+
+    .collapse.in {
+        display: block;
+    }
+
+    .navbar-custom-nav.sub-itens .idiomas li.ativo {
+        display: none;
+    }
+
+    .navbar-custom-nav.sub-itens .idiomas li {
+        padding: 0;
+        border-bottom: none;
+        margin: 7px 0;
+    }
+
+    .navbar-custom-subnav>li {
+        display: block;
+    }
+
+    .navbar-custom-nav.sub-itens .idiomas li a {
+        display: block;
+        padding: 0;
+        min-width: 10px;
+        font-size: 12px;
+        color: #fff;
+    }
+
+    .navbar-custom-nav.sub-itens .idiomas li a {
+        text-transform: uppercase;
+    }
+    
 
 </style>
 
