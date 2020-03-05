@@ -15,7 +15,7 @@
 
 <nav class="navbar navbar-expand-md fixed-top top-nav">
 	<div class="container">
-		  <a class="navbar-brand" href="index.php"><strong><img id="logo" class="img-fluid" src="img/logo_FundoBlack.png" alt="" width="120"></strong></a>
+		  <a class="navbar-brand" href="index.php"><strong><img id="logo" class="img-fluid" src="<?php echo base_url('img/logo_FundoBlack.png'); ?>" alt="" width="120"></strong></a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
 		  </button>

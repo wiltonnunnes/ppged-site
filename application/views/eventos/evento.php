@@ -11,9 +11,7 @@
 			<div class="col-md-8 col-lg-8">
                 <div class="content" style="width:100%">
                     <div id="jquery-accordion-menu" class="jquery-accordion-menu" style="width:100%">                       
-                        <div class="jquery-accordion-menu-header">Evento</div>
-
-                            <h4><?php echo $evento['nome_evento']; ?></h1>
+                        <div class="jquery-accordion-menu-header"><?php echo $evento['nome_evento']; ?></div>
 
                             <p>Data do evento: <?php echo date_format(date_create($evento['data']), 'd/m/Y'); ?></p>
                             <p>Local: <?php echo $evento['local']; ?></p>

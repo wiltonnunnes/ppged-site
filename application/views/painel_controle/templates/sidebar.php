@@ -13,14 +13,15 @@
 					<li>
 						<a href="#"><i class="fa fa-cog"></i>Menu</a>
 						<ul class="submenu">
-							<li><a href="convenio.php">Convênios</a></li>
+							<li><a href="<?php echo site_url('painel_controle/convenios'); ?>">Convênios</a></li>
 							<li><a href="<?php echo site_url('painel_controle/eventos'); ?>">Eventos</a></li>
+							<li><a href="<?php echo site_url('painel_controle/formularios'); ?>">Formulários</a></li>
 							<li><a href="<?php echo site_url('painel_controle/informativos'); ?>">Informativos</a></li>
 							<li><a href="<?php echo site_url('painel_controle/noticias_anpae'); ?>">Noticias da ANPRED/FORPRED</a></li>
 							<li><a href="<?php echo site_url('painel_controle/pesquisas'); ?>">Linha de Pesquisa</a></li>
 							<li><a href="#">Notícias</a></li>
 							<li><a href="<?php echo site_url('painel_controle/professores'); ?>">Professores</a></li>
-							<li><a href="#">Publicações</a></li>
+							<li><a href="<?php echo site_url('painel_controle/publicacoes'); ?>">Publicações</a></li>
 							<li><a href="<?php echo site_url('painel_controle/editais'); ?>">Editais</a></li>
 							<li><a href="<?php echo site_url('painel_controle/resolucoes'); ?>">Resolucões</a></li>
 						</ul>

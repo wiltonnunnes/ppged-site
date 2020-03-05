@@ -37,12 +37,12 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
 					<ul class="list-unstyled list-inline social text-center">
-						<li class="list-inline-item"><a href="http://www.ufrn.br"><img src="../img/logo_ufrn_white.png" width="90"/></li>
-						<li class="list-inline-item"><a href="http://www.capes.gov.br/"><img src="../img/capes_logo.png" width="60"/></a></li>
-						<li class="list-inline-item"><a href="http://www.cnpq.br/"><img src="../img/Cnpq-logo.png" width="100"/></a></li>
-						<li class="list-inline-item"><a href="http://www.sigaa.ufrn.br/"><img src="../img/logoSigaa.png" width="90"/></a></li>
-						<li class="list-inline-item"><a href="http://www.bczm.ufrn.br/site/" target="_blank"><img src="../img/logo_bczm.png" width="60"/></a></li>
-						<li class="list-inline-item"><a href="http://www.revistaeduquestao.educ.ufrn.br/" target="_blank"><img src="../img/logo-revista.png" width="110"/></a></li>
+						<li class="list-inline-item"><a href="http://www.ufrn.br"><img src="<?php echo base_url('img/logo_ufrn_white.png'); ?>" width="90"/></li>
+						<li class="list-inline-item"><a href="http://www.capes.gov.br/"><img src="<?php echo base_url('img/capes_logo.png'); ?>" width="60"/></a></li>
+						<li class="list-inline-item"><a href="http://www.cnpq.br/"><img src="<?php echo base_url('img/Cnpq-logo.png'); ?>" width="100"/></a></li>
+						<li class="list-inline-item"><a href="http://www.sigaa.ufrn.br/"><img src="<?php echo base_url('img/logoSigaa.png'); ?>" width="90"/></a></li>
+						<li class="list-inline-item"><a href="http://www.bczm.ufrn.br/site/" target="_blank"><img src="<?php echo base_url('img/logo_bczm.png'); ?>" width="60"/></a></li>
+						<li class="list-inline-item"><a href="http://www.revistaeduquestao.educ.ufrn.br/" target="_blank"><img src="<?php echo base_url('img/logo-revista.png'); ?>" width="110"/></a></li>
 					</ul>
 				</div>
 				</hr>

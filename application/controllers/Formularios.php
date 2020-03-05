@@ -70,6 +70,8 @@ class Formularios extends MY_Controller {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
 		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
+		$this->load->view('templates/inicio');
 		$this->load->view('painel_controle/formularios/adicionar_alterar_formularios');
 		$this->load->view('painel_controle/templates/footer');
 	}
@@ -77,6 +79,7 @@ class Formularios extends MY_Controller {
 	public function listar() {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
+		/*
 		$config['base_url'] = base_url('index.php/painel_controle/formularios');
 		$config['total_rows'] = $this->formularios_model->get_count();
 		$config['per_page'] = 16;
@@ -90,8 +93,12 @@ class Formularios extends MY_Controller {
 
 		$page = ($this->input->get('page')) ?: 0;
 		$data['formularios'] = $this->formularios_model->get(array(), $config['per_page'], $page * $config['per_page']);
+		*/
+		$data['formularios'] = $this->formularios_model->get();
 
 		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
+		$this->load->view('templates/inicio');
 		$this->load->view('painel_controle/formularios/listar_formularios', $data);
 		$this->load->view('painel_controle/templates/footer');
 	}

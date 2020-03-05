@@ -4,10 +4,10 @@
 
 					if (scroll >= 100) {
 							$(".top-nav").addClass("light-header");
-							document.getElementById("logo").src="img/logo_ppged.png";
+							document.getElementById("logo").src="<?php echo base_url('img/logo_ppged.png'); ?>";
 					} else {
 							$(".top-nav").removeClass("light-header");
-							document.getElementById("logo").src="img/logo_ppged_white.png";
+							document.getElementById("logo").src="<?php echo base_url('img/logo_ppged_white.png'); ?>";
 							
 					}
 			});

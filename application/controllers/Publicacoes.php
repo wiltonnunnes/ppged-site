@@ -40,6 +40,8 @@ class Publicacoes extends MY_Controller {
 			redirect('painel_controle');
 		}
 		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
+		$this->load->view('templates/inicio');
 		$this->load->view('painel_controle/publicacoes/adicionar_alterar_publicacoes');
 		$this->load->view('painel_controle/templates/footer');
 	}
@@ -63,6 +65,7 @@ class Publicacoes extends MY_Controller {
 	public function listar() {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
+		/*
 		$config['base_url'] = site_url('painel_controle/publicacoes');
 		$config['total_rows'] = $this->publicacoes_model->get_count();
 		$config['per_page'] = 16;
@@ -73,8 +76,12 @@ class Publicacoes extends MY_Controller {
 
 		$page = ($this->input->get('page')) ?: 1;
 		$data['publicacoes'] = $this->publicacoes_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
+		*/
+		$data['publicacoes'] = $this->publicacoes_model->get();
 
-		$this->load->view('painel_controle/templates/header', $data);
+		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
+		$this->load->view('templates/inicio');
 		$this->load->view('painel_controle/publicacoes/listar_publicacoes', $data);
 		$this->load->view('painel_controle/templates/footer');
 	}

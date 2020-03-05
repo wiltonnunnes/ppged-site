@@ -42,6 +42,7 @@ class Convenios extends MY_Controller {
 	public function listar() {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
+		/*
 		$config['base_url'] = base_url('index.php/painel_controle/convenios');
 		$config['total_rows'] = $this->convenios_model->get_count();
 		$config['per_page'] = 16;
@@ -52,8 +53,12 @@ class Convenios extends MY_Controller {
 
 		$page = ($this->input->get('page')) ?: 1;
 		$data['convenios'] = $this->convenios_model->get(array(), $config['per_page'], ($page - 1) * $config['per_page']);
+		*/
+		$data['convenios'] = $this->convenios_model->get();
 
 		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
+		$this->load->view('templates/inicio');
 		$this->load->view('painel_controle/convenios/listar_convenios', $data);
 		$this->load->view('painel_controle/templates/footer');
 	}
@@ -69,6 +74,8 @@ class Convenios extends MY_Controller {
 		if (!$this->is_logged_in())
 			redirect('painel_controle');
 		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
+		$this->load->view('templates/inicio');
 		$this->load->view('painel_controle/convenios/adicionar_alterar_convenios');
 		$this->load->view('painel_controle/templates/footer');
 	}

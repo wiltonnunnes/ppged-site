@@ -31,6 +31,8 @@ class Resolucoes extends MY_Controller {
 			redirect('painel_controle');
 		}
 		$this->load->view('painel_controle/templates/header');
+		$this->load->view('painel_controle/templates/menu');
+		$this->load->view('templates/inicio');
 		$this->load->view('painel_controle/resolucoes/adicionar_alterar_resolucoes');
 		$this->load->view('painel_controle/templates/footer');
 	}
