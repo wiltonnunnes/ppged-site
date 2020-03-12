@@ -6,7 +6,8 @@ class MY_Controller extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->helper('html');
 		$this->lang->load('menu');
-		$this->lang->load('menu_lang', 'portuguese');
+
+		$this->lang->load('menu_lang', isset($_SESSION['language']) ? $_SESSION['language'] : 'portuguese');
 		$this->load->helper('language');
 	}
 

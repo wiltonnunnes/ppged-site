@@ -313,16 +313,16 @@
 
                     <nav class="navbar navbar-light justify-content-between" style="margin-top:8%">
                     <a class="navbar-brand" href="https://ufrn.br/">
-                        <img src="img/brasao-ufrn.png" class="d-inline-block align-top" alt="logo UFRN" id="top_logo">
+                        <img src="<?php echo base_url('img/brasao-ufrn.png'); ?>" class="d-inline-block align-top" alt="logo UFRN" id="top_logo">
                     </a>
                     <form class="form-inline">
                     <div class="box-subitens">
                         <ul class="nav navbar-custom-nav sub-itens colapse d-none d-lg-flex">
                         <li><i class="fa fa-globe"></i></li>
-                            <li class="idiomas ativo"><a title="Ir para versão em Português" href="/">PT</a></li>
-                            <li><a title="Go to the version in English" href="en">en</a></li>
-                            <li><a title="Ir para la versión en Español" href="es">es</a></li>
-                            <li><a title="Aller à la version en Anglais" href="fr">fr</a></li>
+                            <li class="idiomas ativo"><a title="Ir para versão em Português" href="<?php echo site_url('lang/?locale=pt');?>">PT</a></li>
+                            <li><a title="Go to the version in English" href="<?php echo site_url('lang/?locale=en');?>">en</a></li>
+                            <li><a title="Ir para la versión en Español" href="<?php echo site_url('lang/?locale=es');?>">es</a></li>
+                            <li><a title="Aller à la version en Anglais" href="<?php echo site_url('lang/?locale=fr');?>">fr</a></li>
                         </ul>
                         <ul class="nav navbar-custom-nav sub-itens d-lg-none">
                             <li class="divisor hidden-xs hidden-sm hidden-md"></li>
